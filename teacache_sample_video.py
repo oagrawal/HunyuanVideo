@@ -15,6 +15,7 @@ import torch
 import json
 import numpy as np
 
+import matplotlib.pyplot as plt
 
 
 
@@ -98,10 +99,14 @@ def teacache_forward(
             if self.cnt == 0 or self.cnt == self.num_steps-1:
                 should_calc = True
                 self.accumulated_rel_l1_distance = 0
+                self.l1_metrics.append(self.accumulated_rel_l1_distance)
+
             else: 
                 coefficients = [7.33226126e+02, -4.01131952e+02,  6.75869174e+01, -3.14987800e+00, 9.61237896e-02]
                 rescale_func = np.poly1d(coefficients)
                 self.accumulated_rel_l1_distance += rescale_func(((modulated_inp-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
+                self.l1_metrics.append(self.accumulated_rel_l1_distance)
+
                 if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
                     should_calc = False
                 else:
@@ -225,6 +230,8 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_residual = None
     hunyuan_video_sampler.pipeline.transformer.__class__.forward = teacache_forward
     
+    # Add this line after the existing TeaCache initialization
+    hunyuan_video_sampler.pipeline.transformer.__class__.l1_metrics = []
 
     # Start sampling
     # TODO: batch inference check
@@ -244,6 +251,25 @@ def main():
     )
     samples = outputs['samples']
     
+    # Plot the accumulated L1 metric
+    if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
+        plt.figure(figsize=(10, 6))
+        timesteps = range(len(hunyuan_video_sampler.pipeline.transformer.l1_metrics))
+        plt.plot(timesteps, hunyuan_video_sampler.pipeline.transformer.l1_metrics, 'b-', linewidth=2)
+        plt.xlabel('Timestep')
+        plt.ylabel('Accumulated L1 Metric')
+        plt.title('Accumulated L1 Metric over Timesteps')
+        plt.grid(True, alpha=0.3)
+        
+        # Save plot to the same directory as videos
+        plot_path = os.path.join(save_path, 'accumulated_l1_metric_plot.png')
+        plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+        logger.info(f'L1 metric plot saved to: {plot_path}')
+        
+        # Optionally display the plot
+        # plt.show()
+        plt.close()
+
     # Save samples
     if 'LOCAL_RANK' not in os.environ or int(os.environ['LOCAL_RANK']) == 0:
         for i, sample in enumerate(samples):
