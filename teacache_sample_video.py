@@ -96,6 +96,10 @@ def teacache_forward(
             modulated_inp = modulate(
                 normed_inp, shift=img_mod1_shift, scale=img_mod1_scale
             )
+
+            current_timestep = t.item() if torch.is_tensor(t) else t
+            self.plot_timesteps.append(current_timestep)
+
             if self.cnt == 0 or self.cnt == self.num_steps-1:
                 should_calc = True
                 self.accumulated_rel_l1_distance = 0
@@ -233,6 +237,7 @@ def main():
     
     # Add this line after the existing TeaCache initialization
     hunyuan_video_sampler.pipeline.transformer.__class__.l1_metrics = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.plot_timesteps = []
 
     # Start sampling
     # TODO: batch inference check
@@ -255,8 +260,8 @@ def main():
     # Plot the accumulated L1 metric
     if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
         plt.figure(figsize=(10, 6))
-        timesteps = range(len(hunyuan_video_sampler.pipeline.transformer.l1_metrics))
-        plt.plot(timesteps, hunyuan_video_sampler.pipeline.transformer.l1_metrics, 'b-', linewidth=2)
+        
+        plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, hunyuan_video_sampler.pipeline.transformer.l1_metrics, 'b-', linewidth=2)
         plt.xlabel('Timestep')
         plt.ylabel('Accumulated L1 Metric')
         plt.title('Accumulated L1 Metric over Timesteps')
