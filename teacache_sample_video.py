@@ -107,11 +107,12 @@ def teacache_forward(
                 self.accumulated_rel_l1_distance += rescale_func(((modulated_inp-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
                 self.l1_metrics.append(self.accumulated_rel_l1_distance)
 
-                if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
-                    should_calc = False
-                else:
-                    should_calc = True
-                    self.accumulated_rel_l1_distance = 0
+                # if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
+                #     should_calc = False
+                # else:
+                #     should_calc = True
+                #     self.accumulated_rel_l1_distance = 0
+                should_calc = True
             self.previous_modulated_input = modulated_inp  
             self.cnt += 1
             if self.cnt == self.num_steps:
