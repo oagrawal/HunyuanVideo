@@ -215,18 +215,12 @@ def main():
     if not models_root_path.exists():
         raise ValueError(f"`models_root` not exists: {models_root_path}")
     
-    # Create save folder to save the samples
-    save_path = args.save_path if args.save_path_suffix=="" else f'{args.save_path}_{args.save_path_suffix}'
-    if not os.path.exists(args.save_path):
-        os.makedirs(save_path, exist_ok=True)
-
     # Load models
     hunyuan_video_sampler = HunyuanVideoSampler.from_pretrained(models_root_path, args=args)
     
     # Get the updated args
     args = hunyuan_video_sampler.args
 
-    
     # TeaCache
     hunyuan_video_sampler.pipeline.transformer.__class__.enable_teacache = True
     hunyuan_video_sampler.pipeline.transformer.__class__.cnt = 0
@@ -241,7 +235,6 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.l1_metrics = []
     hunyuan_video_sampler.pipeline.transformer.__class__.plot_timesteps = []
     hunyuan_video_sampler.pipeline.transformer.__class__.deltas = []
-
 
     # Start sampling
     # TODO: batch inference check
@@ -261,11 +254,24 @@ def main():
     )
     samples = outputs['samples']
     
+    # Create unique folder for this generation
+    time_flag = datetime.fromtimestamp(time.time()).strftime("%Y-%m-%d-%H:%M:%S")
+    seed = outputs['seeds'][0]  # Use first seed for naming
+    prompt_short = outputs['prompts'][0][:50].replace('/', '').replace(' ', '_')  # Shorter and filesystem-safe
+    
+    # Create generation-specific folder inside base save_path
+    base_save_path = args.save_path if args.save_path_suffix=="" else f'{args.save_path}_{args.save_path_suffix}'
+    generation_folder = f"{time_flag}_seed{seed}_{prompt_short}"
+    save_path = os.path.join(base_save_path, generation_folder)
+    os.makedirs(save_path, exist_ok=True)
+    
     # Plot the accumulated L1 metric
     if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
         plt.figure(figsize=(10, 6))
         
-        plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, hunyuan_video_sampler.pipeline.transformer.l1_metrics, 'b-', linewidth=2, marker='o', markersize=3)
+        plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, 
+                 hunyuan_video_sampler.pipeline.transformer.l1_metrics, 
+                 'b-', linewidth=2, marker='o', markersize=3)
         plt.xlabel('Timestep')
         plt.ylabel('Accumulated L1 Metric')
         plt.title('Accumulated L1 Metric over Timesteps')
@@ -275,13 +281,11 @@ def main():
         ax = plt.gca()
         ax.xaxis.set_major_locator(plt.MultipleLocator(100))
         
-        # Save plot to the same directory as videos
-        plot_path = os.path.join(save_path, 'accumulated_l1_metric_plot.png')
+        # Save plot in generation-specific folder
+        plot_path = os.path.join(save_path, 'l1_metric_plot.png')
         plt.savefig(plot_path, dpi=300, bbox_inches='tight')
         logger.info(f'L1 metric plot saved to: {plot_path}')
         
-        # Optionally display the plot
-        # plt.show()
         plt.close()
 
     # Save delta values to text file
@@ -292,15 +296,14 @@ def main():
                 f.write(f"{delta}\n")
         logger.info(f'Delta values saved to: {delta_path}')
 
-
     # Save samples
     if 'LOCAL_RANK' not in os.environ or int(os.environ['LOCAL_RANK']) == 0:
         for i, sample in enumerate(samples):
             sample = samples[i].unsqueeze(0)
-            time_flag = datetime.fromtimestamp(time.time()).strftime("%Y-%m-%d-%H:%M:%S")
-            save_path = f"{save_path}/{time_flag}_seed{outputs['seeds'][i]}_{outputs['prompts'][i][:100].replace('/','')}.mp4"
-            save_videos_grid(sample, save_path, fps=24)
-            logger.info(f'Sample save to: {save_path}')
+            video_path = os.path.join(save_path, 'video.mp4')
+            save_videos_grid(sample, video_path, fps=24)
+            logger.info(f'Sample save to: {video_path}')
+
 
 if __name__ == "__main__":
     main()

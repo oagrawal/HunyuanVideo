@@ -1,3 +1,50 @@
+# Create and enter HunyuanVideo container
+alias hv-create='docker run -it --gpus all --init --net=host --uts=host --ipc=host --name hunyuanvideo --security-opt=seccomp=unconfined --ulimit=stack=671088>
+
+# Enter existing HunyuanVideo container
+alias hv='docker start -ai hunyuanvideo'
+
+# Recreate container from scratch
+alias hv-reset='docker rm -f hunyuanvideo && hv-create'
+
+
+
+run inference:
+python3 sample_video.py \
+    --video-size 544 960 \
+    --video-length 129 \
+    --infer-steps 50 \
+    --prompt "A cat walks on the grass, realistic style." \
+    --flow-reverse \
+    --use-cpu-offload \
+    --save-path ./results
+
+
+
+run inference with TeaCache:
+
+  python3 teacache_sample_video.py \
+    --video-size 544 960 \
+    --video-length 129 \
+    --infer-steps 50 \
+    --prompt "City street in rain - speeding motorcycles blur past, while a street musician stands still playing, rain falls steadily" \
+    --flow-reverse \
+    --use-cpu-offload \
+    --save-path ./teacache_results
+
+    
+if you get the EACCES error:
+chmod -R 777 ./
+
+
+
+
+
+##########################################################################################################################################
+
+
+
+
 if you dont have the docker image:
 docker pull hunyuanvideo/hunyuanvideo:cuda_11
 
@@ -37,24 +84,6 @@ python3 sample_video.py \
 
 
 run inference with TeaCache:
-`python3 teacache_sample_video.py \
-    --video-size 544 960 \
-    --video-length 129 \
-    --infer-steps 50 \
-    --prompt "Bustling nighttime city street in heavy rain - speeding cars with bright headlights, neon signs flickering rapidly, crowds of people with umbrellas rushing through puddles, lightning flashing, construction sparks flying, emergency sirens wailing." \
-    --flow-reverse \
-    --use-cpu-offload \
-    --save-path ./teacache_results`
-
-
-    python3 teacache_sample_video.py \
-    --video-size 544 960 \
-    --video-length 129 \
-    --infer-steps 50 \
-    --prompt "Quiet nighttime city street in gentle rain - parked cars with soft headlights, steady neon signs glowing, a few people with umbrellas standing under awnings, calm puddles reflecting lights." \
-    --flow-reverse \
-    --use-cpu-offload \
-    --save-path ./teacache_results
 
   python3 teacache_sample_video.py \
     --video-size 544 960 \
@@ -66,5 +95,5 @@ run inference with TeaCache:
     --save-path ./teacache_results
 
     
-
+if you get the EACCES error:
 chmod -R 777 ./
