@@ -103,20 +103,21 @@ def teacache_forward(
             if self.cnt == 0 or self.cnt == self.num_steps-1:
                 should_calc = True
                 self.accumulated_rel_l1_distance = 0
-                self.l1_metrics.append(self.accumulated_rel_l1_distance)
 
             else: 
                 coefficients = [7.33226126e+02, -4.01131952e+02,  6.75869174e+01, -3.14987800e+00, 9.61237896e-02]
                 rescale_func = np.poly1d(coefficients)
                 self.accumulated_rel_l1_distance += rescale_func(((modulated_inp-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
-                self.l1_metrics.append(self.accumulated_rel_l1_distance)
+                
 
-                # if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
-                #     should_calc = False
-                # else:
-                #     should_calc = True
-                #     self.accumulated_rel_l1_distance = 0
-                should_calc = True
+                if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
+                    should_calc = False
+                else:
+                    should_calc = True
+                    self.accumulated_rel_l1_distance = 0
+                # should_calc = True
+            
+            self.l1_metrics.append(self.accumulated_rel_l1_distance)
             self.previous_modulated_input = modulated_inp  
             self.cnt += 1
             if self.cnt == self.num_steps:
@@ -261,11 +262,15 @@ def main():
     if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
         plt.figure(figsize=(10, 6))
         
-        plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, hunyuan_video_sampler.pipeline.transformer.l1_metrics, 'b-', linewidth=2)
+        plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, hunyuan_video_sampler.pipeline.transformer.l1_metrics, 'b-', linewidth=2, marker='o', markersize=3)
         plt.xlabel('Timestep')
         plt.ylabel('Accumulated L1 Metric')
         plt.title('Accumulated L1 Metric over Timesteps')
         plt.grid(True, alpha=0.3)
+        
+        # Set x-axis ticks to increments of 100
+        ax = plt.gca()
+        ax.xaxis.set_major_locator(plt.MultipleLocator(100))
         
         # Save plot to the same directory as videos
         plot_path = os.path.join(save_path, 'accumulated_l1_metric_plot.png')
