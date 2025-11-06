@@ -107,8 +107,9 @@ def teacache_forward(
             else: 
                 coefficients = [7.33226126e+02, -4.01131952e+02,  6.75869174e+01, -3.14987800e+00, 9.61237896e-02]
                 rescale_func = np.poly1d(coefficients)
-                self.accumulated_rel_l1_distance += rescale_func(((modulated_inp-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
-                
+                delta = rescale_func(((modulated_inp-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
+                self.deltas.append(delta)
+                self.accumulated_rel_l1_distance += delta
 
                 if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
                     should_calc = False
@@ -239,6 +240,8 @@ def main():
     # Add this line after the existing TeaCache initialization
     hunyuan_video_sampler.pipeline.transformer.__class__.l1_metrics = []
     hunyuan_video_sampler.pipeline.transformer.__class__.plot_timesteps = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.deltas = []
+
 
     # Start sampling
     # TODO: batch inference check
@@ -280,6 +283,15 @@ def main():
         # Optionally display the plot
         # plt.show()
         plt.close()
+
+    # Save delta values to text file
+    if len(hunyuan_video_sampler.pipeline.transformer.deltas) > 0:
+        delta_path = os.path.join(save_path, 'delta_values.txt')
+        with open(delta_path, 'w') as f:
+            for delta in hunyuan_video_sampler.pipeline.transformer.deltas:
+                f.write(f"{delta}\n")
+        logger.info(f'Delta values saved to: {delta_path}')
+
 
     # Save samples
     if 'LOCAL_RANK' not in os.environ or int(os.environ['LOCAL_RANK']) == 0:
