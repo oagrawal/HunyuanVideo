@@ -225,7 +225,7 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.enable_teacache = True
     hunyuan_video_sampler.pipeline.transformer.__class__.cnt = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.num_steps = args.infer_steps
-    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0.15 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
+    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0.12 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
     hunyuan_video_sampler.pipeline.transformer.__class__.accumulated_rel_l1_distance = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_modulated_input = None
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_residual = None
@@ -270,21 +270,18 @@ def main():
         plt.figure(figsize=(10, 6))
         
         # Plot with individual markers at each data point
-        plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, 
+        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) + 1), 
                 hunyuan_video_sampler.pipeline.transformer.l1_metrics, 
                 'b-', linewidth=2, marker='o', markersize=6)
         
-        plt.xlabel('Timestep')
+        plt.xlabel('Timestep Number')
         plt.ylabel('Accumulated L1 Metric')
         plt.title('Accumulated L1 Metric over Timesteps')
         plt.grid(True, alpha=0.3)
         
-        # Set x-axis ticks to increments of 100
+        # Set x-axis ticks to increments of 10
         ax = plt.gca()
-        ax.xaxis.set_major_locator(plt.MultipleLocator(100))
-        
-        # Reverse x-axis (larger values on left, smaller on right)
-        ax.invert_xaxis()
+        ax.xaxis.set_major_locator(plt.MultipleLocator(10))
         
         # Save plot in generation-specific folder
         plot_path = os.path.join(save_path, 'l1_metric_plot.png')

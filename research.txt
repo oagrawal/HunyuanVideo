@@ -42,6 +42,17 @@ run inference with TeaCache:
     --use-cpu-offload \
     --save-path ./teacache_results
 
+
+  python3 teacache_sample_video.py \
+    --video-size 544 960 \
+    --video-length 129 \
+    --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse \
+    --use-cpu-offload \
+    --save-path ./teacache_results
+
+
     
 if you get the EACCES error:
 chmod -R 777 ./
