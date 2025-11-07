@@ -32,6 +32,16 @@ run inference with TeaCache:
     --use-cpu-offload \
     --save-path ./teacache_results
 
+
+  python3 teacache_sample_video.py \
+    --video-size 544 960 \
+    --video-length 129 \
+    --infer-steps 50 \
+    --prompt "A monk meditating on top of a beautifiul mountain - calm and still." \
+    --flow-reverse \
+    --use-cpu-offload \
+    --save-path ./teacache_results
+
     
 if you get the EACCES error:
 chmod -R 777 ./

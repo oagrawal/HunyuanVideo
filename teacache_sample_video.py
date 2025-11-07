@@ -269,9 +269,11 @@ def main():
     if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
         plt.figure(figsize=(10, 6))
         
+        # Plot with individual markers at each data point
         plt.plot(hunyuan_video_sampler.pipeline.transformer.plot_timesteps, 
-                 hunyuan_video_sampler.pipeline.transformer.l1_metrics, 
-                 'b-', linewidth=2, marker='o', markersize=3)
+                hunyuan_video_sampler.pipeline.transformer.l1_metrics, 
+                'b-', linewidth=2, marker='o', markersize=6)
+        
         plt.xlabel('Timestep')
         plt.ylabel('Accumulated L1 Metric')
         plt.title('Accumulated L1 Metric over Timesteps')
@@ -280,6 +282,9 @@ def main():
         # Set x-axis ticks to increments of 100
         ax = plt.gca()
         ax.xaxis.set_major_locator(plt.MultipleLocator(100))
+        
+        # Reverse x-axis (larger values on left, smaller on right)
+        ax.invert_xaxis()
         
         # Save plot in generation-specific folder
         plot_path = os.path.join(save_path, 'l1_metric_plot.png')
@@ -295,6 +300,42 @@ def main():
             for delta in hunyuan_video_sampler.pipeline.transformer.deltas:
                 f.write(f"{delta}\n")
         logger.info(f'Delta values saved to: {delta_path}')
+
+
+    # ===================================================================
+    # Save raw l1_metrics and timesteps for debugging
+    if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
+        # Save l1_metrics
+        l1_metrics_path = os.path.join(save_path, 'l1_metrics.txt')
+        with open(l1_metrics_path, 'w') as f:
+            for metric in hunyuan_video_sampler.pipeline.transformer.l1_metrics:
+                f.write(f"{metric}\n")
+        logger.info(f'L1 metrics saved to: {l1_metrics_path}')
+        
+        # Save timesteps
+        timesteps_path = os.path.join(save_path, 'timesteps.txt')
+        with open(timesteps_path, 'w') as f:
+            for timestep in hunyuan_video_sampler.pipeline.transformer.plot_timesteps:
+                f.write(f"{timestep}\n")
+        logger.info(f'Timesteps saved to: {timesteps_path}')
+        
+        # Save diagnostic info
+        diagnostic_path = os.path.join(save_path, 'diagnostic_info.txt')
+        with open(diagnostic_path, 'w') as f:
+            f.write("Diagnostic Information\n")
+            f.write("=" * 60 + "\n")
+            f.write(f"Number of l1_metrics: {len(hunyuan_video_sampler.pipeline.transformer.l1_metrics)}\n")
+            f.write(f"Number of timesteps: {len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
+            f.write(f"Number of deltas: {len(hunyuan_video_sampler.pipeline.transformer.deltas)}\n")
+            f.write(f"Expected num_steps: {args.infer_steps}\n")
+            f.write(f"\n")
+            f.write(f"Lists match: {len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) == len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
+            f.write(f"\n")
+            if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) != len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps):
+                f.write("WARNING: List lengths don't match!\n")
+                f.write("This will cause plotting artifacts and apparent 'decreases'\n")
+        logger.info(f'Diagnostic info saved to: {diagnostic_path}')
+    # ===================================================================
 
     # Save samples
     if 'LOCAL_RANK' not in os.environ or int(os.environ['LOCAL_RANK']) == 0:

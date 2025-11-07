@@ -1,0 +1,9 @@
+Diagnostic Information
+============================================================
+Number of l1_metrics: 50
+Number of timesteps: 50
+Number of deltas: 48
+Expected num_steps: 50
+
+Lists match: True
+
