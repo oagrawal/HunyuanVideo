@@ -225,7 +225,7 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.enable_teacache = True
     hunyuan_video_sampler.pipeline.transformer.__class__.cnt = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.num_steps = args.infer_steps
-    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0.20 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
+    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0 # 0.20 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
     hunyuan_video_sampler.pipeline.transformer.__class__.accumulated_rel_l1_distance = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_modulated_input = None
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_residual = None
@@ -291,6 +291,28 @@ def main():
         plot_path = os.path.join(save_path, 'l1_metric_plot.png')
         plt.savefig(plot_path, dpi=300, bbox_inches='tight')
         logger.info(f'L1 metric plot saved to: {plot_path}')
+        
+        plt.close()
+
+    # Plot the delta values
+    if len(hunyuan_video_sampler.pipeline.transformer.deltas) > 0:
+        plt.figure(figsize=(10, 6))
+        
+        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.deltas) + 1), 
+                hunyuan_video_sampler.pipeline.transformer.deltas, 
+                'g-', linewidth=2, marker='s', markersize=6)
+        
+        plt.xlabel('Step Number')
+        plt.ylabel('Delta Value')
+        plt.title('Delta Values over Steps')
+        plt.grid(True, alpha=0.3)
+        
+        ax = plt.gca()
+        ax.xaxis.set_major_locator(plt.MultipleLocator(10))
+        
+        plot_path = os.path.join(save_path, 'delta_values_plot.png')
+        plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+        logger.info(f'Delta values plot saved to: {plot_path}')
         
         plt.close()
 
