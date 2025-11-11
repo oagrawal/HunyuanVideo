@@ -238,8 +238,9 @@ def main():
 
     # Start sampling
     # TODO: batch inference check
+    start_time = time.time()
     outputs = hunyuan_video_sampler.predict(
-        prompt=args.prompt, 
+        prompt=args.prompt,
         height=args.video_size[0],
         width=args.video_size[1],
         video_length=args.video_length,
@@ -252,6 +253,9 @@ def main():
         batch_size=args.batch_size,
         embedded_guidance_scale=args.embedded_cfg_scale
     )
+    end_time = time.time()
+    e2e_time = end_time - start_time
+    logger.info(f"End-to-end generation time: {e2e_time:.2f} seconds")    
     samples = outputs['samples']
     
     # Create unique folder for this generation
@@ -325,6 +329,7 @@ def main():
             f.write(f"Number of timesteps: {len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
             f.write(f"Number of deltas: {len(hunyuan_video_sampler.pipeline.transformer.deltas)}\n")
             f.write(f"Expected num_steps: {args.infer_steps}\n")
+            f.write(f"End-to-end generation time: {e2e_time:.2f} seconds\n")
             f.write(f"\n")
             f.write(f"Lists match: {len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) == len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
             f.write(f"\n")

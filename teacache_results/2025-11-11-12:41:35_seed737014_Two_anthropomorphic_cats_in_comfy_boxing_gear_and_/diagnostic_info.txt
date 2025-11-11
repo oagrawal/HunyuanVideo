@@ -1,0 +1,10 @@
+Diagnostic Information
+============================================================
+Number of l1_metrics: 50
+Number of timesteps: 50
+Number of deltas: 48
+Expected num_steps: 50
+End-to-end generation time: 557.46 seconds
+
+Lists match: True
+

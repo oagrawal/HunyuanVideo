@@ -53,6 +53,19 @@ run inference with TeaCache:
     --save-path ./teacache_results
 
 
+  python3 teacache_sample_video.py \
+    --video-size 544 960 \
+    --video-length 129 \
+    --infer-steps 50 \
+    --prompt "static black and white shot of a single bare tree against an overcast sky, no movement, high contrast, minimalist composition" \
+    --flow-reverse \
+    --use-cpu-offload \
+    --save-path ./teacache_results
+
+
+
+
+
     
 if you get the EACCES error:
 chmod -R 777 ./
