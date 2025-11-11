@@ -225,7 +225,7 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.enable_teacache = True
     hunyuan_video_sampler.pipeline.transformer.__class__.cnt = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.num_steps = args.infer_steps
-    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0.12 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
+    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0.20 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
     hunyuan_video_sampler.pipeline.transformer.__class__.accumulated_rel_l1_distance = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_modulated_input = None
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_residual = None
