@@ -162,6 +162,19 @@ def teacache_forward(
                         x = block(*single_block_args)
 
                 img = x[:, :img_seq_len, ...]
+                
+                # Compute L1 distance of output state (img) between timesteps
+                if self.previous_img_output is not None:
+                    # Compute relative L1 distance: |current - previous| / |previous|
+                    l1_distance = ((img - self.previous_img_output).abs().mean() / 
+                                  self.previous_img_output.abs().mean()).cpu().item()
+                    self.l1_output.append(l1_distance)
+                else:
+                    # First timestep, no previous state to compare
+                    self.l1_output.append(0.0)
+                
+                self.previous_img_output = img.clone()
+                
                 self.previous_residual = img - ori_img
         else:        
             # --------------------- Pass through DiT blocks ------------------------
@@ -235,6 +248,8 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.l1_metrics = []
     hunyuan_video_sampler.pipeline.transformer.__class__.plot_timesteps = []
     hunyuan_video_sampler.pipeline.transformer.__class__.deltas = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.l1_output = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.previous_img_output = None
 
     # Start sampling
     # TODO: batch inference check
@@ -316,6 +331,28 @@ def main():
         
         plt.close()
 
+    # Plot the intermediate L1 distances
+    if len(hunyuan_video_sampler.pipeline.transformer.l1_output) > 0:
+        plt.figure(figsize=(10, 6))
+        
+        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.l1_output) + 1), 
+                hunyuan_video_sampler.pipeline.transformer.l1_output, 
+                'r-', linewidth=2, marker='o', markersize=6)
+        
+        plt.xlabel('Timestep Number')
+        plt.ylabel('Relative L1 Distance')
+        plt.title('Intermediate State L1 Distance Between Timesteps')
+        plt.grid(True, alpha=0.3)
+        
+        ax = plt.gca()
+        ax.xaxis.set_major_locator(plt.MultipleLocator(10))
+        
+        plot_path = os.path.join(save_path, 'intermediate_l1_distance_plot.png')
+        plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+        logger.info(f'Intermediate L1 distance plot saved to: {plot_path}')
+        
+        plt.close()
+
     # Save delta values to text file
     if len(hunyuan_video_sampler.pipeline.transformer.deltas) > 0:
         delta_path = os.path.join(save_path, 'delta_values.txt')
@@ -323,6 +360,14 @@ def main():
             for delta in hunyuan_video_sampler.pipeline.transformer.deltas:
                 f.write(f"{delta}\n")
         logger.info(f'Delta values saved to: {delta_path}')
+
+    # Save intermediate L1 distances to text file
+    if len(hunyuan_video_sampler.pipeline.transformer.l1_output) > 0:
+        intermediate_l1_path = os.path.join(save_path, 'intermediate_l1_distances.txt')
+        with open(intermediate_l1_path, 'w') as f:
+            for l1_dist in hunyuan_video_sampler.pipeline.transformer.l1_output:
+                f.write(f"{l1_dist}\n")
+        logger.info(f'Intermediate L1 distances saved to: {intermediate_l1_path}')
 
 
     # ===================================================================
