@@ -100,7 +100,9 @@ def teacache_forward(
             current_timestep = t.item() if torch.is_tensor(t) else t
             self.plot_timesteps.append(current_timestep)
 
-            if self.cnt <= 10 or self.cnt >= self.num_steps-5:
+            # if self.cnt <= 10 or self.cnt >= self.num_steps-5:
+            if self.cnt == 0 or self.cnt == self.num_steps-1:
+
                 should_calc = True
                 self.accumulated_rel_l1_distance = 0
 
