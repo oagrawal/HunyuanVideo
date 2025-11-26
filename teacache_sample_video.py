@@ -100,7 +100,7 @@ def teacache_forward(
             current_timestep = t.item() if torch.is_tensor(t) else t
             self.plot_timesteps.append(current_timestep)
 
-            if self.cnt == 0 or self.cnt == self.num_steps-1:
+            if self.cnt <= 10 or self.cnt >= self.num_steps-5:
                 should_calc = True
                 self.accumulated_rel_l1_distance = 0
 
@@ -238,7 +238,7 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.enable_teacache = True
     hunyuan_video_sampler.pipeline.transformer.__class__.cnt = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.num_steps = args.infer_steps
-    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = 0 # 0.20 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
+    hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh = float('inf') # 0.20 # 0.1 for 1.6x speedup, 0.15 for 2.1x speedup
     hunyuan_video_sampler.pipeline.transformer.__class__.accumulated_rel_l1_distance = 0
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_modulated_input = None
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_residual = None
