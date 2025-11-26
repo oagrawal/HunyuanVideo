@@ -108,7 +108,7 @@ def teacache_forward(
                 coefficients = [7.33226126e+02, -4.01131952e+02,  6.75869174e+01, -3.14987800e+00, 9.61237896e-02]
                 rescale_func = np.poly1d(coefficients)
                 delta = rescale_func(((modulated_inp-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
-                self.deltas.append(delta)
+                self.delta_TEMNI.append(delta)
                 self.accumulated_rel_l1_distance += delta
 
                 if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
@@ -118,7 +118,7 @@ def teacache_forward(
                     self.accumulated_rel_l1_distance = 0
                 # should_calc = True
             
-            self.l1_metrics.append(self.accumulated_rel_l1_distance)
+            self.acc_delta_TEMNI.append(self.accumulated_rel_l1_distance)
             self.previous_modulated_input = modulated_inp  
             self.cnt += 1
             if self.cnt == self.num_steps:
@@ -168,10 +168,10 @@ def teacache_forward(
                     # Compute relative L1 distance: |current - previous| / |previous|
                     l1_distance = ((img - self.previous_img_output).abs().mean() / 
                                   self.previous_img_output.abs().mean()).cpu().item()
-                    self.l1_output.append(l1_distance)
+                    self.delta_true_output.append(l1_distance)
                 else:
                     # First timestep, no previous state to compare
-                    self.l1_output.append(0.0)
+                    self.delta_true_output.append(0.0)
                 
                 self.previous_img_output = img.clone()
                 
@@ -245,10 +245,10 @@ def main():
     hunyuan_video_sampler.pipeline.transformer.__class__.forward = teacache_forward
     
     # Add this line after the existing TeaCache initialization
-    hunyuan_video_sampler.pipeline.transformer.__class__.l1_metrics = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.acc_delta_TEMNI = []
     hunyuan_video_sampler.pipeline.transformer.__class__.plot_timesteps = []
-    hunyuan_video_sampler.pipeline.transformer.__class__.deltas = []
-    hunyuan_video_sampler.pipeline.transformer.__class__.l1_output = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.delta_TEMNI = []
+    hunyuan_video_sampler.pipeline.transformer.__class__.delta_true_output = []
     hunyuan_video_sampler.pipeline.transformer.__class__.previous_img_output = None
 
     # Start sampling
@@ -284,18 +284,18 @@ def main():
     save_path = os.path.join(base_save_path, generation_folder)
     os.makedirs(save_path, exist_ok=True)
     
-    # Plot the accumulated L1 metric
-    if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
+    # Plot the accumulated delta TEMNI
+    if len(hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI) > 0:
         plt.figure(figsize=(10, 6))
         
         # Plot with individual markers at each data point
-        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) + 1), 
-                hunyuan_video_sampler.pipeline.transformer.l1_metrics, 
+        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI) + 1), 
+                hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI, 
                 'b-', linewidth=2, marker='o', markersize=6)
         
         plt.xlabel('Timestep Number')
-        plt.ylabel('Accumulated L1 Metric')
-        plt.title('Accumulated L1 Metric over Timesteps')
+        plt.ylabel('Accumulated Delta TEMNI')
+        plt.title('Accumulated Delta TEMNI over Timesteps')
         plt.grid(True, alpha=0.3)
         
         # Set x-axis ticks to increments of 10
@@ -303,82 +303,82 @@ def main():
         ax.xaxis.set_major_locator(plt.MultipleLocator(10))
         
         # Save plot in generation-specific folder
-        plot_path = os.path.join(save_path, 'l1_metric_plot.png')
+        plot_path = os.path.join(save_path, 'acc_delta_TEMNI_plot.png')
         plt.savefig(plot_path, dpi=300, bbox_inches='tight')
-        logger.info(f'L1 metric plot saved to: {plot_path}')
+        logger.info(f'Accumulated delta TEMNI plot saved to: {plot_path}')
         
         plt.close()
 
-    # Plot the delta values
-    if len(hunyuan_video_sampler.pipeline.transformer.deltas) > 0:
+    # Plot the delta TEMNI values
+    if len(hunyuan_video_sampler.pipeline.transformer.delta_TEMNI) > 0:
         plt.figure(figsize=(10, 6))
         
-        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.deltas) + 1), 
-                hunyuan_video_sampler.pipeline.transformer.deltas, 
+        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.delta_TEMNI) + 1), 
+                hunyuan_video_sampler.pipeline.transformer.delta_TEMNI, 
                 'g-', linewidth=2, marker='s', markersize=6)
         
         plt.xlabel('Step Number')
-        plt.ylabel('Delta Value')
-        plt.title('Delta Values over Steps')
+        plt.ylabel('Delta TEMNI')
+        plt.title('Delta TEMNI over Steps')
         plt.grid(True, alpha=0.3)
         
         ax = plt.gca()
         ax.xaxis.set_major_locator(plt.MultipleLocator(10))
         
-        plot_path = os.path.join(save_path, 'delta_values_plot.png')
+        plot_path = os.path.join(save_path, 'delta_TEMNI_plot.png')
         plt.savefig(plot_path, dpi=300, bbox_inches='tight')
-        logger.info(f'Delta values plot saved to: {plot_path}')
+        logger.info(f'Delta TEMNI plot saved to: {plot_path}')
         
         plt.close()
 
-    # Plot the intermediate L1 distances
-    if len(hunyuan_video_sampler.pipeline.transformer.l1_output) > 0:
+    # Plot the delta true output
+    if len(hunyuan_video_sampler.pipeline.transformer.delta_true_output) > 0:
         plt.figure(figsize=(10, 6))
         
-        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.l1_output) + 1), 
-                hunyuan_video_sampler.pipeline.transformer.l1_output, 
+        plt.plot(range(1, len(hunyuan_video_sampler.pipeline.transformer.delta_true_output) + 1), 
+                hunyuan_video_sampler.pipeline.transformer.delta_true_output, 
                 'r-', linewidth=2, marker='o', markersize=6)
         
         plt.xlabel('Timestep Number')
-        plt.ylabel('Relative L1 Distance')
-        plt.title('Intermediate State L1 Distance Between Timesteps')
+        plt.ylabel('Delta True Output')
+        plt.title('Delta True Output Between Timesteps')
         plt.grid(True, alpha=0.3)
         
         ax = plt.gca()
         ax.xaxis.set_major_locator(plt.MultipleLocator(10))
         
-        plot_path = os.path.join(save_path, 'intermediate_l1_distance_plot.png')
+        plot_path = os.path.join(save_path, 'delta_true_output_plot.png')
         plt.savefig(plot_path, dpi=300, bbox_inches='tight')
-        logger.info(f'Intermediate L1 distance plot saved to: {plot_path}')
+        logger.info(f'Delta true output plot saved to: {plot_path}')
         
         plt.close()
 
-    # Save delta values to text file
-    if len(hunyuan_video_sampler.pipeline.transformer.deltas) > 0:
-        delta_path = os.path.join(save_path, 'delta_values.txt')
+    # Save delta TEMNI values to text file
+    if len(hunyuan_video_sampler.pipeline.transformer.delta_TEMNI) > 0:
+        delta_path = os.path.join(save_path, 'delta_TEMNI.txt')
         with open(delta_path, 'w') as f:
-            for delta in hunyuan_video_sampler.pipeline.transformer.deltas:
+            for delta in hunyuan_video_sampler.pipeline.transformer.delta_TEMNI:
                 f.write(f"{delta}\n")
-        logger.info(f'Delta values saved to: {delta_path}')
+        logger.info(f'Delta TEMNI values saved to: {delta_path}')
 
-    # Save intermediate L1 distances to text file
-    if len(hunyuan_video_sampler.pipeline.transformer.l1_output) > 0:
-        intermediate_l1_path = os.path.join(save_path, 'intermediate_l1_distances.txt')
-        with open(intermediate_l1_path, 'w') as f:
-            for l1_dist in hunyuan_video_sampler.pipeline.transformer.l1_output:
-                f.write(f"{l1_dist}\n")
-        logger.info(f'Intermediate L1 distances saved to: {intermediate_l1_path}')
+    # Save delta true output to text file
+    if len(hunyuan_video_sampler.pipeline.transformer.delta_true_output) > 0:
+        delta_true_output_path = os.path.join(save_path, 'delta_true_output.txt')
+        with open(delta_true_output_path, 'w') as f:
+            for delta_out in hunyuan_video_sampler.pipeline.transformer.delta_true_output:
+                f.write(f"{delta_out}\n")
+        logger.info(f'Delta true output saved to: {delta_true_output_path}')
 
 
     # ===================================================================
-    # Save raw l1_metrics and timesteps for debugging
-    if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) > 0:
-        # Save l1_metrics
-        l1_metrics_path = os.path.join(save_path, 'l1_metrics.txt')
-        with open(l1_metrics_path, 'w') as f:
-            for metric in hunyuan_video_sampler.pipeline.transformer.l1_metrics:
+    # Save raw acc_delta_TEMNI and timesteps for debugging
+    if len(hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI) > 0:
+        # Save acc_delta_TEMNI
+        acc_delta_TEMNI_path = os.path.join(save_path, 'acc_delta_TEMNI.txt')
+        with open(acc_delta_TEMNI_path, 'w') as f:
+            for metric in hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI:
                 f.write(f"{metric}\n")
-        logger.info(f'L1 metrics saved to: {l1_metrics_path}')
+        logger.info(f'Accumulated delta TEMNI saved to: {acc_delta_TEMNI_path}')
         
         # Save timesteps
         timesteps_path = os.path.join(save_path, 'timesteps.txt')
@@ -392,15 +392,16 @@ def main():
         with open(diagnostic_path, 'w') as f:
             f.write("Diagnostic Information\n")
             f.write("=" * 60 + "\n")
-            f.write(f"Number of l1_metrics: {len(hunyuan_video_sampler.pipeline.transformer.l1_metrics)}\n")
+            f.write(f"Number of acc_delta_TEMNI: {len(hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI)}\n")
             f.write(f"Number of timesteps: {len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
-            f.write(f"Number of deltas: {len(hunyuan_video_sampler.pipeline.transformer.deltas)}\n")
+            f.write(f"Number of delta_TEMNI: {len(hunyuan_video_sampler.pipeline.transformer.delta_TEMNI)}\n")
+            f.write(f"Number of delta_true_output: {len(hunyuan_video_sampler.pipeline.transformer.delta_true_output)}\n")
             f.write(f"Expected num_steps: {args.infer_steps}\n")
             f.write(f"End-to-end generation time: {e2e_time:.2f} seconds\n")
             f.write(f"\n")
-            f.write(f"Lists match: {len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) == len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
+            f.write(f"Lists match: {len(hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI) == len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps)}\n")
             f.write(f"\n")
-            if len(hunyuan_video_sampler.pipeline.transformer.l1_metrics) != len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps):
+            if len(hunyuan_video_sampler.pipeline.transformer.acc_delta_TEMNI) != len(hunyuan_video_sampler.pipeline.transformer.plot_timesteps):
                 f.write("WARNING: List lengths don't match!\n")
                 f.write("This will cause plotting artifacts and apparent 'decreases'\n")
         logger.info(f'Diagnostic info saved to: {diagnostic_path}')
