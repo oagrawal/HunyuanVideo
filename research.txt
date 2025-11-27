@@ -131,3 +131,10 @@ run inference with TeaCache:
     
 if you get the EACCES error:
 chmod -R 777 ./
+
+
+To Run VBench eval:
+- put all videos in vbench_evaluation folder
+- tell cursor to create script to eval visual quality of videos in the folder
+- evaluate_videos.py evaluates video quality
+- display_results.py displays the results in an easy to understand manner

@@ -1,0 +1,11 @@
+Diagnostic Information
+============================================================
+Number of acc_delta_TEMNI: 50
+Number of timesteps: 50
+Number of delta_TEMNI: 48
+Number of delta_true_output: 17
+Expected num_steps: 50
+End-to-end generation time: 546.71 seconds
+
+Lists match: True
+
