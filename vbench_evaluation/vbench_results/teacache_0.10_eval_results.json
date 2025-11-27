@@ -64,16 +64,6 @@
             }
         ]
     ],
-    "human_action": [
-        0.0,
-        [
-            {
-                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.10/0.mp4",
-                "video_results": false,
-                "cor_num_per_video": 0
-            }
-        ]
-    ],
     "temporal_style": [
         0.37467366456985474,
         [

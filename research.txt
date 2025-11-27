@@ -138,3 +138,9 @@ To Run VBench eval:
 - tell cursor to create script to eval visual quality of videos in the folder
 - evaluate_videos.py evaluates video quality
 - display_results.py displays the results in an easy to understand manner
+
+
+How to restore docker container for hunyuanvideo_backup_image
+- docker load -i /nfs/oagrawal/hunyuanvideo_backup.tar
+- After loading, you can update your hv-create alias to use your backed-up image name (hunyuanvideo_backup_image) instead of the original hunyuanvideo image name at the end of the command.
+(see top of this file for how to create the alias)
