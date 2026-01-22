@@ -233,10 +233,11 @@ def teacache_forward(
 
 
 def main():
-    args = parse_args()
-    
-    # Parse experiment-specific arguments
+    # Parse experiment-specific arguments FIRST (before hyvideo's parse_args)
+    # This removes them from sys.argv so hyvideo doesn't see them
     import argparse
+    import sys
+    
     exp_parser = argparse.ArgumentParser(add_help=False)
     exp_parser.add_argument('--teacache-mode', type=str, default='adaptive', 
                             choices=['none', 'fixed', 'adaptive'],
@@ -247,7 +248,13 @@ def main():
                             help='Low threshold for first 10 and last 5 steps (used when teacache-mode=adaptive)')
     exp_parser.add_argument('--thresh-high', type=float, default=0.30,
                             help='High threshold for middle steps (used when teacache-mode=adaptive)')
-    exp_args, _ = exp_parser.parse_known_args()
+    exp_args, remaining_argv = exp_parser.parse_known_args()
+    
+    # Replace sys.argv with remaining args for hyvideo's parser
+    sys.argv = [sys.argv[0]] + remaining_argv
+    
+    # Now parse hyvideo args
+    args = parse_args()
     
     # Store experiment args
     args.teacache_mode = exp_args.teacache_mode
