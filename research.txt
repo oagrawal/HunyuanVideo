@@ -1,5 +1,5 @@
 # Create and enter HunyuanVideo container
-alias hv-create='docker run -it --gpus all --init --net=host --uts=host --ipc=host --name hunyuanvideo --security-opt=seccomp=unconfined --ulimit=stack=671088>
+alias hv-create='docker run -it --gpus all --init --net=host --uts=host --ipc=host --name hunyuanvideo --security-opt=seccomp=unconfined --ulimit=stack=67108864 --ulimit=memlock=-1 --privileged -v $(pwd):/workspace hunyuanvideo/hunyuanvideo:cuda_11 bash'
 
 # Enter existing HunyuanVideo container
 alias hv='docker start -ai hunyuanvideo'
@@ -128,6 +128,17 @@ run inference with TeaCache:
     --use-cpu-offload \
     --save-path ./teacache_results
 
+    python3 teacache_sample_video.py \
+    --video-size 544 960 \
+    --video-length 129 \
+    --infer-steps 50 \
+    --prompt  "Six horses gallop across the beach"\
+    --flow-reverse \
+    --use-cpu-offload \
+    --save-path ./teacache_results
+
+
+
     
 if you get the EACCES error:
 chmod -R 777 ./
@@ -144,3 +155,55 @@ How to restore docker container for hunyuanvideo_backup_image
 - docker load -i /nfs/oagrawal/hunyuanvideo_backup.tar
 - After loading, you can update your hv-create alias to use your backed-up image name (hunyuanvideo_backup_image) instead of the original hunyuanvideo image name at the end of the command.
 (see top of this file for how to create the alias)
+
+make sure to pip install from requirements.txt after you restore the docker container
+
+
+##########################################################################################################################################
+ADAPTIVE VS FIXED THRESHOLD EXPERIMENT
+##########################################################################################################################################
+
+Use --teacache-mode with: none, fixed, or adaptive
+Use same --seed across all runs for fair comparison.
+
+# Baseline (no caching)
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode none --seed 12345
+
+# Fixed thresholds (0.10, 0.20, 0.30)
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode fixed --fixed-thresh 0.10 --seed 12345
+
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode fixed --fixed-thresh 0.20 --seed 12345
+
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode fixed --fixed-thresh 0.30 --seed 12345
+
+# Adaptive thresholds (low for first 10 + last 5 steps, high for middle)
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode adaptive --thresh-low 0.05 --thresh-high 0.20 --seed 12345
+
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode adaptive --thresh-low 0.05 --thresh-high 0.30 --seed 12345
+
+# Results: check diagnostic_info.txt in each output folder for generation time
+# Run VBench on videos, then compare: does adaptive get better quality at similar speed?
