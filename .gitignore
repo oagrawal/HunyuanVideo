@@ -1,3 +1,7 @@
 __pycache__
 /ckpts/**/
 hunyuanvideo_backup.tar
+
+# Generated output files
+teacache_results/
+vbench_evaluation/vbench_results/
