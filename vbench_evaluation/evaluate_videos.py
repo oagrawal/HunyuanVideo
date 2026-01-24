@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 VBench evaluation script for comparing HunyuanVideo caching strategies
-Run from: /workspace/vbench_evaluation/
+Run from: /nfs/oagrawal/HunyuanVideo/vbench_evaluation/
 """
 import os
 import sys
@@ -10,20 +10,69 @@ from pathlib import Path
 import pandas as pd
 import shutil
 from datetime import datetime
+import argparse
+import glob
 
-def evaluate_all_videos():
+def discover_videos(source_dir):
+    """Discover all video.mp4 files in subdirectories of source_dir."""
+    video_files = {}
+    
+    # Look for all video.mp4 files in subdirectories
+    for subdir in sorted(os.listdir(source_dir)):
+        subdir_path = os.path.join(source_dir, subdir)
+        if os.path.isdir(subdir_path):
+            video_path = os.path.join(subdir_path, 'video.mp4')
+            if os.path.exists(video_path):
+                # Extract a shorter name from the folder name
+                # e.g., "adaptive_0.15_0.3_2026-01-24-03:33:23_seed12345_Two_..." -> "adaptive_0.15_0.3"
+                parts = subdir.split('_')
+                if parts[0] == 'adaptive':
+                    short_name = f"adaptive_{parts[1]}_{parts[2]}"
+                elif parts[0] == 'fixed':
+                    short_name = f"fixed_{parts[1]}"
+                elif parts[0] == 'nocache':
+                    short_name = 'nocache'
+                else:
+                    short_name = '_'.join(parts[:3])
+                
+                video_files[short_name] = video_path
+    
+    return video_files
+
+def evaluate_all_videos(source_dir=None):
     """Evaluate all videos using VBench on all dimensions."""
     
-    # Configuration - using current directory
-    current_dir = os.getcwd()
-    videos_dir = current_dir
-    output_dir = os.path.join(current_dir, 'vbench_results')
+    # Configuration
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(script_dir, 'vbench_results')
     
-    # VBench paths
-    vbench_root = '/workspace/VBench'
+    # Default source directory is teacache_results
+    if source_dir is None:
+        source_dir = os.path.join(os.path.dirname(script_dir), 'teacache_results')
+    
+    # VBench paths - check multiple possible locations
+    vbench_paths = [
+        '/nfs/oagrawal/HunyuanVideo/VBench',
+        '/workspace/VBench',
+        os.path.join(os.path.dirname(script_dir), 'VBench'),
+    ]
+    
+    vbench_root = None
+    for path in vbench_paths:
+        if os.path.exists(path):
+            vbench_root = path
+            break
+    
+    if vbench_root is None:
+        print(f"\n✗ Error: VBench not found in any of these locations:")
+        for path in vbench_paths:
+            print(f"  - {path}")
+        print("Please install VBench first.")
+        return
+    
     vbench_full_info_path = os.path.join(vbench_root, 'vbench/VBench_full_info.json')
     
-    print(f"Working directory: {current_dir}")
+    print(f"Source directory: {source_dir}")
     print(f"Output directory: {output_dir}")
     print(f"VBench root: {vbench_root}")
     
@@ -39,40 +88,39 @@ def evaluate_all_videos():
         print(f"✓ Found VBench_full_info.json")
     
     # Read prompt from file
-    prompt_file = os.path.join(current_dir, 'prompt_list.txt')
+    prompt_file = os.path.join(script_dir, 'prompt_list.txt')
     with open(prompt_file, 'r') as f:
         prompt = f.read().strip()
     
     print(f"Using prompt: {prompt}")
     
-    # Define video files and their labels
-    video_files = {
-        'my_policy_0.30': 'my_policy(weak_caching_0.30).mp4',
-        'teacache_0.30': 'teacache_0.30.mp4',
-        'teacache_0.20': 'teacache_0.20.mp4',
-        'teacache_0.10': 'teacache_0.10.mp4',
-    }
+    # Discover video files
+    print("\nDiscovering videos...")
+    video_files = discover_videos(source_dir)
     
-    # Verify all videos exist
-    print("\nVerifying video files...")
-    for name, video_file in video_files.items():
-        video_path = os.path.join(videos_dir, video_file)
-        if os.path.exists(video_path):
-            size_mb = os.path.getsize(video_path) / (1024 * 1024)
-            print(f"  ✓ {video_file} ({size_mb:.2f} MB)")
-        else:
-            print(f"  ✗ {video_file} NOT FOUND")
-            return
+    if not video_files:
+        print(f"✗ No videos found in {source_dir}")
+        return
+    
+    # Verify all videos exist and display them
+    print(f"\nFound {len(video_files)} videos:")
+    for name, video_path in video_files.items():
+        size_mb = os.path.getsize(video_path) / (1024 * 1024)
+        print(f"  ✓ {name}: {os.path.basename(os.path.dirname(video_path))} ({size_mb:.2f} MB)")
     
     # Import VBench
     print("\nImporting VBench...")
+    # Add VBench to path if needed
+    if vbench_root not in sys.path:
+        sys.path.insert(0, vbench_root)
+    
     try:
         from vbench import VBench
         print("  ✓ VBench imported successfully")
     except ImportError as e:
         print(f"  ✗ Error importing VBench: {e}")
         print("\nPlease install VBench first:")
-        print("  cd /workspace")
+        print("  cd /nfs/oagrawal/HunyuanVideo")
         print("  git clone https://github.com/Vchitect/VBench.git")
         print("  cd VBench")
         print("  pip install -e .")
@@ -140,12 +188,12 @@ def evaluate_all_videos():
     start_time = datetime.now()
     
     # Evaluate each video
-    for idx, (name, video_file) in enumerate(video_files.items(), 1):
-        video_path = os.path.join(videos_dir, video_file)
+    for idx, (name, video_path) in enumerate(video_files.items(), 1):
+        video_file = os.path.basename(video_path)
         
         print(f"\n{'='*70}")
         print(f"[{idx}/{len(video_files)}] Evaluating: {name}")
-        print(f"Video: {video_file}")
+        print(f"Video: {video_path}")
         print(f"{'='*70}")
         
         # Create temporary directory for this video
@@ -192,7 +240,9 @@ def evaluate_all_videos():
                 # Print quick preview of results
                 print(f"\n  Quick preview of scores:")
                 for metric, score in list(results.items())[:5]:
-                    print(f"    {metric}: {score:.4f}")
+                    # VBench returns scores as lists, extract first element
+                    score_val = score[0] if isinstance(score, list) else score
+                    print(f"    {metric}: {score_val:.4f}")
                 if len(results) > 5:
                     print(f"    ... and {len(results)-5} more metrics")
             else:
@@ -231,7 +281,9 @@ def evaluate_all_videos():
     for video_name, results in all_results.items():
         row = {'Video': video_name}
         if results:
-            row.update(results)
+            # VBench returns scores as lists, extract first element
+            for metric, score in results.items():
+                row[metric] = score[0] if isinstance(score, list) else score
         comparison_data.append(row)
     
     # Save results as CSV
@@ -247,57 +299,69 @@ def evaluate_all_videos():
     print(f"✓ Detailed results saved to: {json_path}")
     
     # Print summary table
-    print("\n" + "="*70)
+    print("\n" + "="*100)
     print("SUMMARY OF RESULTS")
-    print("="*70 + "\n")
+    print("="*100 + "\n")
     
-    # Print in a more readable format
-    print(f"{'Metric':<25} {'my_policy':>12} {'teacache_0.30':>14} {'teacache_0.20':>14} {'teacache_0.10':>14}")
-    print("-" * 85)
-    
+    # Get list of video names
+    video_names = list(video_files.keys())
     metrics = [col for col in df.columns if col != 'Video']
+    
+    # Print header
+    header = f"{'Metric':<25}"
+    for name in video_names:
+        header += f" {name:>15}"
+    print(header)
+    print("-" * (25 + 16 * len(video_names)))
+    
+    # Print each metric
     for metric in metrics:
-        values = []
-        for video in ['my_policy_0.30', 'teacache_0.30', 'teacache_0.20', 'teacache_0.10']:
+        row = f"{metric:<25}"
+        for video in video_names:
             val = df[df['Video'] == video][metric].values
             if len(val) > 0 and pd.notna(val[0]):
-                values.append(f"{val[0]:>12.4f}")
+                row += f" {val[0]:>15.4f}"
             else:
-                values.append(f"{'N/A':>12}")
-        print(f"{metric:<25} {values[0]} {values[1]} {values[2]} {values[3]}")
+                row += f" {'N/A':>15}"
+        print(row)
     
     # Calculate and display average scores
-    print("\n" + "="*70)
+    print("\n" + "="*100)
     print("AVERAGE SCORES (across all dimensions)")
-    print("="*70 + "\n")
+    print("="*100 + "\n")
     
     avg_scores = {}
-    for video in ['my_policy_0.30', 'teacache_0.30', 'teacache_0.20', 'teacache_0.10']:
+    for video in video_names:
         video_data = df[df['Video'] == video][metrics]
         if not video_data.empty:
             avg_score = video_data.mean(axis=1).values[0]
             avg_scores[video] = avg_score
-            print(f"{video:<20}: {avg_score:.4f}")
+            print(f"{video:<25}: {avg_score:.4f}")
     
     # Ranking
     if avg_scores:
-        print("\n" + "="*70)
+        print("\n" + "="*100)
         print("RANKING (best to worst)")
-        print("="*70 + "\n")
+        print("="*100 + "\n")
         
         sorted_videos = sorted(avg_scores.items(), key=lambda x: x[1], reverse=True)
         for rank, (video, score) in enumerate(sorted_videos, 1):
-            print(f"{rank}. {video:<20} (score: {score:.4f})")
+            print(f"{rank}. {video:<25} (score: {score:.4f})")
     
-    print(f"\n{'='*70}")
+    print(f"\n{'='*100}")
     print(f"✓ Evaluation complete!")
     print(f"✓ All results saved in: {output_dir}")
-    print(f"{'='*70}\n")
+    print(f"{'='*100}\n")
     
     return all_results
 
 if __name__ == '__main__':
-    print("="*70)
+    parser = argparse.ArgumentParser(description='VBench Video Quality Evaluation')
+    parser.add_argument('--source', '-s', type=str, default=None,
+                        help='Source directory containing video subdirectories (default: ../teacache_results)')
+    args = parser.parse_args()
+    
+    print("="*100)
     print("VBench Video Quality Evaluation")
-    print("="*70)
-    evaluate_all_videos()
+    print("="*100)
+    evaluate_all_videos(source_dir=args.source)

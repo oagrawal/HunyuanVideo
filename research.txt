@@ -193,17 +193,43 @@ python3 teacache_sample_video.py \
     --teacache-mode fixed --fixed-thresh 0.30 --seed 12345
 
 # Adaptive thresholds (low for first 10 + last 5 steps, high for middle)
+
+
+
+
 python3 teacache_sample_video.py \
     --video-size 544 960 --video-length 129 --infer-steps 50 \
     --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
     --flow-reverse --use-cpu-offload --save-path ./teacache_results \
-    --teacache-mode adaptive --thresh-low 0.05 --thresh-high 0.20 --seed 12345
+    --teacache-mode adaptive --thresh-low 0.20 --thresh-high 0.30 --seed 12345
+
+    python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode adaptive --thresh-low 0.15 --thresh-high 0.30 --seed 12345
+
+
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode adaptive --thresh-low 0.10 --thresh-high 0.30 --seed 12345
+
 
 python3 teacache_sample_video.py \
     --video-size 544 960 --video-length 129 --infer-steps 50 \
     --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
     --flow-reverse --use-cpu-offload --save-path ./teacache_results \
     --teacache-mode adaptive --thresh-low 0.05 --thresh-high 0.30 --seed 12345
+
+python3 teacache_sample_video.py \
+    --video-size 544 960 --video-length 129 --infer-steps 50 \
+    --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage." \
+    --flow-reverse --use-cpu-offload --save-path ./teacache_results \
+    --teacache-mode adaptive --thresh-low 0 --thresh-high 0.30 --seed 12345
+
+
 
 # Results: check diagnostic_info.txt in each output folder for generation time
 # Run VBench on videos, then compare: does adaptive get better quality at similar speed?

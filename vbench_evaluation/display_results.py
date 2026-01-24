@@ -5,38 +5,40 @@ Display VBench evaluation results from JSON files
 import os
 import json
 import pandas as pd
+import glob
 
 def display_results():
-    results_dir = './vbench_results'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(script_dir, 'vbench_results')
     
-    # Find all eval_results.json files
-    result_files = {
-        'my_policy_0.30': 'my_policy_0.30_eval_results.json',
-        'teacache_0.30': 'teacache_0.30_eval_results.json',
-        'teacache_0.20': 'teacache_0.20_eval_results.json',
-        'teacache_0.10': 'teacache_0.10_eval_results.json',
-    }
+    # Dynamically find all eval_results.json files
+    result_pattern = os.path.join(results_dir, '*_eval_results.json')
+    result_files = glob.glob(result_pattern)
+    
+    if not result_files:
+        print(f"✗ No result files found matching: {result_pattern}")
+        return
     
     # Load all results and extract scores
     all_results = {}
-    for name, filename in result_files.items():
-        filepath = os.path.join(results_dir, filename)
-        if os.path.exists(filepath):
-            with open(filepath, 'r') as f:
-                raw_results = json.load(f)
-            
-            # Extract just the scores (first element of each array)
-            scores = {}
-            for metric, value in raw_results.items():
-                if isinstance(value, list) and len(value) > 0:
-                    scores[metric] = value[0]  # First element is the score
-                else:
-                    scores[metric] = value
-            
-            all_results[name] = scores
-            print(f"✓ Loaded results for {name}")
-        else:
-            print(f"✗ Results not found: {filepath}")
+    for filepath in sorted(result_files):
+        filename = os.path.basename(filepath)
+        # Extract name from filename (e.g., "adaptive_0.15_0.3_eval_results.json" -> "adaptive_0.15_0.3")
+        name = filename.replace('_eval_results.json', '')
+        
+        with open(filepath, 'r') as f:
+            raw_results = json.load(f)
+        
+        # Extract just the scores (first element of each array)
+        scores = {}
+        for metric, value in raw_results.items():
+            if isinstance(value, list) and len(value) > 0:
+                scores[metric] = value[0]  # First element is the score
+            else:
+                scores[metric] = value
+        
+        all_results[name] = scores
+        print(f"✓ Loaded results for {name}")
     
     if not all_results:
         print("\nNo results found!")
@@ -62,37 +64,44 @@ def display_results():
         json.dump(all_results, f, indent=2)
     print(f"✓ Detailed results saved to: {json_path}")
     
-    # Print summary table
-    print("\n" + "="*90)
-    print("SUMMARY OF RESULTS")
-    print("="*90 + "\n")
-    
-    # Print in a more readable format
+    # Get list of video names
+    video_names = sorted(all_results.keys())
     metrics = [col for col in df.columns if col != 'Video']
-    print(f"{'Metric':<25} {'my_policy':>14} {'teacache_0.30':>14} {'teacache_0.20':>14} {'teacache_0.10':>14}")
-    print("-" * 90)
     
+    # Print summary table
+    print("\n" + "="*120)
+    print("SUMMARY OF RESULTS")
+    print("="*120 + "\n")
+    
+    # Print header
+    header = f"{'Metric':<25}"
+    for name in video_names:
+        header += f" {name:>18}"
+    print(header)
+    print("-" * (25 + 19 * len(video_names)))
+    
+    # Print each metric
     for metric in metrics:
-        values = []
-        for video in ['my_policy_0.30', 'teacache_0.30', 'teacache_0.20', 'teacache_0.10']:
+        row = f"{metric:<25}"
+        for video in video_names:
             video_row = df[df['Video'] == video]
             if not video_row.empty and metric in video_row.columns:
                 score = video_row[metric].iloc[0]
                 if pd.notna(score):
-                    values.append(f"{score:>14.4f}")
+                    row += f" {score:>18.4f}"
                 else:
-                    values.append(f"{'N/A':>14}")
+                    row += f" {'N/A':>18}"
             else:
-                values.append(f"{'N/A':>14}")
-        print(f"{metric:<25} {values[0]} {values[1]} {values[2]} {values[3]}")
+                row += f" {'N/A':>18}"
+        print(row)
     
     # Calculate and display average scores
-    print("\n" + "="*90)
+    print("\n" + "="*120)
     print("AVERAGE SCORES (across all dimensions)")
-    print("="*90 + "\n")
+    print("="*120 + "\n")
     
     avg_scores = {}
-    for video in ['my_policy_0.30', 'teacache_0.30', 'teacache_0.20', 'teacache_0.10']:
+    for video in video_names:
         video_data = df[df['Video'] == video][metrics]
         if not video_data.empty:
             avg_score = video_data.mean(axis=1).iloc[0]
@@ -101,25 +110,25 @@ def display_results():
     
     # Ranking
     if avg_scores:
-        print("\n" + "="*90)
+        print("\n" + "="*120)
         print("RANKING (best to worst)")
-        print("="*90 + "\n")
+        print("="*120 + "\n")
         
         sorted_videos = sorted(avg_scores.items(), key=lambda x: x[1], reverse=True)
         for rank, (video, score) in enumerate(sorted_videos, 1):
             print(f"{rank}. {video:<25} (score: {score:.4f})")
     
-    print(f"\n{'='*90}\n")
+    print(f"\n{'='*120}\n")
     
     # Print key insights
-    print("="*90)
+    print("="*120)
     print("KEY INSIGHTS")
-    print("="*90 + "\n")
+    print("="*120 + "\n")
     
     # Find best and worst per metric
     for metric in metrics:
         metric_scores = {}
-        for video in ['my_policy_0.30', 'teacache_0.30', 'teacache_0.20', 'teacache_0.10']:
+        for video in video_names:
             video_row = df[df['Video'] == video]
             if not video_row.empty and metric in video_row.columns:
                 score = video_row[metric].iloc[0]
@@ -131,10 +140,10 @@ def display_results():
             worst = min(metric_scores.items(), key=lambda x: x[1])
             print(f"{metric:<25} → Best: {best[0]} ({best[1]:.4f}), Worst: {worst[0]} ({worst[1]:.4f})")
     
-    print(f"\n{'='*90}\n")
+    print(f"\n{'='*120}\n")
 
 if __name__ == '__main__':
-    print("="*90)
+    print("="*120)
     print("VBench Results Display")
-    print("="*90 + "\n")
+    print("="*120 + "\n")
     display_results()
