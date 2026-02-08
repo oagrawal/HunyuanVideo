@@ -1,0 +1,85 @@
+{
+    "subject_consistency": [
+        0.8906548861414194,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.8906548861414194
+            }
+        ]
+    ],
+    "background_consistency": [
+        0.9805889129638672,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.9805889129638672,
+                "video_sim": 125.515380859375,
+                "cnt_per_video": 128
+            }
+        ]
+    ],
+    "temporal_flickering": [
+        0.9932898343778124,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.9932898343778124
+            }
+        ]
+    ],
+    "motion_smoothness": [
+        0.9951536554778736,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.9951536554778736
+            }
+        ]
+    ],
+    "dynamic_degree": [
+        1.0,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": true
+            }
+        ]
+    ],
+    "aesthetic_quality": [
+        0.6512021422386169,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.6512021422386169
+            }
+        ]
+    ],
+    "imaging_quality": [
+        0.46485905846884085,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 46.48590584688409
+            }
+        ]
+    ],
+    "temporal_style": [
+        0.29227137565612793,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.29227137565612793
+            }
+        ]
+    ],
+    "overall_consistency": [
+        0.29227137565612793,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/lone_surfer/temp_adaptive_0.2_0.5_f5l10/0.mp4",
+                "video_results": 0.29227137565612793
+            }
+        ]
+    ]
+}

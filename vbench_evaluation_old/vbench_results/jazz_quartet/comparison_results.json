@@ -1,0 +1,512 @@
+{
+  "fixed_0.1": {
+    "subject_consistency": [
+      0.9682188467122614,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9682188467122614
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9695148468017578,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9695148468017578,
+          "video_sim": 124.097900390625,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9833035786946615,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9833035786946615
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9937271984842944,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9937271984842944
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.6781263947486877,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.6781263947486877
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.5361451830605204,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 53.61451830605204
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.017649520188570023,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.017649520188570023
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.017649520188570023,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.1/0.mp4",
+          "video_results": 0.017649520188570023
+        }
+      ]
+    ]
+  },
+  "fixed_0.2": {
+    "subject_consistency": [
+      0.9703007219359279,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9703007219359279
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9727764129638672,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9727764129638672,
+          "video_sim": 124.515380859375,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9857170759462843,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9857170759462843
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9938307553078294,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9938307553078294
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.7288357615470886,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.7288357615470886
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.5419792775590291,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 54.1979277559029
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.023179255425930023,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.023179255425930023
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.023179255425930023,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.2/0.mp4",
+          "video_results": 0.023179255425930023
+        }
+      ]
+    ]
+  },
+  "fixed_0.3": {
+    "subject_consistency": [
+      0.970147673971951,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.970147673971951
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9692459106445312,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.9692459106445312,
+          "video_sim": 124.0634765625,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9878898994595396,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.9878898994595396
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9944816460878929,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.9944816460878929
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.6856804490089417,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.6856804490089417
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.4919946061363516,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 49.19946061363516
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.03241438418626785,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.03241438418626785
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.03241438418626785,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.3/0.mp4",
+          "video_results": 0.03241438418626785
+        }
+      ]
+    ]
+  },
+  "fixed_0.4": {
+    "subject_consistency": [
+      0.9501654384657741,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.9501654384657741
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9524173736572266,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.9524173736572266,
+          "video_sim": 121.909423828125,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9893526301664465,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.9893526301664465
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.994171252829378,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.994171252829378
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.6622862815856934,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.6622862815856934
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.4334323254666587,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 43.343232546665874
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.01974862813949585,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.01974862813949585
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.01974862813949585,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.4/0.mp4",
+          "video_results": 0.01974862813949585
+        }
+      ]
+    ]
+  },
+  "fixed_0.5": {
+    "subject_consistency": [
+      0.9017114455346018,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9017114455346018
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9616107940673828,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9616107940673828,
+          "video_sim": 123.086181640625,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9920260737924015,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9920260737924015
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9948720578989676,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9948720578989676
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.6617843508720398,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.6617843508720398
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.39241145644077036,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 39.24114564407704
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.002585040405392647,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.002585040405392647
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.002585040405392647,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_fixed_0.5/0.mp4",
+          "video_results": 0.002585040405392647
+        }
+      ]
+    ]
+  },
+  "nocache": {
+    "subject_consistency": [
+      0.973999518668279,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.973999518668279
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9680271148681641,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.9680271148681641,
+          "video_sim": 123.907470703125,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9840171851363837,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.9840171851363837
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9935742085031648,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.9935742085031648
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.6948822736740112,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.6948822736740112
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.5683400909660399,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 56.834009096603985
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.03521765395998955,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.03521765395998955
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.03521765395998955,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+          "video_results": 0.03521765395998955
+        }
+      ]
+    ]
+  }
+}

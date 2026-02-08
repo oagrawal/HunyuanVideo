@@ -1,0 +1,19 @@
+[
+    {
+        "prompt_en": "A lone surfer rides a massive turquoise wave as it curls and crashes, ocean spray flying against a pink and orange sunset sky.",
+        "dimension": [
+            "subject_consistency",
+            "background_consistency",
+            "temporal_flickering",
+            "motion_smoothness",
+            "dynamic_degree",
+            "aesthetic_quality",
+            "imaging_quality",
+            "temporal_style",
+            "overall_consistency"
+        ],
+        "video_list": [
+            "/workspace/vbench_evaluation/vbench_results/temp_adaptive_0.2_0.3/0.mp4"
+        ]
+    }
+]

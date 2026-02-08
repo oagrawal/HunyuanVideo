@@ -1,0 +1,19 @@
+[
+    {
+        "prompt_en": "A jazz quartet plays intensely on a smoky stage - saxophone, upright bass, drums, and piano - spotlights catching the gleam of brass instruments.",
+        "dimension": [
+            "subject_consistency",
+            "background_consistency",
+            "temporal_flickering",
+            "motion_smoothness",
+            "dynamic_degree",
+            "aesthetic_quality",
+            "imaging_quality",
+            "temporal_style",
+            "overall_consistency"
+        ],
+        "video_list": [
+            "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.1_0.4_f5l10/0.mp4"
+        ]
+    }
+]

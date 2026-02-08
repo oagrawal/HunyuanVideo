@@ -1,0 +1,85 @@
+{
+    "subject_consistency": [
+        0.9669540296308696,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.9669540296308696
+            }
+        ]
+    ],
+    "background_consistency": [
+        0.9609088897705078,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.9609088897705078,
+                "video_sim": 122.996337890625,
+                "cnt_per_video": 128
+            }
+        ]
+    ],
+    "temporal_flickering": [
+        0.9871879026001575,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.9871879026001575
+            }
+        ]
+    ],
+    "motion_smoothness": [
+        0.9931070386668314,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.9931070386668314
+            }
+        ]
+    ],
+    "dynamic_degree": [
+        1.0,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": true
+            }
+        ]
+    ],
+    "aesthetic_quality": [
+        0.6353387236595154,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.6353387236595154
+            }
+        ]
+    ],
+    "imaging_quality": [
+        0.4606817399254141,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 46.06817399254141
+            }
+        ]
+    ],
+    "temporal_style": [
+        0.26146358251571655,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.26146358251571655
+            }
+        ]
+    ],
+    "overall_consistency": [
+        0.26146358251571655,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet_adaptive/temp_adaptive_0.0_0.4_f5l10/0.mp4",
+                "video_results": 0.26146358251571655
+            }
+        ]
+    ]
+}

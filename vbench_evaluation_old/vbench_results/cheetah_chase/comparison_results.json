@@ -1,0 +1,512 @@
+{
+  "fixed_0.1": {
+    "subject_consistency": [
+      0.771082024439238,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.771082024439238
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9119606018066406,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9119606018066406,
+          "video_sim": 116.73095703125,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9739924393448175,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9739924393448175
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9886605513476262,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.9886605513476262
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.5032978057861328,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.5032978057861328
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.62639202324919,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 62.639202324919
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.35258370637893677,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.35258370637893677
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.35258370637893677,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.1/0.mp4",
+          "video_results": 0.35258370637893677
+        }
+      ]
+    ]
+  },
+  "fixed_0.2": {
+    "subject_consistency": [
+      0.7691401701886207,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.7691401701886207
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9061775207519531,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9061775207519531,
+          "video_sim": 115.99072265625,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9739992777506511,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9739992777506511
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9894369288210715,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.9894369288210715
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.498422771692276,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.498422771692276
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.5964752620135166,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 59.64752620135167
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.35188230872154236,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.35188230872154236
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.35188230872154236,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.2/0.mp4",
+          "video_results": 0.35188230872154236
+        }
+      ]
+    ]
+  },
+  "fixed_0.3": {
+    "subject_consistency": [
+      0.7673689868533984,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.7673689868533984
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9166698455810547,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.9166698455810547,
+          "video_sim": 117.333740234375,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.971242498884014,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.971242498884014
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.987851730868799,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.987851730868799
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.49387165904045105,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.49387165904045105
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.6226318400774815,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 62.26318400774815
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.36386731266975403,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.36386731266975403
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.36386731266975403,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.3/0.mp4",
+          "video_results": 0.36386731266975403
+        }
+      ]
+    ]
+  },
+  "fixed_0.4": {
+    "subject_consistency": [
+      0.7731206767493859,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.7731206767493859
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.8939857482910156,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.8939857482910156,
+          "video_sim": 114.43017578125,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9699072557337144,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.9699072557337144
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9832187405510101,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.9832187405510101
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.49147355556488037,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.49147355556488037
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.6130631998343061,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 61.30631998343061
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.35131484270095825,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.35131484270095825
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.35131484270095825,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.4/0.mp4",
+          "video_results": 0.35131484270095825
+        }
+      ]
+    ]
+  },
+  "fixed_0.5": {
+    "subject_consistency": [
+      0.7709121704101562,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.7709121704101562
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9097061157226562,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9097061157226562,
+          "video_sim": 116.4423828125,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9834370669196634,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9834370669196634
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9925558474808492,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.9925558474808492
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.4896854758262634,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.4896854758262634
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.5224961733263592,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 52.24961733263592
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.3686596751213074,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.3686596751213074
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.3686596751213074,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+          "video_results": 0.3686596751213074
+        }
+      ]
+    ]
+  },
+  "nocache": {
+    "subject_consistency": [
+      0.7714490734506398,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.7714490734506398
+        }
+      ]
+    ],
+    "background_consistency": [
+      0.9068202972412109,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.9068202972412109,
+          "video_sim": 116.072998046875,
+          "cnt_per_video": 128
+        }
+      ]
+    ],
+    "temporal_flickering": [
+      0.9722964155907724,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.9722964155907724
+        }
+      ]
+    ],
+    "motion_smoothness": [
+      0.9881416220874584,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.9881416220874584
+        }
+      ]
+    ],
+    "dynamic_degree": [
+      1.0,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": true
+        }
+      ]
+    ],
+    "aesthetic_quality": [
+      0.4907812774181366,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.4907812774181366
+        }
+      ]
+    ],
+    "imaging_quality": [
+      0.649325188037961,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 64.9325188037961
+        }
+      ]
+    ],
+    "temporal_style": [
+      0.34179553389549255,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.34179553389549255
+        }
+      ]
+    ],
+    "overall_consistency": [
+      0.34179553389549255,
+      [
+        {
+          "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_nocache/0.mp4",
+          "video_results": 0.34179553389549255
+        }
+      ]
+    ]
+  }
+}

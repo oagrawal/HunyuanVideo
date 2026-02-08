@@ -1,0 +1,85 @@
+{
+    "subject_consistency": [
+        0.7709121704101562,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.7709121704101562
+            }
+        ]
+    ],
+    "background_consistency": [
+        0.9097061157226562,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.9097061157226562,
+                "video_sim": 116.4423828125,
+                "cnt_per_video": 128
+            }
+        ]
+    ],
+    "temporal_flickering": [
+        0.9834370669196634,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.9834370669196634
+            }
+        ]
+    ],
+    "motion_smoothness": [
+        0.9925558474808492,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.9925558474808492
+            }
+        ]
+    ],
+    "dynamic_degree": [
+        1.0,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": true
+            }
+        ]
+    ],
+    "aesthetic_quality": [
+        0.4896854758262634,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.4896854758262634
+            }
+        ]
+    ],
+    "imaging_quality": [
+        0.5224961733263592,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 52.24961733263592
+            }
+        ]
+    ],
+    "temporal_style": [
+        0.3686596751213074,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.3686596751213074
+            }
+        ]
+    ],
+    "overall_consistency": [
+        0.3686596751213074,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4",
+                "video_results": 0.3686596751213074
+            }
+        ]
+    ]
+}

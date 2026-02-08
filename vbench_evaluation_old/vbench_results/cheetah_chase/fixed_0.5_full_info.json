@@ -1,0 +1,19 @@
+[
+    {
+        "prompt_en": "A cheetah sprints across the golden savanna chasing a leaping gazelle, dust clouds swirling in the afternoon light.",
+        "dimension": [
+            "subject_consistency",
+            "background_consistency",
+            "temporal_flickering",
+            "motion_smoothness",
+            "dynamic_degree",
+            "aesthetic_quality",
+            "imaging_quality",
+            "temporal_style",
+            "overall_consistency"
+        ],
+        "video_list": [
+            "/workspace/vbench_evaluation/vbench_results/cheetah_chase/temp_fixed_0.5/0.mp4"
+        ]
+    }
+]

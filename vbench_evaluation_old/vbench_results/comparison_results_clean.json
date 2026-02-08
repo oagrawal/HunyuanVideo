@@ -1,0 +1,156 @@
+{
+  "adaptive_0.05_0.2": {
+    "subject_consistency": 0.9538781011942774,
+    "background_consistency": 0.9591083526611328,
+    "temporal_flickering": 0.9778225711747712,
+    "motion_smoothness": 0.9883338097329478,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.7388843894004822,
+    "imaging_quality": 0.6869681132116984,
+    "temporal_style": 0.2955579459667206,
+    "overall_consistency": 0.2955579459667206
+  },
+  "adaptive_0.05_0.3": {
+    "subject_consistency": 0.892284742789343,
+    "background_consistency": 0.9744796752929688,
+    "temporal_flickering": 0.992780803231632,
+    "motion_smoothness": 0.9952604102526172,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6414739489555359,
+    "imaging_quality": 0.515624147755231,
+    "temporal_style": 0.2810620963573456,
+    "overall_consistency": 0.2810620963573456
+  },
+  "adaptive_0.0_0.3": {
+    "subject_consistency": 0.892284742789343,
+    "background_consistency": 0.9744796752929688,
+    "temporal_flickering": 0.992780803231632,
+    "motion_smoothness": 0.9952604102526172,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6414739489555359,
+    "imaging_quality": 0.515624147755231,
+    "temporal_style": 0.2810620963573456,
+    "overall_consistency": 0.2810620963573456
+  },
+  "adaptive_0.15_0.3": {
+    "subject_consistency": 0.889483722159639,
+    "background_consistency": 0.9699172973632812,
+    "temporal_flickering": 0.9931733991585526,
+    "motion_smoothness": 0.9952428067373676,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.643465518951416,
+    "imaging_quality": 0.47847220457801526,
+    "temporal_style": 0.2856660783290863,
+    "overall_consistency": 0.2856660783290863
+  },
+  "adaptive_0.1_0.3": {
+    "subject_consistency": 0.8897673385217786,
+    "background_consistency": 0.9714412689208984,
+    "temporal_flickering": 0.9927874658621993,
+    "motion_smoothness": 0.99518346387332,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6472180485725403,
+    "imaging_quality": 0.48820594137029133,
+    "temporal_style": 0.2838481068611145,
+    "overall_consistency": 0.2838481068611145
+  },
+  "adaptive_0.2_0.3": {
+    "subject_consistency": 0.9253990887664258,
+    "background_consistency": 0.9773101806640625,
+    "temporal_flickering": 0.9930798268785663,
+    "motion_smoothness": 0.9951166618999329,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6508749723434448,
+    "imaging_quality": 0.47184110360552173,
+    "temporal_style": 0.28975290060043335,
+    "overall_consistency": 0.28975290060043335
+  },
+  "fixed_0.1": {
+    "subject_consistency": 0.8949288392905146,
+    "background_consistency": 0.9663543701171875,
+    "temporal_flickering": 0.9926147685331457,
+    "motion_smoothness": 0.9952060691738654,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6505478024482727,
+    "imaging_quality": 0.5098376674799956,
+    "temporal_style": 0.2839145064353943,
+    "overall_consistency": 0.2839145064353943
+  },
+  "fixed_0.2": {
+    "subject_consistency": 0.9247581318486482,
+    "background_consistency": 0.9770641326904297,
+    "temporal_flickering": 0.9928512203927133,
+    "motion_smoothness": 0.9950703054914777,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6544013619422913,
+    "imaging_quality": 0.48147074470224305,
+    "temporal_style": 0.28939521312713623,
+    "overall_consistency": 0.28939521312713623
+  },
+  "fixed_0.3": {
+    "subject_consistency": 0.9076971348840743,
+    "background_consistency": 0.9768352508544922,
+    "temporal_flickering": 0.9920034632963293,
+    "motion_smoothness": 0.994607346791511,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6528761982917786,
+    "imaging_quality": 0.48470839655676556,
+    "temporal_style": 0.2921067178249359,
+    "overall_consistency": 0.2921067178249359
+  },
+  "my_policy_0.30": {
+    "subject_consistency": 0.9477334311231971,
+    "background_consistency": 0.9528045654296875,
+    "temporal_flickering": 0.9696098589429668,
+    "motion_smoothness": 0.9831965279545553,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.7299711108207703,
+    "imaging_quality": 0.6592353649287261,
+    "temporal_style": 0.35786059498786926,
+    "overall_consistency": 0.35786059498786926
+  },
+  "nocache": {
+    "subject_consistency": 0.8980923721101135,
+    "background_consistency": 0.9738407135009766,
+    "temporal_flickering": 0.9925113280614217,
+    "motion_smoothness": 0.9952414633851012,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6545838713645935,
+    "imaging_quality": 0.5374908630607664,
+    "temporal_style": 0.28187060356140137,
+    "overall_consistency": 0.28187060356140137
+  },
+  "teacache_0.10": {
+    "subject_consistency": 0.9658382786437869,
+    "background_consistency": 0.9839305877685547,
+    "temporal_flickering": 0.9745182560939415,
+    "motion_smoothness": 0.979904689141058,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.7060492038726807,
+    "imaging_quality": 0.707216998846956,
+    "temporal_style": 0.37467366456985474,
+    "overall_consistency": 0.37467366456985474
+  },
+  "teacache_0.20": {
+    "subject_consistency": 0.8897077888250351,
+    "background_consistency": 0.9346981048583984,
+    "temporal_flickering": 0.9685752345066444,
+    "motion_smoothness": 0.9755417732102862,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.6345924735069275,
+    "imaging_quality": 0.5899792554396991,
+    "temporal_style": 0.30588585138320923,
+    "overall_consistency": 0.30588585138320923
+  },
+  "teacache_0.30": {
+    "subject_consistency": 0.9312331227120012,
+    "background_consistency": 0.9477577209472656,
+    "temporal_flickering": 0.9633533215990253,
+    "motion_smoothness": 0.9705515739561181,
+    "dynamic_degree": 1.0,
+    "aesthetic_quality": 0.7324039936065674,
+    "imaging_quality": 0.708785155244576,
+    "temporal_style": 0.34152019023895264,
+    "overall_consistency": 0.34152019023895264
+  }
+}

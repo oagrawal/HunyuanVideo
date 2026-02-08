@@ -1,0 +1,85 @@
+{
+    "subject_consistency": [
+        0.8897077888250351,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.8897077888250351
+            }
+        ]
+    ],
+    "background_consistency": [
+        0.9346981048583984,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.9346981048583984,
+                "video_sim": 119.641357421875,
+                "cnt_per_video": 128
+            }
+        ]
+    ],
+    "temporal_flickering": [
+        0.9685752345066444,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.9685752345066444
+            }
+        ]
+    ],
+    "motion_smoothness": [
+        0.9755417732102862,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.9755417732102862
+            }
+        ]
+    ],
+    "dynamic_degree": [
+        1.0,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": true
+            }
+        ]
+    ],
+    "aesthetic_quality": [
+        0.6345924735069275,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.6345924735069275
+            }
+        ]
+    ],
+    "imaging_quality": [
+        0.5899792554396991,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 58.99792554396991
+            }
+        ]
+    ],
+    "temporal_style": [
+        0.30588585138320923,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.30588585138320923
+            }
+        ]
+    ],
+    "overall_consistency": [
+        0.30588585138320923,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/temp_teacache_0.20/0.mp4",
+                "video_results": 0.30588585138320923
+            }
+        ]
+    ]
+}

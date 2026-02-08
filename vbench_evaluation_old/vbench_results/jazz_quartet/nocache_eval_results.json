@@ -1,0 +1,85 @@
+{
+    "subject_consistency": [
+        0.973999518668279,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.973999518668279
+            }
+        ]
+    ],
+    "background_consistency": [
+        0.9680271148681641,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.9680271148681641,
+                "video_sim": 123.907470703125,
+                "cnt_per_video": 128
+            }
+        ]
+    ],
+    "temporal_flickering": [
+        0.9840171851363837,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.9840171851363837
+            }
+        ]
+    ],
+    "motion_smoothness": [
+        0.9935742085031648,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.9935742085031648
+            }
+        ]
+    ],
+    "dynamic_degree": [
+        1.0,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": true
+            }
+        ]
+    ],
+    "aesthetic_quality": [
+        0.6948822736740112,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.6948822736740112
+            }
+        ]
+    ],
+    "imaging_quality": [
+        0.5683400909660399,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 56.834009096603985
+            }
+        ]
+    ],
+    "temporal_style": [
+        0.03521765395998955,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.03521765395998955
+            }
+        ]
+    ],
+    "overall_consistency": [
+        0.03521765395998955,
+        [
+            {
+                "video_path": "/workspace/vbench_evaluation/vbench_results/jazz_quartet/temp_nocache/0.mp4",
+                "video_results": 0.03521765395998955
+            }
+        ]
+    ]
+}
