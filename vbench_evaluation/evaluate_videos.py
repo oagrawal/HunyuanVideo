@@ -13,8 +13,14 @@ from datetime import datetime
 import argparse
 import glob
 
-def discover_videos(source_dir):
-    """Discover all video.mp4 files in subdirectories of source_dir."""
+def discover_videos(source_dir, include_patterns=None):
+    """Discover all video.mp4 files in subdirectories of source_dir.
+    
+    Args:
+        source_dir: Directory containing video subdirectories
+        include_patterns: Optional list of patterns to include (e.g., ['fixed_0.4', 'fixed_0.5'])
+                         If None, all videos are included.
+    """
     video_files = {}
     
     # Look for all video.mp4 files in subdirectories
@@ -25,9 +31,14 @@ def discover_videos(source_dir):
             if os.path.exists(video_path):
                 # Extract a shorter name from the folder name
                 # e.g., "adaptive_0.15_0.3_2026-01-24-03:33:23_seed12345_Two_..." -> "adaptive_0.15_0.3"
+                # e.g., "adaptive_0.0_0.5_f5l10_2026-01-25..." -> "adaptive_0.0_0.5_f5l10"
                 parts = subdir.split('_')
                 if parts[0] == 'adaptive':
-                    short_name = f"adaptive_{parts[1]}_{parts[2]}"
+                    # Check if there's a step config suffix (e.g., f5l10)
+                    if len(parts) > 3 and parts[3].startswith('f') and 'l' in parts[3]:
+                        short_name = f"adaptive_{parts[1]}_{parts[2]}_{parts[3]}"
+                    else:
+                        short_name = f"adaptive_{parts[1]}_{parts[2]}"
                 elif parts[0] == 'fixed':
                     short_name = f"fixed_{parts[1]}"
                 elif parts[0] == 'nocache':
@@ -35,20 +46,35 @@ def discover_videos(source_dir):
                 else:
                     short_name = '_'.join(parts[:3])
                 
-                video_files[short_name] = video_path
+                # Filter by include patterns if specified
+                if include_patterns:
+                    # Check if any pattern matches the short_name OR the full subdir name
+                    if any(pattern in short_name or pattern in subdir for pattern in include_patterns):
+                        video_files[short_name] = video_path
+                else:
+                    video_files[short_name] = video_path
     
     return video_files
 
-def evaluate_all_videos(source_dir=None):
-    """Evaluate all videos using VBench on all dimensions."""
+def evaluate_all_videos(source_dir=None, include_patterns=None):
+    """Evaluate all videos using VBench on all dimensions.
+    
+    Args:
+        source_dir: Directory containing video subdirectories
+        include_patterns: Optional list of patterns to include (e.g., ['fixed_0.4', 'fixed_0.5'])
+    """
     
     # Configuration
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_dir = os.path.join(script_dir, 'vbench_results')
     
     # Default source directory is teacache_results
     if source_dir is None:
         source_dir = os.path.join(os.path.dirname(script_dir), 'teacache_results')
+    
+    # Create prompt-specific output subfolder based on source directory name
+    # e.g., source_dir = ".../teacache_results/lone_surfer" -> subfolder = "lone_surfer"
+    source_folder_name = os.path.basename(os.path.normpath(source_dir))
+    output_dir = os.path.join(script_dir, 'vbench_results', source_folder_name)
     
     # VBench paths - check multiple possible locations
     vbench_paths = [
@@ -87,8 +113,22 @@ def evaluate_all_videos(source_dir=None):
     else:
         print(f"✓ Found VBench_full_info.json")
     
-    # Read prompt from file
-    prompt_file = os.path.join(script_dir, 'prompt_list.txt')
+    # Read prompt from file - first check source directory, then fall back to script directory
+    prompt_file_in_source = os.path.join(source_dir, 'prompt.txt')
+    prompt_file_in_script = os.path.join(script_dir, 'prompt_list.txt')
+    
+    if os.path.exists(prompt_file_in_source):
+        prompt_file = prompt_file_in_source
+        print(f"✓ Found prompt.txt in source directory")
+    elif os.path.exists(prompt_file_in_script):
+        prompt_file = prompt_file_in_script
+        print(f"✓ Using prompt_list.txt from script directory")
+    else:
+        print(f"✗ Error: No prompt file found!")
+        print(f"  Checked: {prompt_file_in_source}")
+        print(f"  Checked: {prompt_file_in_script}")
+        return
+    
     with open(prompt_file, 'r') as f:
         prompt = f.read().strip()
     
@@ -96,10 +136,14 @@ def evaluate_all_videos(source_dir=None):
     
     # Discover video files
     print("\nDiscovering videos...")
-    video_files = discover_videos(source_dir)
+    if include_patterns:
+        print(f"Filtering to include only: {include_patterns}")
+    video_files = discover_videos(source_dir, include_patterns=include_patterns)
     
     if not video_files:
         print(f"✗ No videos found in {source_dir}")
+        if include_patterns:
+            print(f"  (with filter: {include_patterns})")
         return
     
     # Verify all videos exist and display them
@@ -359,9 +403,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='VBench Video Quality Evaluation')
     parser.add_argument('--source', '-s', type=str, default=None,
                         help='Source directory containing video subdirectories (default: ../teacache_results)')
+    parser.add_argument('--include', '-i', type=str, default=None,
+                        help='Comma-separated patterns to include (e.g., "fixed_0.4,fixed_0.5"). If not specified, all videos are evaluated.')
     args = parser.parse_args()
+    
+    # Parse include patterns
+    include_patterns = None
+    if args.include:
+        include_patterns = [p.strip() for p in args.include.split(',')]
     
     print("="*100)
     print("VBench Video Quality Evaluation")
     print("="*100)
-    evaluate_all_videos(source_dir=args.source)
+    evaluate_all_videos(source_dir=args.source, include_patterns=include_patterns)

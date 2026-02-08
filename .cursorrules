@@ -1,0 +1,109 @@
+# HunyuanVideo TeaCache Research Project
+
+## Project Overview
+This is a research project investigating **TeaCache** caching strategies for accelerating video generation in HunyuanVideo. The goal is to find optimal caching thresholds that balance speed vs quality.
+
+## Key Components
+
+### Video Generation
+- **Main script**: `teacache_sample_video.py` - Generates videos with configurable caching
+- **Docker container**: `hunyuanvideo` (alias: `hv` to enter, `hv-create` to create)
+- **Model**: HunyuanVideo T2V (text-to-video) 720p model
+
+### TeaCache Modes
+1. **none**: No caching (baseline, slowest, highest quality)
+2. **fixed**: Single threshold for all timesteps
+   - `--fixed-thresh 0.10/0.20/0.30/0.40/0.50` (testing higher values)
+3. **adaptive**: Different thresholds for different phases
+   - `--thresh-low` for first 10 + last 5 steps (critical phases)
+   - `--thresh-high` for middle steps (less critical)
+   - Middle threshold will be calibrated based on fixed threshold experiments
+
+### Experiment Structure
+Results are saved to `teacache_results/` with subfolders per prompt:
+- `teacache_results/anthropomorphic_cats/` - Boxing cats experiments (seed 12345)
+- `teacache_results/lone_surfer/` - Surfer wave experiments (seed 98765)
+
+Each experiment folder contains:
+- `video.mp4` - Generated video
+- `diagnostic_info.txt` - Timing and cache stats
+- `acc_delta_TEMNI_plot.png` - Accumulated delta visualization
+- `delta_TEMNI_plot.png` - Per-step delta visualization
+- `timesteps.txt` - Timestep data
+
+### VBench Evaluation
+- **Location**: `vbench_evaluation/`
+- **Scripts**: 
+  - `evaluate_videos.py` - Runs VBench on videos
+  - `display_results.py` - Shows comparison results
+- **Results**: Saved to `vbench_evaluation/vbench_results/`
+
+**Important VBench dimensions for quality comparison:**
+- `subject_consistency` - Higher = better (nocache should be highest)
+- `background_consistency` - Higher = better
+- `aesthetic_quality` - Higher = better
+- `imaging_quality` - Higher = better
+- `temporal_flickering` - Higher = better (less flicker)
+- `motion_smoothness` - Higher = better
+
+**Less reliable for caching comparison:**
+- `temporal_style` and `overall_consistency` - These measure text-video alignment, not quality. May show counterintuitive results where cached videos score higher due to CLIP embedding behavior.
+
+### Automation Scripts
+- `run_teacache_experiments.sh` - Runs all 9 experiments automatically
+  ```bash
+  ./run_teacache_experiments.sh --prompt "..." --seed 12345
+  ```
+
+## Environment Notes
+
+### Transformers Version Conflict
+- **For video generation**: `pip install transformers==4.46.3`
+- **For VBench evaluation**: `pip install transformers==4.33.2`
+
+Switch versions as needed when moving between generation and evaluation.
+
+### Docker Container Paths
+- Host: `/nfs/oagrawal/HunyuanVideo/` → Container: `/workspace/`
+- VBench installed at: `/workspace/VBench/`
+
+## Research Hypothesis
+Adaptive thresholds (low threshold for early/late steps, high threshold for middle steps) should provide better quality than fixed thresholds at similar speedup levels, because:
+- Early steps establish overall structure (need accuracy)
+- Middle steps refine details (can tolerate more caching)
+- Late steps finalize output (need accuracy)
+
+## Key Files
+- `research.txt` - Detailed research notes and commands
+- `teacache_sample_video.py` - Main video generation script with TeaCache
+- `hyvideo/` - HunyuanVideo model code
+- `VBench/` - Video quality evaluation benchmark
+
+## Current Experiment Status
+
+### Completed Experiments
+1. **anthropomorphic_cats** (seed 12345): Ran full suite (none, fixed 0.1/0.2/0.3, adaptive variants)
+   - Quality degradation was visible at higher thresholds
+   - Good baseline for understanding threshold impact
+
+2. **lone_surfer** (seed 98765): Ran same suite
+   - Quality scores across all caching modes were very close
+   - Thresholds 0.1-0.3 did not push caching hard enough to see degradation
+   - Need more aggressive thresholds to find the quality cliff
+
+### Next Steps
+1. **Run higher fixed thresholds for lone_surfer**:
+   - `--teacache-mode fixed --fixed-thresh 0.40 --seed 98765`
+   - `--teacache-mode fixed --fixed-thresh 0.50 --seed 98765`
+   - Goal: Find where quality starts to degrade noticeably
+
+2. **Adjust adaptive thresholds based on findings**:
+   - Once we identify the degradation point (e.g., 0.4 or 0.5)
+   - Set `--thresh-high` to that value for adaptive mode
+   - Keep `--thresh-low` conservative (0.05-0.10) for critical phases
+   - Compare adaptive quality vs fixed at same speedup
+
+### Lone Surfer Prompt
+```
+A lone surfer rides a massive turquoise wave as it curls and crashes around them
+```

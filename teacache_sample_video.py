@@ -114,10 +114,10 @@ def teacache_forward(
                 self.accumulated_rel_l1_distance += delta
 
                 # Use different thresholds based on step number:
-                # - Steps 1-9 (first 10 minus first): low threshold
-                # - Steps num_steps-5 to num_steps-2 (last 5 minus last): low threshold
-                # - Middle steps: high threshold
-                if self.cnt <= 10 or self.cnt >= self.num_steps - 5:
+                # - First N steps: low threshold (critical for structure)
+                # - Last M steps: low threshold (critical for finalization)
+                # - Middle steps: high threshold (can tolerate more caching)
+                if self.cnt <= self.first_steps or self.cnt >= self.num_steps - self.last_steps:
                     current_thresh = self.rel_l1_thresh_low
                 else:
                     current_thresh = self.rel_l1_thresh_high
@@ -245,9 +245,13 @@ def main():
     exp_parser.add_argument('--fixed-thresh', type=float, default=0.10,
                             help='Fixed threshold value (used when teacache-mode=fixed)')
     exp_parser.add_argument('--thresh-low', type=float, default=0.05,
-                            help='Low threshold for first 10 and last 5 steps (used when teacache-mode=adaptive)')
+                            help='Low threshold for critical steps (used when teacache-mode=adaptive)')
     exp_parser.add_argument('--thresh-high', type=float, default=0.30,
                             help='High threshold for middle steps (used when teacache-mode=adaptive)')
+    exp_parser.add_argument('--first-steps', type=int, default=10,
+                            help='Number of first steps to use low threshold (default: 10)')
+    exp_parser.add_argument('--last-steps', type=int, default=5,
+                            help='Number of last steps to use low threshold (default: 5)')
     exp_args, remaining_argv = exp_parser.parse_known_args()
     
     # Replace sys.argv with remaining args for hyvideo's parser
@@ -261,6 +265,8 @@ def main():
     args.fixed_thresh = exp_args.fixed_thresh
     args.thresh_low = exp_args.thresh_low
     args.thresh_high = exp_args.thresh_high
+    args.first_steps = exp_args.first_steps
+    args.last_steps = exp_args.last_steps
     
     print(args)
     print(f"\n=== Experiment Config ===")
@@ -268,7 +274,7 @@ def main():
     if args.teacache_mode == 'fixed':
         print(f"Fixed threshold: {args.fixed_thresh}")
     elif args.teacache_mode == 'adaptive':
-        print(f"Thresh low (first 10 + last 5): {args.thresh_low}")
+        print(f"Thresh low (first {args.first_steps} + last {args.last_steps}): {args.thresh_low}")
         print(f"Thresh high (middle): {args.thresh_high}")
     print(f"=========================\n")
     
@@ -284,11 +290,15 @@ def main():
     fixed_thresh = args.fixed_thresh
     thresh_low = args.thresh_low
     thresh_high = args.thresh_high
+    first_steps = args.first_steps
+    last_steps = args.last_steps
     args = hunyuan_video_sampler.args
     args.teacache_mode = teacache_mode
     args.fixed_thresh = fixed_thresh
     args.thresh_low = thresh_low
     args.thresh_high = thresh_high
+    args.first_steps = first_steps
+    args.last_steps = last_steps
 
     # TeaCache configuration based on mode
     if args.teacache_mode == 'none':
@@ -305,6 +315,10 @@ def main():
         hunyuan_video_sampler.pipeline.transformer.__class__.previous_residual = None
         hunyuan_video_sampler.pipeline.transformer.__class__.forward = teacache_forward
         
+        # Set first/last steps for adaptive threshold schedule
+        hunyuan_video_sampler.pipeline.transformer.__class__.first_steps = args.first_steps
+        hunyuan_video_sampler.pipeline.transformer.__class__.last_steps = args.last_steps
+        
         if args.teacache_mode == 'fixed':
             # Fixed threshold - same value for all steps
             hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh_low = args.fixed_thresh
@@ -314,7 +328,7 @@ def main():
             # Adaptive threshold - different for start/end vs middle
             hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh_low = args.thresh_low
             hunyuan_video_sampler.pipeline.transformer.__class__.rel_l1_thresh_high = args.thresh_high
-            logger.info(f"TeaCache ADAPTIVE thresholds: low={args.thresh_low}, high={args.thresh_high}")
+            logger.info(f"TeaCache ADAPTIVE thresholds: low={args.thresh_low}, high={args.thresh_high} (first {args.first_steps} + last {args.last_steps} steps)")
     
     # Tracking lists (always initialize for consistency)
     hunyuan_video_sampler.pipeline.transformer.__class__.acc_delta_TEMNI = []
@@ -356,7 +370,11 @@ def main():
     elif args.teacache_mode == 'fixed':
         exp_tag = f"fixed_{args.fixed_thresh}"
     else:  # adaptive
-        exp_tag = f"adaptive_{args.thresh_low}_{args.thresh_high}"
+        # Include first/last steps in tag if they differ from defaults (10/5)
+        if args.first_steps != 10 or args.last_steps != 5:
+            exp_tag = f"adaptive_{args.thresh_low}_{args.thresh_high}_f{args.first_steps}l{args.last_steps}"
+        else:
+            exp_tag = f"adaptive_{args.thresh_low}_{args.thresh_high}"
     
     # Create generation-specific folder inside base save_path
     base_save_path = args.save_path if args.save_path_suffix=="" else f'{args.save_path}_{args.save_path_suffix}'
@@ -463,7 +481,7 @@ def main():
         elif args.teacache_mode == 'fixed':
             f.write(f"Fixed threshold: {args.fixed_thresh}\n")
         elif args.teacache_mode == 'adaptive':
-            f.write(f"Thresh low (first 10 + last 5): {args.thresh_low}\n")
+            f.write(f"Thresh low (first {args.first_steps} + last {args.last_steps}): {args.thresh_low}\n")
             f.write(f"Thresh high (middle): {args.thresh_high}\n")
         f.write(f"\n=== Timing ===\n")
         f.write(f"End-to-end generation time: {e2e_time:.2f} seconds\n")

@@ -6,16 +6,34 @@ import os
 import json
 import pandas as pd
 import glob
+import argparse
 
-def display_results():
+def display_results(folder=None):
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    results_dir = os.path.join(script_dir, 'vbench_results')
+    
+    # Determine results directory
+    if folder:
+        results_dir = os.path.join(script_dir, 'vbench_results', folder)
+    else:
+        results_dir = os.path.join(script_dir, 'vbench_results')
+    
+    print(f"Results directory: {results_dir}")
     
     # Dynamically find all eval_results.json files
     result_pattern = os.path.join(results_dir, '*_eval_results.json')
     result_files = glob.glob(result_pattern)
     
     if not result_files:
+        # Try looking in subfolders if no results found directly
+        result_pattern_subfolder = os.path.join(results_dir, '*', '*_eval_results.json')
+        result_files = glob.glob(result_pattern_subfolder)
+        if result_files:
+            print(f"\nFound results in subfolders. Available folders:")
+            subfolders = set(os.path.basename(os.path.dirname(f)) for f in result_files)
+            for sf in sorted(subfolders):
+                print(f"  - {sf}")
+            print(f"\nUse --folder <name> to display specific results.")
+            return
         print(f"✗ No result files found matching: {result_pattern}")
         return
     
@@ -143,7 +161,12 @@ def display_results():
     print(f"\n{'='*120}\n")
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Display VBench evaluation results')
+    parser.add_argument('--folder', '-f', type=str, default=None,
+                        help='Subfolder name to display results from (e.g., "lone_surfer", "anthropomorphic_cats")')
+    args = parser.parse_args()
+    
     print("="*120)
     print("VBench Results Display")
     print("="*120 + "\n")
-    display_results()
+    display_results(folder=args.folder)
