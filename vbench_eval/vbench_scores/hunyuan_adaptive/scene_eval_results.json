@@ -1,0 +1,25 @@
+{
+    "scene": [
+        0.8541666666666666,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/alley-0.mp4",
+                "video_results": 0.5625,
+                "success_frame_count": 9,
+                "frame_count": 16
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/amusement park-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/aquarium-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

@@ -1,0 +1,53 @@
+{
+  "hunyuan_fixed_0.1": {
+    "mode": "hunyuan_fixed_0.1",
+    "baseline": "hunyuan_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 24.687582872151555,
+      "std": 4.5714822581382135
+    },
+    "ssim": {
+      "mean": 0.8185011160049624,
+      "std": 0.08465187014154145
+    },
+    "lpips": {
+      "mean": 0.18743093915166417,
+      "std": 0.1012790104514876
+    }
+  },
+  "hunyuan_fixed_0.2": {
+    "mode": "hunyuan_fixed_0.2",
+    "baseline": "hunyuan_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 21.713051992723443,
+      "std": 3.0822571363160427
+    },
+    "ssim": {
+      "mean": 0.7548876700562744,
+      "std": 0.07108835578739447
+    },
+    "lpips": {
+      "mean": 0.2763581880912384,
+      "std": 0.08916391936689912
+    }
+  },
+  "hunyuan_adaptive": {
+    "mode": "hunyuan_adaptive",
+    "baseline": "hunyuan_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 23.850782889909382,
+      "std": 4.04664435634091
+    },
+    "ssim": {
+      "mean": 0.7964750573973327,
+      "std": 0.08100006492182027
+    },
+    "lpips": {
+      "mean": 0.21459071678502167,
+      "std": 0.09595886198702196
+    }
+  }
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "prompt_en": "a red bicycle",
+        "dimension": [
+            "color"
+        ],
+        "auxiliary_info": {
+            "color": {
+                "color": "red"
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_adaptive/a red bicycle-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a green bicycle",
+        "dimension": [
+            "color"
+        ],
+        "auxiliary_info": {
+            "color": {
+                "color": "green"
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_adaptive/a green bicycle-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a blue bicycle",
+        "dimension": [
+            "color"
+        ],
+        "auxiliary_info": {
+            "color": {
+                "color": "blue"
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_adaptive/a blue bicycle-0.mp4"
+        ]
+    }
+]

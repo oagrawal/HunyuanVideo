@@ -24,22 +24,6 @@
         ]
     },
     {
-        "prompt_en": "a person eating a burger",
-        "dimension": [
-            "subject_consistency",
-            "dynamic_degree",
-            "motion_smoothness"
-        ]
-    },
-    {
-        "prompt_en": "a person walking in the snowstorm",
-        "dimension": [
-            "subject_consistency",
-            "dynamic_degree",
-            "motion_smoothness"
-        ]
-    },
-    {
         "prompt_en": "Close up of grapes on a rotating table.",
         "dimension": [
             "overall_consistency",
@@ -57,22 +41,6 @@
     },
     {
         "prompt_en": "A storm trooper vacuuming the beach.",
-        "dimension": [
-            "overall_consistency",
-            "aesthetic_quality",
-            "imaging_quality"
-        ]
-    },
-    {
-        "prompt_en": "A panda standing on a surfboard in the ocean in sunset.",
-        "dimension": [
-            "overall_consistency",
-            "aesthetic_quality",
-            "imaging_quality"
-        ]
-    },
-    {
-        "prompt_en": "An astronaut feeding ducks on a sunny afternoon, reflection from the water.",
         "dimension": [
             "overall_consistency",
             "aesthetic_quality",
@@ -122,34 +90,6 @@
         }
     },
     {
-        "prompt_en": "arch",
-        "dimension": [
-            "scene",
-            "background_consistency"
-        ],
-        "auxiliary_info": {
-            "scene": {
-                "scene": {
-                    "scene": "arch"
-                }
-            }
-        }
-    },
-    {
-        "prompt_en": "art gallery",
-        "dimension": [
-            "scene",
-            "background_consistency"
-        ],
-        "auxiliary_info": {
-            "scene": {
-                "scene": {
-                    "scene": "art gallery"
-                }
-            }
-        }
-    },
-    {
         "prompt_en": "In a still frame, a stop sign",
         "dimension": [
             "temporal_flickering"
@@ -163,18 +103,6 @@
     },
     {
         "prompt_en": "a laptop, frozen in time",
-        "dimension": [
-            "temporal_flickering"
-        ]
-    },
-    {
-        "prompt_en": "A tranquil tableau of alley",
-        "dimension": [
-            "temporal_flickering"
-        ]
-    },
-    {
-        "prompt_en": "A tranquil tableau of bar",
         "dimension": [
             "temporal_flickering"
         ]
@@ -198,18 +126,6 @@
         ]
     },
     {
-        "prompt_en": "A person is tasting beer",
-        "dimension": [
-            "human_action"
-        ]
-    },
-    {
-        "prompt_en": "A person is clapping",
-        "dimension": [
-            "human_action"
-        ]
-    },
-    {
         "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, in super slow motion",
         "dimension": [
             "temporal_style"
@@ -223,18 +139,6 @@
     },
     {
         "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
-        "dimension": [
-            "temporal_style"
-        ]
-    },
-    {
-        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, pan left",
-        "dimension": [
-            "temporal_style"
-        ]
-    },
-    {
-        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, pan right",
         "dimension": [
             "temporal_style"
         ]
@@ -273,28 +177,6 @@
         }
     },
     {
-        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, black and white",
-        "dimension": [
-            "appearance_style"
-        ],
-        "auxiliary_info": {
-            "appearance_style": {
-                "appearance_style": "black and white"
-            }
-        }
-    },
-    {
-        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, pixel art",
-        "dimension": [
-            "appearance_style"
-        ],
-        "auxiliary_info": {
-            "appearance_style": {
-                "appearance_style": "pixel art"
-            }
-        }
-    },
-    {
         "prompt_en": "a red bicycle",
         "dimension": [
             "color"
@@ -324,28 +206,6 @@
         "auxiliary_info": {
             "color": {
                 "color": "blue"
-            }
-        }
-    },
-    {
-        "prompt_en": "a yellow bicycle",
-        "dimension": [
-            "color"
-        ],
-        "auxiliary_info": {
-            "color": {
-                "color": "yellow"
-            }
-        }
-    },
-    {
-        "prompt_en": "an orange bicycle",
-        "dimension": [
-            "color"
-        ],
-        "auxiliary_info": {
-            "color": {
-                "color": "orange"
             }
         }
     },
@@ -395,36 +255,6 @@
         }
     },
     {
-        "prompt_en": "a bus on the right of a traffic light, front view",
-        "dimension": [
-            "spatial_relationship"
-        ],
-        "auxiliary_info": {
-            "spatial_relationship": {
-                "spatial_relationship": {
-                    "object_a": "bus",
-                    "object_b": "traffic light",
-                    "relationship": "on the right of"
-                }
-            }
-        }
-    },
-    {
-        "prompt_en": "a traffic light on the left of a fire hydrant, front view",
-        "dimension": [
-            "spatial_relationship"
-        ],
-        "auxiliary_info": {
-            "spatial_relationship": {
-                "spatial_relationship": {
-                    "object_a": "traffic light",
-                    "object_b": "fire hydrant",
-                    "relationship": "on the left of"
-                }
-            }
-        }
-    },
-    {
         "prompt_en": "a bird and a cat",
         "dimension": [
             "multiple_objects"
@@ -458,28 +288,6 @@
         }
     },
     {
-        "prompt_en": "a horse and a sheep",
-        "dimension": [
-            "multiple_objects"
-        ],
-        "auxiliary_info": {
-            "multiple_objects": {
-                "object": "horse and sheep"
-            }
-        }
-    },
-    {
-        "prompt_en": "a sheep and a cow",
-        "dimension": [
-            "multiple_objects"
-        ],
-        "auxiliary_info": {
-            "multiple_objects": {
-                "object": "sheep and cow"
-            }
-        }
-    },
-    {
         "prompt_en": "a person",
         "dimension": [
             "object_class"
@@ -509,28 +317,6 @@
         "auxiliary_info": {
             "object_class": {
                 "object": "car"
-            }
-        }
-    },
-    {
-        "prompt_en": "a motorcycle",
-        "dimension": [
-            "object_class"
-        ],
-        "auxiliary_info": {
-            "object_class": {
-                "object": "motorcycle"
-            }
-        }
-    },
-    {
-        "prompt_en": "an airplane",
-        "dimension": [
-            "object_class"
-        ],
-        "auxiliary_info": {
-            "object_class": {
-                "object": "airplane"
             }
         }
     }

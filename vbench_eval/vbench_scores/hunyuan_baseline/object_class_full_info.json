@@ -1,0 +1,44 @@
+[
+    {
+        "prompt_en": "a person",
+        "dimension": [
+            "object_class"
+        ],
+        "auxiliary_info": {
+            "object_class": {
+                "object": "person"
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_baseline/a person-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a bicycle",
+        "dimension": [
+            "object_class"
+        ],
+        "auxiliary_info": {
+            "object_class": {
+                "object": "bicycle"
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_baseline/a bicycle-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a car",
+        "dimension": [
+            "object_class"
+        ],
+        "auxiliary_info": {
+            "object_class": {
+                "object": "car"
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_baseline/a car-0.mp4"
+        ]
+    }
+]

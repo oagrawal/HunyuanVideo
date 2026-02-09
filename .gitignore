@@ -5,3 +5,7 @@ hunyuanvideo_backup.tar
 # Generated output files
 teacache_results/
 vbench_evaluation/vbench_results/
+
+# Video files (too large for git)
+*.mp4
+vbench_eval/videos/

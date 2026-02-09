@@ -1,0 +1,25 @@
+{
+    "multiple_objects": [
+        0.625,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a bird and a cat-0.mp4",
+                "video_results": 0.0625,
+                "success_frame_count": 1,
+                "frame_count": 16
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a cat and a dog-0.mp4",
+                "video_results": 0.8125,
+                "success_frame_count": 13,
+                "frame_count": 16
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a dog and a horse-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

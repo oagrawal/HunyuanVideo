@@ -1,0 +1,19 @@
+{
+    "aesthetic_quality": [
+        0.6635837952295939,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/Close up of grapes on a rotating table.-0.mp4",
+                "video_results": 0.6075738668441772
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/Turtle swimming in ocean.-0.mp4",
+                "video_results": 0.6102311015129089
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A storm trooper vacuuming the beach.-0.mp4",
+                "video_results": 0.7729464173316956
+            }
+        ]
+    ]
+}

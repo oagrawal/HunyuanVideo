@@ -116,8 +116,26 @@ def main():
         kwargs = {}
         kwargs["imaging_quality_preprocessing_mode"] = "longer"
 
-        for dim_idx, dimension in enumerate(dimensions, 1):
-            print(f"\n  [{dim_idx}/{len(dimensions)}] {dimension}...")
+        # Check which dimensions are already evaluated (for resume)
+        remaining_dims = []
+        skipped_dims = []
+        for dimension in dimensions:
+            result_file = os.path.join(save_path, f"{dimension}_eval_results.json")
+            if os.path.exists(result_file):
+                skipped_dims.append(dimension)
+            else:
+                remaining_dims.append(dimension)
+
+        if skipped_dims:
+            print(f"  Skipping {len(skipped_dims)} already-evaluated dimensions: {skipped_dims}")
+        if not remaining_dims:
+            print(f"  All dimensions already evaluated for {mode}. Skipping.")
+            continue
+
+        print(f"  Evaluating {len(remaining_dims)}/{len(dimensions)} dimensions")
+
+        for dim_idx, dimension in enumerate(remaining_dims, 1):
+            print(f"\n  [{dim_idx}/{len(remaining_dims)}] {dimension}...")
 
             try:
                 my_VBench = VBench(torch.device("cuda"), args.full_info, save_path)

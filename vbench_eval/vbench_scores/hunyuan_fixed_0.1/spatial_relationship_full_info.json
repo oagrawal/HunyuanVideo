@@ -1,0 +1,56 @@
+[
+    {
+        "prompt_en": "a bicycle on the left of a car, front view",
+        "dimension": [
+            "spatial_relationship"
+        ],
+        "auxiliary_info": {
+            "spatial_relationship": {
+                "spatial_relationship": {
+                    "object_a": "bicycle",
+                    "object_b": "car",
+                    "relationship": "on the left of"
+                }
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/a bicycle on the left of a car, front view-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a car on the right of a motorcycle, front view",
+        "dimension": [
+            "spatial_relationship"
+        ],
+        "auxiliary_info": {
+            "spatial_relationship": {
+                "spatial_relationship": {
+                    "object_a": "car",
+                    "object_b": "motorcycle",
+                    "relationship": "on the right of"
+                }
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/a car on the right of a motorcycle, front view-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a motorcycle on the left of a bus, front view",
+        "dimension": [
+            "spatial_relationship"
+        ],
+        "auxiliary_info": {
+            "spatial_relationship": {
+                "spatial_relationship": {
+                    "object_a": "motorcycle",
+                    "object_b": "bus",
+                    "relationship": "on the left of"
+                }
+            }
+        },
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/a motorcycle on the left of a bus, front view-0.mp4"
+        ]
+    }
+]

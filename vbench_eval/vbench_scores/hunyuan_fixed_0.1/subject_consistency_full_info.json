@@ -1,0 +1,35 @@
+[
+    {
+        "prompt_en": "a person swimming in ocean",
+        "dimension": [
+            "subject_consistency",
+            "dynamic_degree",
+            "motion_smoothness"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/a person swimming in ocean-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a person giving a presentation to a room full of colleagues",
+        "dimension": [
+            "subject_consistency",
+            "dynamic_degree",
+            "motion_smoothness"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/a person giving a presentation to a room full of colleagues-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a person washing the dishes",
+        "dimension": [
+            "subject_consistency",
+            "dynamic_degree",
+            "motion_smoothness"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/a person washing the dishes-0.mp4"
+        ]
+    }
+]

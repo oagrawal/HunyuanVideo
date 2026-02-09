@@ -1,0 +1,22 @@
+{
+    "human_action": [
+        0.6666666666666666,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A person is riding a bike-0.mp4",
+                "video_results": true,
+                "cor_num_per_video": 1
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A person is marching-0.mp4",
+                "video_results": false,
+                "cor_num_per_video": 0
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A person is roller skating-0.mp4",
+                "video_results": true,
+                "cor_num_per_video": 1
+            }
+        ]
+    ]
+}

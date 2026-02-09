@@ -1,0 +1,19 @@
+{
+    "temporal_style": [
+        0.204123521844546,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+                "video_results": 0.19055405259132385
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+                "video_results": 0.20268264412879944
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+                "video_results": 0.2191338688135147
+            }
+        ]
+    ]
+}

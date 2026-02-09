@@ -1,0 +1,25 @@
+{
+    "object_class": [
+        0.6666666666666666,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a person-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a bicycle-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a car-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

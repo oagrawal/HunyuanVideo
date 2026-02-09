@@ -1,0 +1,35 @@
+[
+    {
+        "prompt_en": "Close up of grapes on a rotating table.",
+        "dimension": [
+            "overall_consistency",
+            "aesthetic_quality",
+            "imaging_quality"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/Close up of grapes on a rotating table.-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "Turtle swimming in ocean.",
+        "dimension": [
+            "overall_consistency",
+            "aesthetic_quality",
+            "imaging_quality"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/Turtle swimming in ocean.-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A storm trooper vacuuming the beach.",
+        "dimension": [
+            "overall_consistency",
+            "aesthetic_quality",
+            "imaging_quality"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/A storm trooper vacuuming the beach.-0.mp4"
+        ]
+    }
+]

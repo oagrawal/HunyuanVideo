@@ -1,0 +1,19 @@
+{
+    "temporal_flickering": [
+        0.9990804930917578,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/In a still frame, a stop sign-0.mp4",
+                "video_results": 0.9991776038618648
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a toilet, frozen in time-0.mp4",
+                "video_results": 0.9990713802038454
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a laptop, frozen in time-0.mp4",
+                "video_results": 0.998992495209563
+            }
+        ]
+    ]
+}

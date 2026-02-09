@@ -1,0 +1,22 @@
+{
+    "color": [
+        1.0,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_fixed_0.1/a red bicycle-0.mp4",
+                "video_results": 1.0,
+                "cur_success_frame_rate": 1.0
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_fixed_0.1/a green bicycle-0.mp4",
+                "video_results": 1.0,
+                "cur_success_frame_rate": 1.0
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_fixed_0.1/a blue bicycle-0.mp4",
+                "video_results": 1.0,
+                "cur_success_frame_rate": 1.0
+            }
+        ]
+    ]
+}

@@ -1,0 +1,29 @@
+[
+    {
+        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, in super slow motion",
+        "dimension": [
+            "temporal_style"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, zoom in",
+        "dimension": [
+            "temporal_style"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
+        "dimension": [
+            "temporal_style"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_fixed_0.1/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4"
+        ]
+    }
+]

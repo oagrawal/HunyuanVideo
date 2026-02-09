@@ -32,6 +32,12 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 
+# Ensure the project root (parent of vbench_eval/) is on the Python path,
+# so that `hyvideo` can be imported regardless of how this script is invoked.
+_project_root = str(Path(__file__).resolve().parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 try:
     from loguru import logger
 except ImportError:
@@ -363,7 +369,11 @@ def main():
     # ---- Heavy imports (only for actual generation) ----
     _import_heavy()
 
-    # Pass remaining args to hyvideo's parser
+    # Pass remaining args to hyvideo's parser.
+    # Inject default --save-path if not provided (required by hyvideo's parser
+    # but not used by this script — we use --output-dir instead).
+    if "--save-path" not in remaining_argv:
+        remaining_argv += ["--save-path", output_dir]
     sys.argv = [sys.argv[0]] + remaining_argv
 
     from hyvideo.config import parse_args
@@ -375,9 +385,11 @@ def main():
     print(f"Video config:  {args.video_size[0]}x{args.video_size[1]}, "
           f"{args.video_length} frames, {args.infer_steps} steps")
 
-    # ---- Generation log ----
-    log_path = os.path.join(output_dir, "generation_log.json")
+    # ---- Generation log (per-process to avoid race conditions with multi-GPU) ----
+    log_filename = f"generation_log_{start_idx}-{end_idx}.json"
+    log_path = os.path.join(output_dir, log_filename)
     gen_log = load_generation_log(log_path)
+    print(f"Log file:      {log_path}")
 
     # ---- Load model ONCE ----
     print("\nLoading HunyuanVideo model (this takes a few minutes)...")

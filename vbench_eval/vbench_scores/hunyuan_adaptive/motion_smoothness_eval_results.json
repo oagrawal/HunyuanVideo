@@ -1,0 +1,19 @@
+{
+    "motion_smoothness": [
+        0.9922987224079064,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a person swimming in ocean-0.mp4",
+                "video_results": 0.9881608878192757
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.997143308567906
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_adaptive/a person washing the dishes-0.mp4",
+                "video_results": 0.9915919708365373
+            }
+        ]
+    ]
+}

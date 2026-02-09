@@ -1,0 +1,29 @@
+[
+    {
+        "prompt_en": "In a still frame, a stop sign",
+        "dimension": [
+            "temporal_flickering"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_baseline/In a still frame, a stop sign-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a toilet, frozen in time",
+        "dimension": [
+            "temporal_flickering"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_baseline/a toilet, frozen in time-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a laptop, frozen in time",
+        "dimension": [
+            "temporal_flickering"
+        ],
+        "video_list": [
+            "vbench_eval/videos/hunyuan_baseline/a laptop, frozen in time-0.mp4"
+        ]
+    }
+]

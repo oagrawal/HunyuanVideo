@@ -1,0 +1,19 @@
+{
+    "subject_consistency": [
+        0.9497562000372758,
+        [
+            {
+                "video_path": "vbench_eval/videos/hunyuan_fixed_0.1/a person swimming in ocean-0.mp4",
+                "video_results": 0.9476517874281853
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_fixed_0.1/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.9952689169440418
+            },
+            {
+                "video_path": "vbench_eval/videos/hunyuan_fixed_0.1/a person washing the dishes-0.mp4",
+                "video_results": 0.9063478957396001
+            }
+        ]
+    ]
+}

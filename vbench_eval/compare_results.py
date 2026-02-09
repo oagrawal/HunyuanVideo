@@ -144,23 +144,41 @@ def compute_vbench_aggregate(raw_scores):
     }
 
 
-def load_generation_log(log_path):
-    """Load generation timing data."""
-    if not os.path.exists(log_path):
+def load_generation_logs(log_dir):
+    """Load generation timing data from all generation_log_*.json files.
+    Merges multiple log files (from multi-GPU runs) into one."""
+    import glob
+
+    mode_times = {}
+
+    # Find all generation log files
+    patterns = [
+        os.path.join(log_dir, "generation_log_*.json"),
+        os.path.join(log_dir, "generation_log.json"),  # legacy single-file format
+    ]
+    log_files = []
+    for pattern in patterns:
+        log_files.extend(glob.glob(pattern))
+    log_files = sorted(set(log_files))
+
+    if not log_files:
         return {}
 
-    with open(log_path, "r") as f:
-        log = json.load(f)
+    for log_path in log_files:
+        with open(log_path, "r") as f:
+            log = json.load(f)
+        for run in log.get("runs", []):
+            if "time_seconds" not in run:
+                continue
+            mode = run["mode"]
+            if mode not in mode_times:
+                mode_times[mode] = []
+            mode_times[mode].append(run["time_seconds"])
 
-    # Compute per-mode average time
-    mode_times = {}
-    for run in log.get("runs", []):
-        if "time_seconds" not in run:
-            continue
-        mode = run["mode"]
-        if mode not in mode_times:
-            mode_times[mode] = []
-        mode_times[mode].append(run["time_seconds"])
+    if not mode_times:
+        return {}
+
+    print(f"  Loaded timing data from {len(log_files)} log file(s): {[os.path.basename(f) for f in log_files]}")
 
     return {
         mode: {
@@ -198,8 +216,8 @@ def main():
                         help="Base directory for VBench scores")
     parser.add_argument("--fidelity-dir", type=str, default="vbench_eval/fidelity_metrics",
                         help="Directory for fidelity metrics")
-    parser.add_argument("--gen-log", type=str, default="vbench_eval/videos/generation_log.json",
-                        help="Path to generation log")
+    parser.add_argument("--gen-log-dir", type=str, default="vbench_eval/videos",
+                        help="Directory containing generation_log_*.json files")
     parser.add_argument("--output-csv", type=str, default=None,
                         help="Optional CSV output path")
     parser.add_argument("--output-json", type=str, default="vbench_eval/all_comparison_results.json",
@@ -211,7 +229,7 @@ def main():
     print("=" * 90)
 
     # ---- Load all data ----
-    timing = load_generation_log(args.gen_log)
+    timing = load_generation_logs(args.gen_log_dir)
     fidelity = load_fidelity_metrics(args.fidelity_dir)
 
     all_data = {}
