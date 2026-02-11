@@ -339,26 +339,31 @@ Aggregates VBench scores, fidelity metrics, and generation timing into one view.
 python3 vbench_eval/compare_results.py
 ```
 
-### Also save as CSV (for spreadsheets)
+### Output files
 
-```bash
-python3 vbench_eval/compare_results.py --output-csv vbench_eval/results_table.csv
-```
-
-### Output
-
-- Prints a full comparison table to stdout
-- Saves `vbench_eval/all_comparison_results.json` (combined JSON)
-- Optionally saves CSV file
+| File | Description |
+|---|---|
+| `vbench_eval/vbench_scores_table.csv` | VBench scores — all 16 dimensions per mode (quality dims, then semantic dims) + latency |
+| `vbench_eval/fidelity_table.csv` | Fidelity metrics — PSNR/SSIM/LPIPS per mode + latency |
+| `vbench_eval/summary_table.csv` | Compact summary — speedup, latency, VBench total, PSNR, SSIM, LPIPS |
+| `vbench_eval/all_comparison_results.json` | Combined JSON with all raw data |
 
 ### What the output shows
 
-1. **VBench raw scores** — all 16 dimensions per mode (higher = better)
-2. **VBench aggregate scores** — quality score, semantic score, total score
-   (normalized using TeaCache's exact normalization weights)
-3. **Fidelity metrics** — PSNR (higher = better), SSIM (higher = better),
-   LPIPS (lower = better) vs baseline
-4. **Generation timing** — avg time per video, speedup vs baseline
+The script prints **3 tables** to stdout (and saves each as a CSV):
+
+**Table 1 — VBench Scores:**
+Rows = 4 modes, Columns = 7 quality dimensions | 9 semantic dimensions | latency.
+Quality and semantic dimensions are grouped together. Aggregate scores
+(quality score, semantic score, total score) are shown below the table.
+
+**Table 2 — Fidelity Metrics:**
+Rows = 4 modes, Columns = PSNR | SSIM | LPIPS | latency.
+Baseline shows "—" (it's the reference). Higher PSNR/SSIM = better,
+lower LPIPS = better.
+
+**Table 3 — Compact Summary:**
+One-line-per-mode overview: speedup, latency, VBench total, PSNR, SSIM, LPIPS.
 
 ---
 

@@ -1,0 +1,5 @@
+Mode,Speedup,Latency (s),VBench Total,PSNR,SSIM,LPIPS
+HunyuanVideo (no cache),1.00x,1359s,82.35%,—,—,—
+TeaCache 0.1,1.57x,864s,83.90%,24.6876,0.8185,0.1874
+TeaCache 0.2,2.51x,542s,82.49%,21.7131,0.7549,0.2764
+TeaCache Adaptive,2.09x,652s,83.39%,23.8508,0.7965,0.2146

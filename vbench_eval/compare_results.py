@@ -219,7 +219,7 @@ def main():
     parser.add_argument("--gen-log-dir", type=str, default="vbench_eval/videos",
                         help="Directory containing generation_log_*.json files")
     parser.add_argument("--output-csv", type=str, default=None,
-                        help="Optional CSV output path")
+                        help="(deprecated, CSVs are always saved to vbench_eval/)")
     parser.add_argument("--output-json", type=str, default="vbench_eval/all_comparison_results.json",
                         help="JSON output path")
     args = parser.parse_args()
@@ -244,121 +244,192 @@ def main():
             "fidelity": fidelity.get(mode),
         }
 
-    # ---- Print VBench Scores ----
+    # ---- Shared labels and baseline time ----
+    MODE_LABELS = {
+        "hunyuan_baseline": "HunyuanVideo (no cache)",
+        "hunyuan_fixed_0.1": "TeaCache 0.1",
+        "hunyuan_fixed_0.2": "TeaCache 0.2",
+        "hunyuan_adaptive": "TeaCache Adaptive",
+    }
+
+    baseline_time = timing.get("hunyuan_baseline", {}).get("avg_time") if timing else None
+
+    # Precompute per-mode latency string
+    def get_latency(mode):
+        t = all_data[mode].get("timing")
+        if t:
+            return f"{t['avg_time']:.0f}s"
+        return "—"
+
+    # Ordered dimensions: quality first, then semantic
+    QUALITY_DIMS_ORDERED = [
+        "subject_consistency", "background_consistency", "temporal_flickering",
+        "motion_smoothness", "dynamic_degree", "aesthetic_quality", "imaging_quality",
+    ]
+    SEMANTIC_DIMS_ORDERED = [
+        "object_class", "multiple_objects", "human_action", "color",
+        "spatial_relationship", "scene", "appearance_style", "temporal_style",
+        "overall_consistency",
+    ]
+
+    # ---- Table 1: VBench Scores (rows = modes, cols = dimensions + latency) ----
     modes_with_scores = [m for m in ALL_MODES if all_data[m]["raw_vbench"]]
     if modes_with_scores:
         print(f"\n{'='*90}")
-        print("VBENCH SCORES (raw, higher = better)")
+        print("TABLE 1: VBENCH SCORES (higher = better)")
         print(f"{'='*90}")
 
-        # Collect all dimensions
-        all_dims = set()
-        for mode in modes_with_scores:
-            all_dims.update(all_data[mode]["raw_vbench"].keys())
-        all_dims = sorted(all_dims)
+        all_dim_cols = QUALITY_DIMS_ORDERED + SEMANTIC_DIMS_ORDERED
+        # Short column names for display
+        short_dim = {
+            "subject_consistency": "SubjCon",
+            "background_consistency": "BgCon",
+            "temporal_flickering": "TmpFlk",
+            "motion_smoothness": "MotSmth",
+            "dynamic_degree": "DynDeg",
+            "aesthetic_quality": "Aesth",
+            "imaging_quality": "ImgQl",
+            "object_class": "ObjCls",
+            "multiple_objects": "MulObj",
+            "human_action": "HumAct",
+            "color": "Color",
+            "spatial_relationship": "SpatRl",
+            "scene": "Scene",
+            "appearance_style": "AppSty",
+            "temporal_style": "TmpSty",
+            "overall_consistency": "OvrlCn",
+        }
 
         # Header
-        header = f"{'Dimension':<28}"
-        for mode in modes_with_scores:
-            short = mode.replace("hunyuan_", "")
-            header += f" {short:>14}"
+        header = f"{'Mode':<24}"
+        for dim in QUALITY_DIMS_ORDERED:
+            header += f" {short_dim[dim]:>7}"
+        header += "  |"
+        for dim in SEMANTIC_DIMS_ORDERED:
+            header += f" {short_dim[dim]:>7}"
+        header += f" {'Latency':>10}"
         print(header)
-        print("-" * (28 + 15 * len(modes_with_scores)))
 
-        # Per-dimension scores
-        for dim in all_dims:
-            row = f"{dim:<28}"
-            for mode in modes_with_scores:
+        sep = f"{'':.<24}"
+        sep += " " + ".......".join(["" for _ in range(len(QUALITY_DIMS_ORDERED) + 1)])
+        print("-" * len(header))
+
+        # Label row for grouping
+        quality_width = 8 * len(QUALITY_DIMS_ORDERED)
+        semantic_width = 8 * len(SEMANTIC_DIMS_ORDERED)
+        group_row = f"{'':24}"
+        group_row += f" {'--- Quality Dimensions ---':^{quality_width}}"
+        group_row += "  |"
+        group_row += f" {'--- Semantic Dimensions ---':^{semantic_width}}"
+        print(group_row)
+        print("-" * len(header))
+
+        # Data rows
+        for mode in modes_with_scores:
+            label = MODE_LABELS.get(mode, mode)
+            row = f"{label:<24}"
+            for dim in QUALITY_DIMS_ORDERED:
                 val = all_data[mode]["raw_vbench"].get(dim)
-                if val is not None:
-                    row += f" {float(val):>14.4f}"
-                else:
-                    row += f" {'N/A':>14}"
+                row += f" {float(val):>7.4f}" if val is not None else f" {'N/A':>7}"
+            row += "  |"
+            for dim in SEMANTIC_DIMS_ORDERED:
+                val = all_data[mode]["raw_vbench"].get(dim)
+                row += f" {float(val):>7.4f}" if val is not None else f" {'N/A':>7}"
+            row += f" {get_latency(mode):>10}"
             print(row)
 
-        # Aggregate scores
-        print("-" * (28 + 15 * len(modes_with_scores)))
-        for score_name, score_key in [("Quality Score", "quality_score"),
-                                       ("Semantic Score", "semantic_score"),
-                                       ("TOTAL SCORE", "total_score")]:
-            row = f"{score_name:<28}"
+        # Aggregate row
+        print("-" * len(header))
+        agg_row = f"{'Aggregate Scores:':<24}"
+        # Quality score under quality dims
+        for i, dim in enumerate(QUALITY_DIMS_ORDERED):
+            agg_row += f" {'':>7}"
+        agg_row += "  |"
+        for i, dim in enumerate(SEMANTIC_DIMS_ORDERED):
+            agg_row += f" {'':>7}"
+        agg_row += f" {'':>10}"
+        print(agg_row)
+
+        for score_name, score_key in [("  Quality Score", "quality_score"),
+                                       ("  Semantic Score", "semantic_score"),
+                                       ("  TOTAL SCORE", "total_score")]:
+            row = f"{score_name:<24}"
             for mode in modes_with_scores:
                 val = all_data[mode]["aggregate"].get(score_key)
-                if val is not None:
-                    row += f" {val*100:>13.2f}%"
-                else:
-                    row += f" {'N/A':>14}"
+                val_str = f"{val*100:.2f}%" if val is not None else "N/A"
+                row += f" {val_str:>12}"
             print(row)
 
-    # ---- Print Fidelity Metrics ----
-    modes_with_fidelity = [m for m in ALL_MODES if all_data[m]["fidelity"]]
-    if modes_with_fidelity:
-        print(f"\n{'='*90}")
-        print("FIDELITY METRICS vs BASELINE (higher PSNR/SSIM = better, lower LPIPS = better)")
-        print(f"{'='*90}")
-
-        header = f"{'Metric':<28}"
-        for mode in modes_with_fidelity:
-            short = mode.replace("hunyuan_", "")
-            header += f" {short:>14}"
-        print(header)
-        print("-" * (28 + 15 * len(modes_with_fidelity)))
-
-        for metric in ["psnr", "ssim", "lpips"]:
-            row = f"{metric.upper():<28}"
-            for mode in modes_with_fidelity:
-                val = all_data[mode]["fidelity"].get(metric, {}).get("mean")
-                if val is not None:
-                    row += f" {val:>14.4f}"
-                else:
-                    row += f" {'N/A':>14}"
-            print(row)
-
-    # ---- Print Timing ----
-    modes_with_timing = [m for m in ALL_MODES if all_data[m]["timing"]]
-    if modes_with_timing:
-        print(f"\n{'='*90}")
-        print("GENERATION TIMING")
-        print(f"{'='*90}")
-
-        baseline_time = None
-        if "hunyuan_baseline" in timing:
-            baseline_time = timing["hunyuan_baseline"]["avg_time"]
-
-        header = f"{'Metric':<28}"
-        for mode in modes_with_timing:
-            short = mode.replace("hunyuan_", "")
-            header += f" {short:>14}"
-        print(header)
-        print("-" * (28 + 15 * len(modes_with_timing)))
-
-        # Avg time
-        row = f"{'Avg time (sec)':<28}"
-        for mode in modes_with_timing:
-            row += f" {all_data[mode]['timing']['avg_time']:>14.1f}"
-        print(row)
-
-        # Avg time in minutes
-        row = f"{'Avg time (min)':<28}"
-        for mode in modes_with_timing:
-            row += f" {all_data[mode]['timing']['avg_time']/60:>14.1f}"
-        print(row)
-
-        # Speedup vs baseline
-        if baseline_time:
-            row = f"{'Speedup vs baseline':<28}"
-            for mode in modes_with_timing:
-                speedup = baseline_time / all_data[mode]["timing"]["avg_time"]
-                row += f" {speedup:>13.2f}x"
-            print(row)
-
-        # Num videos
-        row = f"{'Videos generated':<28}"
-        for mode in modes_with_timing:
-            row += f" {all_data[mode]['timing']['num_videos']:>14d}"
-        print(row)
-
+    # ---- Table 2: Fidelity Metrics (rows = modes, cols = PSNR/SSIM/LPIPS + latency) ----
     print(f"\n{'='*90}")
+    print("TABLE 2: FIDELITY METRICS vs BASELINE")
+    print("(higher PSNR/SSIM = better, lower LPIPS = better)")
+    print(f"{'='*90}")
+
+    fid_header = f"{'Mode':<26} {'PSNR':>10} {'SSIM':>10} {'LPIPS':>10} {'Latency':>12}"
+    print(fid_header)
+    print("-" * 70)
+
+    for mode in ALL_MODES:
+        label = MODE_LABELS.get(mode, mode)
+        fid = all_data[mode].get("fidelity")
+
+        psnr_str = f"{fid['psnr']['mean']:.4f}" if fid and "psnr" in fid else "—"
+        ssim_str = f"{fid['ssim']['mean']:.4f}" if fid and "ssim" in fid else "—"
+        lpips_str = f"{fid['lpips']['mean']:.4f}" if fid and "lpips" in fid else "—"
+        latency = get_latency(mode)
+
+        print(f"{label:<26} {psnr_str:>10} {ssim_str:>10} {lpips_str:>10} {latency:>12}")
+
+    # ---- Table 3: Compact Summary ----
+    print(f"\n{'='*90}")
+    print("TABLE 3: COMPACT SUMMARY")
+    print(f"{'='*90}")
+
+    compact_header = f"{'Mode':<26} {'Speedup':>8} {'Latency':>12} {'VBench':>10} {'PSNR':>8} {'SSIM':>8} {'LPIPS':>8}"
+    print(compact_header)
+    print("-" * 82)
+
+    compact_rows = []  # for CSV
+    for mode in ALL_MODES:
+        label = MODE_LABELS.get(mode, mode)
+        row_data = {"mode": label}
+
+        # Speedup + Latency
+        t = all_data[mode].get("timing")
+        if t and baseline_time:
+            speedup = baseline_time / t["avg_time"]
+            speedup_str = f"{speedup:.2f}x"
+            latency_str = f"{t['avg_time']:.0f}s"
+        elif t:
+            speedup_str = "1.00x"
+            latency_str = f"{t['avg_time']:.0f}s"
+        else:
+            speedup_str = "—"
+            latency_str = "—"
+        row_data["speedup"] = speedup_str
+        row_data["latency"] = latency_str
+
+        # VBench Total
+        total = all_data[mode]["aggregate"].get("total_score")
+        if total is not None:
+            vbench_str = f"{total*100:.2f}%"
+        else:
+            vbench_str = "—"
+        row_data["vbench_total"] = vbench_str
+
+        # Fidelity
+        fid = all_data[mode].get("fidelity")
+        for metric in ["psnr", "ssim", "lpips"]:
+            if fid and metric in fid:
+                row_data[metric] = f"{fid[metric]['mean']:.4f}"
+            else:
+                row_data[metric] = "—"
+
+        compact_rows.append(row_data)
+        print(f"{label:<26} {speedup_str:>8} {latency_str:>12} {vbench_str:>10} {row_data['psnr']:>8} {row_data['ssim']:>8} {row_data['lpips']:>8}")
+
+    print(f"{'='*90}")
 
     # ---- Save results ----
     # Prepare serializable output
@@ -382,57 +453,69 @@ def main():
         json.dump(output, f, indent=2)
     print(f"Results saved to: {args.output_json}")
 
-    # CSV output
-    if args.output_csv:
-        try:
-            import csv
-            with open(args.output_csv, "w", newline="") as f:
-                writer = csv.writer(f)
+    # ---- Save CSVs ----
+    import csv
+    output_base = os.path.dirname(args.output_json)
 
-                # Header
-                header_row = ["metric"] + [m.replace("hunyuan_", "") for m in ALL_MODES]
-                writer.writerow(header_row)
-
-                # VBench dimensions
-                all_dims = set()
-                for mode in ALL_MODES:
-                    all_dims.update(all_data[mode]["raw_vbench"].keys())
-                for dim in sorted(all_dims):
-                    row = [dim]
-                    for mode in ALL_MODES:
-                        val = all_data[mode]["raw_vbench"].get(dim, "")
-                        row.append(f"{float(val):.4f}" if val != "" else "")
-                    writer.writerow(row)
-
-                # Aggregate scores
-                for name, key in [("quality_score", "quality_score"),
-                                  ("semantic_score", "semantic_score"),
-                                  ("total_score", "total_score")]:
-                    row = [name]
-                    for mode in ALL_MODES:
-                        val = all_data[mode]["aggregate"].get(key)
-                        row.append(f"{val:.4f}" if val is not None else "")
-                    writer.writerow(row)
-
-                # Fidelity
-                for metric in ["psnr", "ssim", "lpips"]:
-                    row = [f"fidelity_{metric}"]
-                    for mode in ALL_MODES:
-                        fid = all_data[mode].get("fidelity")
-                        val = fid.get(metric, {}).get("mean") if fid else None
-                        row.append(f"{val:.4f}" if val is not None else "")
-                    writer.writerow(row)
-
-                # Timing
-                row = ["avg_time_sec"]
-                for mode in ALL_MODES:
-                    t = all_data[mode].get("timing")
-                    row.append(f"{t['avg_time']:.1f}" if t else "")
+    # CSV 1: VBench scores (rows = modes, cols = quality dims | semantic dims | latency)
+    vbench_csv_path = os.path.join(output_base, "vbench_scores_table.csv")
+    try:
+        all_dim_cols = QUALITY_DIMS_ORDERED + SEMANTIC_DIMS_ORDERED
+        with open(vbench_csv_path, "w", newline="") as f:
+            writer = csv.writer(f)
+            header = ["Mode"] + all_dim_cols + ["Quality Score", "Semantic Score", "Total Score", "Latency"]
+            writer.writerow(header)
+            for mode in ALL_MODES:
+                label = MODE_LABELS.get(mode, mode)
+                row = [label]
+                for dim in all_dim_cols:
+                    val = all_data[mode]["raw_vbench"].get(dim, "")
+                    row.append(f"{float(val):.4f}" if val != "" else "")
+                for key in ["quality_score", "semantic_score", "total_score"]:
+                    val = all_data[mode]["aggregate"].get(key)
+                    row.append(f"{val*100:.2f}%" if val is not None else "")
+                row.append(get_latency(mode))
                 writer.writerow(row)
+        print(f"VBench CSV saved to: {vbench_csv_path}")
+    except Exception as e:
+        print(f"Warning: Failed to save VBench CSV: {e}")
 
-            print(f"CSV saved to: {args.output_csv}")
-        except Exception as e:
-            print(f"Warning: Failed to save CSV: {e}")
+    # CSV 2: Fidelity metrics (rows = modes, cols = PSNR/SSIM/LPIPS + latency)
+    fidelity_csv_path = os.path.join(output_base, "fidelity_table.csv")
+    try:
+        with open(fidelity_csv_path, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["Mode", "PSNR", "SSIM", "LPIPS", "Latency"])
+            for mode in ALL_MODES:
+                label = MODE_LABELS.get(mode, mode)
+                fid = all_data[mode].get("fidelity")
+                psnr = f"{fid['psnr']['mean']:.4f}" if fid and "psnr" in fid else "—"
+                ssim = f"{fid['ssim']['mean']:.4f}" if fid and "ssim" in fid else "—"
+                lpips_val = f"{fid['lpips']['mean']:.4f}" if fid and "lpips" in fid else "—"
+                writer.writerow([label, psnr, ssim, lpips_val, get_latency(mode)])
+        print(f"Fidelity CSV saved to: {fidelity_csv_path}")
+    except Exception as e:
+        print(f"Warning: Failed to save fidelity CSV: {e}")
+
+    # CSV 3: Compact summary
+    summary_csv_path = os.path.join(output_base, "summary_table.csv")
+    try:
+        with open(summary_csv_path, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["Mode", "Speedup", "Latency (s)", "VBench Total", "PSNR", "SSIM", "LPIPS"])
+            for row_data in compact_rows:
+                writer.writerow([
+                    row_data["mode"],
+                    row_data["speedup"],
+                    row_data["latency"],
+                    row_data["vbench_total"],
+                    row_data["psnr"],
+                    row_data["ssim"],
+                    row_data["lpips"],
+                ])
+        print(f"Summary CSV saved to: {summary_csv_path}")
+    except Exception as e:
+        print(f"Warning: Failed to save summary CSV: {e}")
 
     print(f"{'='*90}")
 

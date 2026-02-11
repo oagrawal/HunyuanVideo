@@ -1,0 +1,5 @@
+Mode,PSNR,SSIM,LPIPS,Latency
+HunyuanVideo (no cache),—,—,—,1359s
+TeaCache 0.1,24.6876,0.8185,0.1874,864s
+TeaCache 0.2,21.7131,0.7549,0.2764,542s
+TeaCache Adaptive,23.8508,0.7965,0.2146,652s
