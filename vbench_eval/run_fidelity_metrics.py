@@ -107,6 +107,12 @@ def main():
                         help="Comma-separated cached modes to compare, or 'all'")
     parser.add_argument("--save-dir", type=str, default="vbench_eval/fidelity_metrics",
                         help="Directory to save results")
+    parser.add_argument("--start-idx", type=int, default=0,
+                        help="Start video index (inclusive, for multi-GPU split)")
+    parser.add_argument("--end-idx", type=int, default=-1,
+                        help="End video index (exclusive, -1 = all)")
+    parser.add_argument("--partial-output", type=str, default=None,
+                        help="Path for partial output (raw scores for merge). When set, writes partial JSON instead of final aggregated result.")
     args = parser.parse_args()
 
     if args.modes == "all":
@@ -145,15 +151,23 @@ def main():
             print(f"WARNING: No matching videos between baseline and {mode}")
             continue
 
+        # Slice for multi-GPU split
+        end_idx = len(common) if args.end_idx == -1 else min(args.end_idx, len(common))
+        start_idx = max(0, args.start_idx)
+        common_slice = common[start_idx:end_idx]
+        if not common_slice:
+            print(f"WARNING: No videos in range [{start_idx}, {end_idx}) for {mode}")
+            continue
+
         print(f"\n{'='*70}")
-        print(f"Comparing: {args.baseline} vs {mode} ({len(common)} videos)")
+        print(f"Comparing: {args.baseline} vs {mode} (videos {start_idx}-{end_idx-1} of {len(common)} = {len(common_slice)} videos)")
         print(f"{'='*70}")
 
         lpips_scores = []
         psnr_scores = []
         ssim_scores = []
 
-        for video_name in tqdm.tqdm(common, desc=mode):
+        for video_name in tqdm.tqdm(common_slice, desc=mode):
             gt_path = os.path.join(baseline_dir, video_name)
             gen_path = os.path.join(mode_dir, video_name)
 
@@ -201,31 +215,49 @@ def main():
                 print(f"\n  ERROR processing {video_name}: {e}")
                 continue
 
-        # Aggregate results for this mode
+        # Save results for this mode (partial or final)
         if psnr_scores:
-            result = {
-                "mode": mode,
-                "baseline": args.baseline,
-                "num_videos": len(psnr_scores),
-                "psnr": {"mean": float(np.mean(psnr_scores)), "std": float(np.std(psnr_scores))},
-                "ssim": {"mean": float(np.mean(ssim_scores)), "std": float(np.std(ssim_scores))},
-                "lpips": {"mean": float(np.mean(lpips_scores)), "std": float(np.std(lpips_scores))},
-            }
-            all_results[mode] = result
+            if args.partial_output:
+                # Partial output: raw scores for later merge (only first mode when multiple)
+                partial = {
+                    "mode": mode,
+                    "baseline": args.baseline,
+                    "start_idx": start_idx,
+                    "end_idx": end_idx,
+                    "num_videos": len(psnr_scores),
+                    "psnr_scores": psnr_scores,
+                    "ssim_scores": ssim_scores,
+                    "lpips_scores": lpips_scores,
+                }
+                os.makedirs(os.path.dirname(args.partial_output) or ".", exist_ok=True)
+                with open(args.partial_output, "w") as f:
+                    json.dump(partial, f, indent=2)
+                print(f"\n  Partial results for {mode} (videos {start_idx}-{end_idx-1}):")
+                print(f"    PSNR:  {np.mean(psnr_scores):.4f}  SSIM:  {np.mean(ssim_scores):.4f}  LPIPS: {np.mean(lpips_scores):.4f}")
+                print(f"    Saved to: {args.partial_output}")
+            else:
+                result = {
+                    "mode": mode,
+                    "baseline": args.baseline,
+                    "num_videos": len(psnr_scores),
+                    "psnr": {"mean": float(np.mean(psnr_scores)), "std": float(np.std(psnr_scores))},
+                    "ssim": {"mean": float(np.mean(ssim_scores)), "std": float(np.std(ssim_scores))},
+                    "lpips": {"mean": float(np.mean(lpips_scores)), "std": float(np.std(lpips_scores))},
+                }
+                all_results[mode] = result
 
-            print(f"\n  Results for {mode}:")
-            print(f"    PSNR:  {result['psnr']['mean']:.4f} +/- {result['psnr']['std']:.4f}")
-            print(f"    SSIM:  {result['ssim']['mean']:.4f} +/- {result['ssim']['std']:.4f}")
-            print(f"    LPIPS: {result['lpips']['mean']:.4f} +/- {result['lpips']['std']:.4f}")
+                print(f"\n  Results for {mode}:")
+                print(f"    PSNR:  {result['psnr']['mean']:.4f} +/- {result['psnr']['std']:.4f}")
+                print(f"    SSIM:  {result['ssim']['mean']:.4f} +/- {result['ssim']['std']:.4f}")
+                print(f"    LPIPS: {result['lpips']['mean']:.4f} +/- {result['lpips']['std']:.4f}")
 
-            # Save per-mode result
-            mode_result_path = os.path.join(args.save_dir, f"{mode}_vs_{args.baseline}.json")
-            with open(mode_result_path, "w") as f:
-                json.dump(result, f, indent=2)
-            print(f"    Saved to: {mode_result_path}")
+                mode_result_path = os.path.join(args.save_dir, f"{mode}_vs_{args.baseline}.json")
+                with open(mode_result_path, "w") as f:
+                    json.dump(result, f, indent=2)
+                print(f"    Saved to: {mode_result_path}")
 
-    # Save combined results
-    if all_results:
+    # Save combined results (skip when using partial output)
+    if all_results and not args.partial_output:
         combined_path = os.path.join(args.save_dir, "all_fidelity_results.json")
         with open(combined_path, "w") as f:
             json.dump(all_results, f, indent=2)

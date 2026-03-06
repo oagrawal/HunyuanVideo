@@ -91,6 +91,14 @@ ALL_MODES = [
     "hunyuan_adaptive",
 ]
 
+# Wan 2.1 modes (for --modes wan_baseline,wan_fixed_0.1,...)
+WAN_MODES = [
+    "wan_baseline",
+    "wan_fixed_0.1",
+    "wan_fixed_0.2",
+    "wan_adaptive",
+]
+
 
 def load_vbench_scores(score_dir):
     """Load VBench evaluation results from a score directory.
@@ -222,7 +230,15 @@ def main():
                         help="(deprecated, CSVs are always saved to vbench_eval/)")
     parser.add_argument("--output-json", type=str, default="vbench_eval/all_comparison_results.json",
                         help="JSON output path")
+    parser.add_argument("--modes", type=str, default=None,
+                        help="Comma-separated mode names (e.g. wan_baseline,wan_fixed_0.1,wan_fixed_0.2,wan_adaptive). If not set, uses HunyuanVideo modes.")
     args = parser.parse_args()
+
+    # Resolve mode list (for Wan use --modes wan_baseline,wan_fixed_0.1,wan_fixed_0.2,wan_adaptive)
+    if args.modes is not None:
+        modes = [m.strip() for m in args.modes.split(",") if m.strip()]
+    else:
+        modes = ALL_MODES
 
     print("=" * 90)
     print("EVALUATION RESULTS COMPARISON")
@@ -233,7 +249,7 @@ def main():
     fidelity = load_fidelity_metrics(args.fidelity_dir)
 
     all_data = {}
-    for mode in ALL_MODES:
+    for mode in modes:
         score_dir = os.path.join(args.scores_dir, mode)
         raw_scores = load_vbench_scores(score_dir)
         aggregate = compute_vbench_aggregate(raw_scores)
@@ -250,9 +266,18 @@ def main():
         "hunyuan_fixed_0.1": "TeaCache 0.1",
         "hunyuan_fixed_0.2": "TeaCache 0.2",
         "hunyuan_adaptive": "TeaCache Adaptive",
+        "wan_baseline": "Wan 2.1 (no cache)",
+        "wan_fixed_0.1": "TeaCache 0.1",
+        "wan_fixed_0.2": "TeaCache 0.2",
+        "wan_adaptive": "TeaCache Adaptive",
+        "mochi_baseline": "Mochi (baseline)",
     }
-
-    baseline_time = timing.get("hunyuan_baseline", {}).get("avg_time") if timing else None
+    # Baseline for speedup: first mode is treated as baseline if no *_baseline in timing
+    baseline_time = (
+        timing.get("wan_baseline", {}).get("avg_time")
+        or timing.get("hunyuan_baseline", {}).get("avg_time")
+        or (timing.get(modes[0], {}).get("avg_time") if timing else None)
+    )
 
     # Precompute per-mode latency string
     def get_latency(mode):
@@ -273,7 +298,7 @@ def main():
     ]
 
     # ---- Table 1: VBench Scores (rows = modes, cols = dimensions + latency) ----
-    modes_with_scores = [m for m in ALL_MODES if all_data[m]["raw_vbench"]]
+    modes_with_scores = [m for m in modes if all_data[m]["raw_vbench"]]
     if modes_with_scores:
         print(f"\n{'='*90}")
         print("TABLE 1: VBENCH SCORES (higher = better)")
@@ -370,7 +395,7 @@ def main():
     print(fid_header)
     print("-" * 70)
 
-    for mode in ALL_MODES:
+    for mode in modes:
         label = MODE_LABELS.get(mode, mode)
         fid = all_data[mode].get("fidelity")
 
@@ -391,7 +416,7 @@ def main():
     print("-" * 82)
 
     compact_rows = []  # for CSV
-    for mode in ALL_MODES:
+    for mode in modes:
         label = MODE_LABELS.get(mode, mode)
         row_data = {"mode": label}
 
@@ -434,7 +459,7 @@ def main():
     # ---- Save results ----
     # Prepare serializable output
     output = {}
-    for mode in ALL_MODES:
+    for mode in modes:
         entry = {}
         if all_data[mode]["raw_vbench"]:
             entry["vbench_raw"] = {k: float(v) for k, v in all_data[mode]["raw_vbench"].items()}
@@ -465,7 +490,7 @@ def main():
             writer = csv.writer(f)
             header = ["Mode"] + all_dim_cols + ["Quality Score", "Semantic Score", "Total Score", "Latency"]
             writer.writerow(header)
-            for mode in ALL_MODES:
+            for mode in modes:
                 label = MODE_LABELS.get(mode, mode)
                 row = [label]
                 for dim in all_dim_cols:
@@ -486,7 +511,7 @@ def main():
         with open(fidelity_csv_path, "w", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(["Mode", "PSNR", "SSIM", "LPIPS", "Latency"])
-            for mode in ALL_MODES:
+            for mode in modes:
                 label = MODE_LABELS.get(mode, mode)
                 fid = all_data[mode].get("fidelity")
                 psnr = f"{fid['psnr']['mean']:.4f}" if fid and "psnr" in fid else "—"

@@ -1,11 +1,43 @@
 __pycache__
-/ckpts/**/
+*.pyc
+*.pyo
+.Python
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Checkpoints and model weights (too large for git)
+/ckpts/
+*.pth
+*.safetensors
+*.bin
 hunyuanvideo_backup.tar
 
 # Generated output files
 teacache_results/
 vbench_evaluation/vbench_results/
+vbench_evaluation_old/
+vbench_eval/videos/
+vbench_eval/vbench_scores/
+vbench_eval/fidelity_metrics/
+vbench_eval/all_comparison_results.json
+vbench_eval/*_table.csv
+
+# VBench submodule generated/output
+VBench/sampled_videos/
+VBench/pretrained/
+VBench/vbench.egg-info/
 
 # Video files (too large for git)
 *.mp4
-vbench_eval/videos/
+*.avi
+*.mov
+*.webm
+
+# IDE / OS
+.cursor/
+.DS_Store
+*.log
