@@ -8,6 +8,7 @@ numpy==1.24.4
 einops==0.7.0
 tqdm==4.66.2
 loguru==0.7.2
+portalocker==2.8.2
 imageio==2.34.0
 imageio-ffmpeg==0.5.1
 safetensors==0.4.3

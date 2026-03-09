@@ -1,0 +1,21 @@
+EasyCache Profiling Baseline
+============================================================
+Mode: no caching — full compute every step
+
+=== Timing ===
+End-to-end time:   1365.77s
+DiT-only time:     1243.74s
+Inference steps:   50
+
+=== k_t Statistics ===
+k_t values recorded: 49  (steps 1–49)
+Mean:  7.8626
+Std:   25.3515
+Min:   0.2172
+Max:   159.7691
+
+=== Prompt ===
+Two cats boxing in bright gloves on a spotlighted stage.
+
+=== Seed ===
+12345
