@@ -201,7 +201,7 @@ Requires `transformers==4.33.2` in the container.
 pip install transformers==4.33.2
 ```
 
-**Split across 2 GPUs (each evaluates 2 modes):**
+**Split across 4 GPUs (one mode per GPU):**
 
 **Terminal 1:**
 ```bash
@@ -211,7 +211,7 @@ cd /workspace
 pip install transformers==4.33.2
 
 CUDA_VISIBLE_DEVICES=0 python3 vbench_eval_easycache/run_vbench_eval.py \
-  --modes easycache_baseline,easycache_fixed_0.025
+  --modes easycache_baseline
 ```
 
 **Terminal 2:**
@@ -222,15 +222,62 @@ cd /workspace
 pip install transformers==4.33.2
 
 CUDA_VISIBLE_DEVICES=1 python3 vbench_eval_easycache/run_vbench_eval.py \
-  --modes easycache_fixed_0.050,easycache_adaptive
+  --modes easycache_fixed_0.025
+```
+
+**Terminal 3:**
+```bash
+tmux new -s ec_vb2
+docker exec -it hunyuanvideo bash
+cd /workspace
+pip install transformers==4.33.2
+
+CUDA_VISIBLE_DEVICES=2 python3 vbench_eval_easycache/run_vbench_eval.py \
+  --modes easycache_fixed_0.050
+```
+
+**Terminal 4:**
+```bash
+tmux new -s ec_vb3
+docker exec -it hunyuanvideo bash
+cd /workspace
+pip install transformers==4.33.2
+
+CUDA_VISIBLE_DEVICES=3 python3 vbench_eval_easycache/run_vbench_eval.py \
+  --modes easycache_adaptive
 ```
 
 No race conditions — each mode writes to its own directory.
+
+**2 GPU alternative:** Run 2 modes per GPU in parallel. Use two tmux sessions:
+
+**Terminal 1 (GPU 0):**
+```bash
+tmux new -s ec_vb0
+docker exec -it hunyuanvideo bash
+cd /workspace
+pip install transformers==4.33.2
+
+CUDA_VISIBLE_DEVICES=0 python3 vbench_eval_easycache/run_vbench_eval.py \
+  --modes easycache_baseline,easycache_fixed_0.025
+```
+
+**Terminal 2 (GPU 1):**
+```bash
+tmux new -s ec_vb1
+docker exec -it hunyuanvideo bash
+cd /workspace
+pip install transformers==4.33.2
+
+CUDA_VISIBLE_DEVICES=1 python3 vbench_eval_easycache/run_vbench_eval.py \
+  --modes easycache_fixed_0.050,easycache_adaptive
+```
 
 ---
 
 ### Step 3: Run fidelity metrics (PSNR / SSIM / LPIPS)
 
+**Single GPU:**
 ```bash
 tmux new -s ec_fid
 docker exec -it hunyuanvideo bash
@@ -239,6 +286,32 @@ pip install lpips
 
 CUDA_VISIBLE_DEVICES=0 python3 vbench_eval_easycache/run_fidelity_metrics.py
 ```
+
+**2 GPU alternative:** Each GPU writes only its own mode files (no shared writes, no race conditions). Use two tmux sessions:
+
+**Terminal 1 (GPU 0):**
+```bash
+tmux new -s ec_fid0
+docker exec -it hunyuanvideo bash
+cd /workspace
+pip install lpips
+
+CUDA_VISIBLE_DEVICES=0 python3 vbench_eval_easycache/run_fidelity_metrics.py \
+  --modes easycache_fixed_0.025,easycache_fixed_0.050
+```
+
+**Terminal 2 (GPU 1):**
+```bash
+tmux new -s ec_fid1
+docker exec -it hunyuanvideo bash
+cd /workspace
+pip install lpips
+
+CUDA_VISIBLE_DEVICES=1 python3 vbench_eval_easycache/run_fidelity_metrics.py \
+  --modes easycache_adaptive
+```
+
+After both finish, `compare_results.py` will merge the per-mode JSON files automatically.
 
 ---
 

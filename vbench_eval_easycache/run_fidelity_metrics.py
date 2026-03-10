@@ -49,7 +49,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--video-dir", default="vbench_eval_easycache/videos")
     p.add_argument("--baseline", default="easycache_baseline")
-    p.add_argument("--modes", default="all")
+    p.add_argument("--modes", default="all", help="Comma-separated modes, or 'all'. When subset, skips all_fidelity_results.json (for 2-GPU parallel runs).")
     p.add_argument("--save-dir", default="vbench_eval_easycache/fidelity_metrics")
     args = p.parse_args()
 
@@ -100,8 +100,10 @@ def main():
             json.dump(r, f, indent=2)
         print(f"  {mode}: PSNR {r['psnr']['mean']:.4f}  SSIM {r['ssim']['mean']:.4f}  LPIPS {r['lpips']['mean']:.4f}")
 
-    with open(os.path.join(args.save_dir, "all_fidelity_results.json"), "w") as f:
-        json.dump(all_results, f, indent=2)
+    # Only write aggregate file when running all modes (avoids race when splitting across GPUs)
+    if args.modes == "all":
+        with open(os.path.join(args.save_dir, "all_fidelity_results.json"), "w") as f:
+            json.dump(all_results, f, indent=2)
 
 
 if __name__ == "__main__":

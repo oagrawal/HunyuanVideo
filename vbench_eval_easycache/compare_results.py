@@ -80,7 +80,15 @@ def load_fidelity(metrics_dir):
     if os.path.exists(p):
         with open(p) as f:
             return json.load(f)
-    return {}
+    # Fallback: merge per-mode files (e.g. from 2-GPU parallel run)
+    r = {}
+    for fpath in glob.glob(os.path.join(metrics_dir, "*_vs_easycache_baseline.json")):
+        with open(fpath) as f:
+            d = json.load(f)
+        mode = d.get("mode")
+        if mode:
+            r[mode] = d
+    return r
 
 
 def main():
