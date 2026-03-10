@@ -1,0 +1,23 @@
+EasyCache Experiment
+============================================================
+Mode: easycache
+Threshold: 0.025
+ret_steps: 5
+
+=== Timing ===
+End-to-end time:   712.02s
+DiT-only time:     588.01s
+Inference steps:   50
+
+=== k_t Statistics ===
+k_t values recorded: 20
+Mean:  17.3039
+Std:   37.6808
+Min:   0.1729
+Max:   159.7691
+
+=== Prompt ===
+Two cats boxing in bright gloves on a spotlighted stage.
+
+=== Seed ===
+12345
