@@ -1,0 +1,117 @@
+{
+  "modes": [
+    "easycache_baseline",
+    "easycache_fixed_0.025",
+    "easycache_fixed_0.050",
+    "easycache_adaptive"
+  ],
+  "rows": [
+    {
+      "mode": "EasyCache baseline",
+      "speedup": "1.00x",
+      "latency": "1358s",
+      "vbench": "77.52%",
+      "psnr": "\u2014",
+      "ssim": "\u2014",
+      "lpips": "\u2014"
+    },
+    {
+      "mode": "EasyCache fixed 0.025",
+      "speedup": "1.00x",
+      "latency": "1359s",
+      "vbench": "77.52%",
+      "psnr": "100.0000",
+      "ssim": "1.0000",
+      "lpips": "0.0000"
+    },
+    {
+      "mode": "EasyCache fixed 0.050",
+      "speedup": "1.00x",
+      "latency": "1358s",
+      "vbench": "77.52%",
+      "psnr": "100.0000",
+      "ssim": "1.0000",
+      "lpips": "0.0000"
+    },
+    {
+      "mode": "EasyCache adaptive",
+      "speedup": "1.00x",
+      "latency": "1357s",
+      "vbench": "77.52%",
+      "psnr": "100.0000",
+      "ssim": "1.0000",
+      "lpips": "0.0000"
+    }
+  ],
+  "timing": {
+    "easycache_baseline": {
+      "avg_time": 1357.7469696969692,
+      "num_videos": 33
+    },
+    "easycache_fixed_0.025": {
+      "avg_time": 1358.9045454545453,
+      "num_videos": 33
+    },
+    "easycache_fixed_0.050": {
+      "avg_time": 1357.8272727272729,
+      "num_videos": 33
+    },
+    "easycache_adaptive": {
+      "avg_time": 1357.4221212121208,
+      "num_videos": 33
+    }
+  },
+  "fidelity": {
+    "easycache_adaptive": {
+      "mode": "easycache_adaptive",
+      "baseline": "easycache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 100.0,
+        "std": 0.0
+      },
+      "ssim": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "lpips": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "easycache_fixed_0.025": {
+      "mode": "easycache_fixed_0.025",
+      "baseline": "easycache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 100.0,
+        "std": 0.0
+      },
+      "ssim": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "lpips": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "easycache_fixed_0.050": {
+      "mode": "easycache_fixed_0.050",
+      "baseline": "easycache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 100.0,
+        "std": 0.0
+      },
+      "ssim": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "lpips": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    }
+  }
+}

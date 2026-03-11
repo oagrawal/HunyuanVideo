@@ -10,33 +10,6 @@
       "timestamp": "2026-03-10T11:29:18.424530"
     },
     {
-      "prompt": "a bird and a cat",
-      "seed": 0,
-      "mode": "easycache_fixed_0.025",
-      "time_seconds": 1382.63,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a bird and a cat-0.mp4",
-      "prompt_index": 27,
-      "timestamp": "2026-03-10T11:52:22.685830"
-    },
-    {
-      "prompt": "a bird and a cat",
-      "seed": 0,
-      "mode": "easycache_fixed_0.050",
-      "time_seconds": 1379.07,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a bird and a cat-0.mp4",
-      "prompt_index": 27,
-      "timestamp": "2026-03-10T12:15:23.307529"
-    },
-    {
-      "prompt": "a bird and a cat",
-      "seed": 0,
-      "mode": "easycache_adaptive",
-      "time_seconds": 1376.57,
-      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a bird and a cat-0.mp4",
-      "prompt_index": 27,
-      "timestamp": "2026-03-10T12:38:21.313166"
-    },
-    {
       "prompt": "a cat and a dog",
       "seed": 0,
       "mode": "easycache_baseline",
@@ -44,33 +17,6 @@
       "video_path": "vbench_eval_easycache/videos/easycache_baseline/a cat and a dog-0.mp4",
       "prompt_index": 28,
       "timestamp": "2026-03-10T13:01:20.168400"
-    },
-    {
-      "prompt": "a cat and a dog",
-      "seed": 0,
-      "mode": "easycache_fixed_0.025",
-      "time_seconds": 1375.67,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a cat and a dog-0.mp4",
-      "prompt_index": 28,
-      "timestamp": "2026-03-10T13:24:17.487143"
-    },
-    {
-      "prompt": "a cat and a dog",
-      "seed": 0,
-      "mode": "easycache_fixed_0.050",
-      "time_seconds": 1375.42,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a cat and a dog-0.mp4",
-      "prompt_index": 28,
-      "timestamp": "2026-03-10T13:47:14.540512"
-    },
-    {
-      "prompt": "a cat and a dog",
-      "seed": 0,
-      "mode": "easycache_adaptive",
-      "time_seconds": 1374.38,
-      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a cat and a dog-0.mp4",
-      "prompt_index": 28,
-      "timestamp": "2026-03-10T14:10:10.578221"
     },
     {
       "prompt": "a dog and a horse",
@@ -82,33 +28,6 @@
       "timestamp": "2026-03-10T14:33:06.773430"
     },
     {
-      "prompt": "a dog and a horse",
-      "seed": 0,
-      "mode": "easycache_fixed_0.025",
-      "time_seconds": 1375.21,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a dog and a horse-0.mp4",
-      "prompt_index": 29,
-      "timestamp": "2026-03-10T14:56:03.602108"
-    },
-    {
-      "prompt": "a dog and a horse",
-      "seed": 0,
-      "mode": "easycache_fixed_0.050",
-      "time_seconds": 1374.75,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a dog and a horse-0.mp4",
-      "prompt_index": 29,
-      "timestamp": "2026-03-10T15:18:59.926800"
-    },
-    {
-      "prompt": "a dog and a horse",
-      "seed": 0,
-      "mode": "easycache_adaptive",
-      "time_seconds": 1374.95,
-      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a dog and a horse-0.mp4",
-      "prompt_index": 29,
-      "timestamp": "2026-03-10T15:41:56.526292"
-    },
-    {
       "prompt": "a person",
       "seed": 0,
       "mode": "easycache_baseline",
@@ -116,33 +35,6 @@
       "video_path": "vbench_eval_easycache/videos/easycache_baseline/a person-0.mp4",
       "prompt_index": 30,
       "timestamp": "2026-03-10T16:04:53.766657"
-    },
-    {
-      "prompt": "a person",
-      "seed": 0,
-      "mode": "easycache_fixed_0.025",
-      "time_seconds": 1379.24,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a person-0.mp4",
-      "prompt_index": 30,
-      "timestamp": "2026-03-10T16:27:54.628908"
-    },
-    {
-      "prompt": "a person",
-      "seed": 0,
-      "mode": "easycache_fixed_0.050",
-      "time_seconds": 1375.8,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a person-0.mp4",
-      "prompt_index": 30,
-      "timestamp": "2026-03-10T16:50:51.928194"
-    },
-    {
-      "prompt": "a person",
-      "seed": 0,
-      "mode": "easycache_adaptive",
-      "time_seconds": 1375.12,
-      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person-0.mp4",
-      "prompt_index": 30,
-      "timestamp": "2026-03-10T17:13:48.644688"
     },
     {
       "prompt": "a bicycle",
@@ -154,33 +46,6 @@
       "timestamp": "2026-03-10T17:36:46.952562"
     },
     {
-      "prompt": "a bicycle",
-      "seed": 0,
-      "mode": "easycache_fixed_0.025",
-      "time_seconds": 1375.97,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a bicycle-0.mp4",
-      "prompt_index": 31,
-      "timestamp": "2026-03-10T17:59:44.516586"
-    },
-    {
-      "prompt": "a bicycle",
-      "seed": 0,
-      "mode": "easycache_fixed_0.050",
-      "time_seconds": 1375.65,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a bicycle-0.mp4",
-      "prompt_index": 31,
-      "timestamp": "2026-03-10T18:22:41.709059"
-    },
-    {
-      "prompt": "a bicycle",
-      "seed": 0,
-      "mode": "easycache_adaptive",
-      "time_seconds": 1375.54,
-      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a bicycle-0.mp4",
-      "prompt_index": 31,
-      "timestamp": "2026-03-10T18:45:38.775118"
-    },
-    {
       "prompt": "a car",
       "seed": 0,
       "mode": "easycache_baseline",
@@ -188,59 +53,14 @@
       "video_path": "vbench_eval_easycache/videos/easycache_baseline/a car-0.mp4",
       "prompt_index": 32,
       "timestamp": "2026-03-10T19:08:36.675628"
-    },
-    {
-      "prompt": "a car",
-      "seed": 0,
-      "mode": "easycache_fixed_0.025",
-      "time_seconds": 1376.37,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a car-0.mp4",
-      "prompt_index": 32,
-      "timestamp": "2026-03-10T19:31:34.636680"
-    },
-    {
-      "prompt": "a car",
-      "seed": 0,
-      "mode": "easycache_fixed_0.050",
-      "time_seconds": 1375.78,
-      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a car-0.mp4",
-      "prompt_index": 32,
-      "timestamp": "2026-03-10T19:54:32.005220"
-    },
-    {
-      "prompt": "a car",
-      "seed": 0,
-      "mode": "easycache_adaptive",
-      "time_seconds": 1376.02,
-      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a car-0.mp4",
-      "prompt_index": 32,
-      "timestamp": "2026-03-10T20:17:29.560613"
     }
   ],
   "completed_keys": [
     "easycache_baseline|a bird and a cat|0",
-    "easycache_fixed_0.025|a bird and a cat|0",
-    "easycache_fixed_0.050|a bird and a cat|0",
-    "easycache_adaptive|a bird and a cat|0",
     "easycache_baseline|a cat and a dog|0",
-    "easycache_fixed_0.025|a cat and a dog|0",
-    "easycache_fixed_0.050|a cat and a dog|0",
-    "easycache_adaptive|a cat and a dog|0",
     "easycache_baseline|a dog and a horse|0",
-    "easycache_fixed_0.025|a dog and a horse|0",
-    "easycache_fixed_0.050|a dog and a horse|0",
-    "easycache_adaptive|a dog and a horse|0",
     "easycache_baseline|a person|0",
-    "easycache_fixed_0.025|a person|0",
-    "easycache_fixed_0.050|a person|0",
-    "easycache_adaptive|a person|0",
     "easycache_baseline|a bicycle|0",
-    "easycache_fixed_0.025|a bicycle|0",
-    "easycache_fixed_0.050|a bicycle|0",
-    "easycache_adaptive|a bicycle|0",
-    "easycache_baseline|a car|0",
-    "easycache_fixed_0.025|a car|0",
-    "easycache_fixed_0.050|a car|0",
-    "easycache_adaptive|a car|0"
+    "easycache_baseline|a car|0"
   ]
 }

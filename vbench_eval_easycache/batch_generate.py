@@ -42,39 +42,52 @@ MODES = [
 
 
 def configure_easycache(sampler, mode_cfg, infer_steps):
-    """Configure EasyCache on the transformer. Call before each generation."""
+    """Configure EasyCache on the transformer. Call before each generation.
+
+    IMPORTANT: State must be set on the *instance* (not the class) so that
+    attributes like cnt, k, previous_raw_input, etc. are properly reset between
+    runs. Setting them on the class does NOT reset instance-level attributes that
+    were created by previous forward calls via `self.X = ...` / `self.X += 1`.
+    The forward method itself must still be set on the class so that PyTorch's
+    nn.Module.__call__ picks it up via the normal MRO.
+    """
     from easycache_sample_video import easycache_forward, easycache_baseline_forward
 
-    transformer_cls = sampler.pipeline.transformer.__class__
-    transformer_cls.cnt = 0
-    transformer_cls.num_steps = infer_steps
-    transformer_cls.total_time = 0.0
-    transformer_cls.k = None
-    transformer_cls.previous_raw_input = None
-    transformer_cls.previous_output = None
-    transformer_cls.prev_prev_raw_input = None
-    transformer_cls.k_history = []
-    transformer_cls.pred_change_history = []
-    transformer_cls.accumulated_error_history = []
+    transformer = sampler.pipeline.transformer
+    transformer_cls = transformer.__class__
 
+    # Reset all per-run state on the INSTANCE so it shadows any stale class attrs.
+    transformer.cnt = 0
+    transformer.num_steps = infer_steps
+    transformer.total_time = 0.0
+    transformer.k = None
+    transformer.previous_raw_input = None
+    transformer.previous_output = None
+    transformer.prev_prev_raw_input = None
+    transformer.k_history = []
+    transformer.pred_change_history = []
+    transformer.accumulated_error_history = []
+
+    # forward must be set on the class (nn.Module.__call__ resolves it via MRO).
     if mode_cfg["mode"] == "baseline":
         transformer_cls.forward = easycache_baseline_forward
     else:
         transformer_cls.forward = easycache_forward
-        transformer_cls.cache = None
-        transformer_cls.accumulated_error = 0.0
-        transformer_cls.ret_steps = 5
+        transformer.cache = None
+        transformer.accumulated_error = 0.0
+        transformer.ret_steps = 5
         if mode_cfg["mode"] == "adaptive":
-            transformer_cls.easycache_adaptive = True
-            transformer_cls.thresh_low = mode_cfg["thresh_low"]
-            transformer_cls.thresh_high = mode_cfg["thresh_high"]
-            transformer_cls.first_steps = mode_cfg["first_steps"]
-            transformer_cls.last_steps = mode_cfg["last_steps"]
+            transformer.easycache_adaptive = True
+            transformer.thresh_low = mode_cfg["thresh_low"]
+            transformer.thresh_high = mode_cfg["thresh_high"]
+            transformer.first_steps = mode_cfg["first_steps"]
+            transformer.last_steps = mode_cfg["last_steps"]
+            transformer.thresh = mode_cfg["thresh_low"]  # fallback
         else:
-            transformer_cls.easycache_adaptive = False
-            transformer_cls.thresh = mode_cfg["thresh"]
-            transformer_cls.thresh_low = mode_cfg["thresh"]
-            transformer_cls.thresh_high = mode_cfg["thresh"]
+            transformer.easycache_adaptive = False
+            transformer.thresh = mode_cfg["thresh"]
+            transformer.thresh_low = mode_cfg["thresh"]
+            transformer.thresh_high = mode_cfg["thresh"]
 
 
 def load_generation_log(log_path):
