@@ -97,6 +97,7 @@ def main():
     p.add_argument("--fidelity-dir", default="vbench_eval_easycache/fidelity_metrics")
     p.add_argument("--gen-log-dir", default="vbench_eval_easycache/videos")
     p.add_argument("--output-json", default="vbench_eval_easycache/all_comparison_results.json")
+    p.add_argument("--output-csv", default="vbench_eval_easycache/all_comparison_results.csv")
     args = p.parse_args()
 
     timing = load_timing(args.gen_log_dir)
@@ -126,10 +127,27 @@ def main():
         rows.append(row)
         print(f"{row['mode']:<22} {row['speedup']:>8} {row['latency']:>8} {row['vbench']:>10} {row['psnr']:>8} {row['ssim']:>8} {row['lpips']:>8}")
 
-    os.makedirs(os.path.dirname(args.output_json) or ".", exist_ok=True)
+    out_dir = os.path.dirname(args.output_json) or "."
+    os.makedirs(out_dir, exist_ok=True)
+
     with open(args.output_json, "w") as f:
         json.dump({"modes": ALL_MODES, "rows": rows, "timing": timing, "fidelity": fidelity}, f, indent=2)
-    print(f"\nSaved to {args.output_json}")
+    print(f"\nSaved JSON to {args.output_json}")
+
+    # Also write a flat CSV for easy import into analysis tools.
+    try:
+        import csv
+
+        csv_path = args.output_csv
+        fieldnames = ["mode", "speedup", "latency", "vbench", "psnr", "ssim", "lpips"]
+        with open(csv_path, "w", newline="") as cf:
+            writer = csv.DictWriter(cf, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in rows:
+                writer.writerow(row)
+        print(f"Saved CSV to {csv_path}")
+    except Exception as e:
+        print(f"WARNING: Failed to write CSV ({e})")
 
 
 if __name__ == "__main__":
