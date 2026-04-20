@@ -1,0 +1,19 @@
+{
+    "temporal_style": [
+        0.20436364909013113,
+        [
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+                "video_results": 0.19174855947494507
+            },
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+                "video_results": 0.19892072677612305
+            },
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+                "video_results": 0.22242166101932526
+            }
+        ]
+    ]
+}

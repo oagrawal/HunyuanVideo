@@ -80,6 +80,249 @@
       "video_path": "vbench_eval_easycache/videos/easycache_baseline/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
       "prompt_index": 17,
       "timestamp": "2026-03-10T23:24:00.266810"
+    },
+    {
+      "prompt": "In a still frame, a stop sign",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 560.9,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/In a still frame, a stop sign-0.mp4",
+      "prompt_index": 9,
+      "timestamp": "2026-03-11T12:25:56.477698"
+    },
+    {
+      "prompt": "In a still frame, a stop sign",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 470.8,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/In a still frame, a stop sign-0.mp4",
+      "prompt_index": 9,
+      "timestamp": "2026-03-11T12:33:49.124073"
+    },
+    {
+      "prompt": "In a still frame, a stop sign",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 496.52,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/In a still frame, a stop sign-0.mp4",
+      "prompt_index": 9,
+      "timestamp": "2026-03-11T12:42:07.151597"
+    },
+    {
+      "prompt": "a toilet, frozen in time",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 640.85,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a toilet, frozen in time-0.mp4",
+      "prompt_index": 10,
+      "timestamp": "2026-03-11T12:52:49.432358"
+    },
+    {
+      "prompt": "a toilet, frozen in time",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 517.32,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a toilet, frozen in time-0.mp4",
+      "prompt_index": 10,
+      "timestamp": "2026-03-11T13:01:28.710266"
+    },
+    {
+      "prompt": "a toilet, frozen in time",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 539.48,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a toilet, frozen in time-0.mp4",
+      "prompt_index": 10,
+      "timestamp": "2026-03-11T13:10:29.753814"
+    },
+    {
+      "prompt": "a laptop, frozen in time",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 556.64,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a laptop, frozen in time-0.mp4",
+      "prompt_index": 11,
+      "timestamp": "2026-03-11T13:19:47.943915"
+    },
+    {
+      "prompt": "a laptop, frozen in time",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 441.63,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a laptop, frozen in time-0.mp4",
+      "prompt_index": 11,
+      "timestamp": "2026-03-11T13:27:11.748137"
+    },
+    {
+      "prompt": "a laptop, frozen in time",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 517.28,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a laptop, frozen in time-0.mp4",
+      "prompt_index": 11,
+      "timestamp": "2026-03-11T13:35:50.601134"
+    },
+    {
+      "prompt": "A person is riding a bike",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 778.35,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A person is riding a bike-0.mp4",
+      "prompt_index": 12,
+      "timestamp": "2026-03-11T13:48:50.552001"
+    },
+    {
+      "prompt": "A person is riding a bike",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 583.31,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A person is riding a bike-0.mp4",
+      "prompt_index": 12,
+      "timestamp": "2026-03-11T13:58:35.553756"
+    },
+    {
+      "prompt": "A person is riding a bike",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 607.67,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A person is riding a bike-0.mp4",
+      "prompt_index": 12,
+      "timestamp": "2026-03-11T14:08:44.910035"
+    },
+    {
+      "prompt": "A person is marching",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 712.25,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A person is marching-0.mp4",
+      "prompt_index": 13,
+      "timestamp": "2026-03-11T14:20:38.853021"
+    },
+    {
+      "prompt": "A person is marching",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 542.34,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A person is marching-0.mp4",
+      "prompt_index": 13,
+      "timestamp": "2026-03-11T14:29:43.059870"
+    },
+    {
+      "prompt": "A person is marching",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 590.54,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A person is marching-0.mp4",
+      "prompt_index": 13,
+      "timestamp": "2026-03-11T14:39:35.183472"
+    },
+    {
+      "prompt": "A person is roller skating",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 758.3,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A person is roller skating-0.mp4",
+      "prompt_index": 14,
+      "timestamp": "2026-03-11T14:52:15.006194"
+    },
+    {
+      "prompt": "A person is roller skating",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 536.4,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A person is roller skating-0.mp4",
+      "prompt_index": 14,
+      "timestamp": "2026-03-11T15:01:13.098650"
+    },
+    {
+      "prompt": "A person is roller skating",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 590.36,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A person is roller skating-0.mp4",
+      "prompt_index": 14,
+      "timestamp": "2026-03-11T15:11:05.055598"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, in super slow motion",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 588.41,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+      "prompt_index": 15,
+      "timestamp": "2026-03-11T15:20:55.097977"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, in super slow motion",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 464.53,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+      "prompt_index": 15,
+      "timestamp": "2026-03-11T15:28:41.349774"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, in super slow motion",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 517.01,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+      "prompt_index": 15,
+      "timestamp": "2026-03-11T15:37:20.071739"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom in",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 586.11,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+      "prompt_index": 16,
+      "timestamp": "2026-03-11T15:47:07.861812"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom in",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 470.0,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+      "prompt_index": 16,
+      "timestamp": "2026-03-11T15:54:59.689486"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom in",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 515.8,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+      "prompt_index": 16,
+      "timestamp": "2026-03-11T16:03:37.198661"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 537.6,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+      "prompt_index": 17,
+      "timestamp": "2026-03-11T16:12:36.496025"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 439.23,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+      "prompt_index": 17,
+      "timestamp": "2026-03-11T16:19:58.011134"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 516.24,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+      "prompt_index": 17,
+      "timestamp": "2026-03-11T16:28:36.007439"
     }
   ],
   "completed_keys": [
@@ -91,6 +334,33 @@
     "easycache_baseline|A person is roller skating|0",
     "easycache_baseline|A beautiful coastal beach in spring, waves lapping on sand, in super slow motion|0",
     "easycache_baseline|A beautiful coastal beach in spring, waves lapping on sand, zoom in|0",
-    "easycache_baseline|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0"
+    "easycache_baseline|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0",
+    "easycache_fixed_0.025|In a still frame, a stop sign|0",
+    "easycache_fixed_0.050|In a still frame, a stop sign|0",
+    "easycache_adaptive|In a still frame, a stop sign|0",
+    "easycache_fixed_0.025|a toilet, frozen in time|0",
+    "easycache_fixed_0.050|a toilet, frozen in time|0",
+    "easycache_adaptive|a toilet, frozen in time|0",
+    "easycache_fixed_0.025|a laptop, frozen in time|0",
+    "easycache_fixed_0.050|a laptop, frozen in time|0",
+    "easycache_adaptive|a laptop, frozen in time|0",
+    "easycache_fixed_0.025|A person is riding a bike|0",
+    "easycache_fixed_0.050|A person is riding a bike|0",
+    "easycache_adaptive|A person is riding a bike|0",
+    "easycache_fixed_0.025|A person is marching|0",
+    "easycache_fixed_0.050|A person is marching|0",
+    "easycache_adaptive|A person is marching|0",
+    "easycache_fixed_0.025|A person is roller skating|0",
+    "easycache_fixed_0.050|A person is roller skating|0",
+    "easycache_adaptive|A person is roller skating|0",
+    "easycache_fixed_0.025|A beautiful coastal beach in spring, waves lapping on sand, in super slow motion|0",
+    "easycache_fixed_0.050|A beautiful coastal beach in spring, waves lapping on sand, in super slow motion|0",
+    "easycache_adaptive|A beautiful coastal beach in spring, waves lapping on sand, in super slow motion|0",
+    "easycache_fixed_0.025|A beautiful coastal beach in spring, waves lapping on sand, zoom in|0",
+    "easycache_fixed_0.050|A beautiful coastal beach in spring, waves lapping on sand, zoom in|0",
+    "easycache_adaptive|A beautiful coastal beach in spring, waves lapping on sand, zoom in|0",
+    "easycache_fixed_0.025|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0",
+    "easycache_fixed_0.050|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0",
+    "easycache_adaptive|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0"
   ]
 }

@@ -1,0 +1,19 @@
+{
+    "temporal_style": [
+        0.20783264438311258,
+        [
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_k15_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+                "video_results": 0.19527976214885712
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_k15_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+                "video_results": 0.20796772837638855
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_k15_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+                "video_results": 0.2202504426240921
+            }
+        ]
+    ]
+}

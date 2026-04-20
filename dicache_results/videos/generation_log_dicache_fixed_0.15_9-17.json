@@ -1,0 +1,86 @@
+{
+  "runs": [
+    {
+      "prompt": "In a still frame, a stop sign",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 344.26,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/In a still frame, a stop sign-0.mp4",
+      "prompt_index": 9,
+      "timestamp": "2026-03-28T04:53:09.996292"
+    },
+    {
+      "prompt": "a toilet, frozen in time",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 342.34,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/a toilet, frozen in time-0.mp4",
+      "prompt_index": 10,
+      "timestamp": "2026-03-28T04:58:53.403434"
+    },
+    {
+      "prompt": "a laptop, frozen in time",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 342.31,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/a laptop, frozen in time-0.mp4",
+      "prompt_index": 11,
+      "timestamp": "2026-03-28T05:04:36.793237"
+    },
+    {
+      "prompt": "A person is riding a bike",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 342.41,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/A person is riding a bike-0.mp4",
+      "prompt_index": 12,
+      "timestamp": "2026-03-28T05:10:20.541118"
+    },
+    {
+      "prompt": "A person is marching",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 318.8,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/A person is marching-0.mp4",
+      "prompt_index": 13,
+      "timestamp": "2026-03-28T05:15:40.674827"
+    },
+    {
+      "prompt": "A person is roller skating",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 342.04,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/A person is roller skating-0.mp4",
+      "prompt_index": 14,
+      "timestamp": "2026-03-28T05:21:23.965514"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, in super slow motion",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 342.75,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4",
+      "prompt_index": 15,
+      "timestamp": "2026-03-28T05:27:08.072607"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom in",
+      "seed": 0,
+      "mode": "dicache_fixed_0.15",
+      "time_seconds": 342.57,
+      "video_path": "dicache_results/videos/dicache_fixed_0.15/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4",
+      "prompt_index": 16,
+      "timestamp": "2026-03-28T05:32:52.054253"
+    }
+  ],
+  "completed_keys": [
+    "dicache_fixed_0.15|In a still frame, a stop sign|0",
+    "dicache_fixed_0.15|a toilet, frozen in time|0",
+    "dicache_fixed_0.15|a laptop, frozen in time|0",
+    "dicache_fixed_0.15|A person is riding a bike|0",
+    "dicache_fixed_0.15|A person is marching|0",
+    "dicache_fixed_0.15|A person is roller skating|0",
+    "dicache_fixed_0.15|A beautiful coastal beach in spring, waves lapping on sand, in super slow motion|0",
+    "dicache_fixed_0.15|A beautiful coastal beach in spring, waves lapping on sand, zoom in|0"
+  ]
+}

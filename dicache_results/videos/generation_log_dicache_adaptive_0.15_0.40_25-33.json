@@ -1,0 +1,86 @@
+{
+  "runs": [
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 279.91,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-29T16:37:44.407994"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 280.26,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-29T16:42:25.903796"
+    },
+    {
+      "prompt": "a bird and a cat",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 279.78,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a bird and a cat-0.mp4",
+      "prompt_index": 27,
+      "timestamp": "2026-03-29T16:47:06.884519"
+    },
+    {
+      "prompt": "a cat and a dog",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 279.86,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a cat and a dog-0.mp4",
+      "prompt_index": 28,
+      "timestamp": "2026-03-29T16:51:48.032543"
+    },
+    {
+      "prompt": "a dog and a horse",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 279.82,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a dog and a horse-0.mp4",
+      "prompt_index": 29,
+      "timestamp": "2026-03-29T16:56:29.039813"
+    },
+    {
+      "prompt": "a person",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 280.07,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a person-0.mp4",
+      "prompt_index": 30,
+      "timestamp": "2026-03-29T17:01:10.285819"
+    },
+    {
+      "prompt": "a bicycle",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 279.81,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a bicycle-0.mp4",
+      "prompt_index": 31,
+      "timestamp": "2026-03-29T17:05:51.305111"
+    },
+    {
+      "prompt": "a car",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.15_0.40",
+      "time_seconds": 279.63,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/a car-0.mp4",
+      "prompt_index": 32,
+      "timestamp": "2026-03-29T17:10:32.098387"
+    }
+  ],
+  "completed_keys": [
+    "dicache_adaptive_0.15_0.40|a car on the right of a motorcycle, front view|0",
+    "dicache_adaptive_0.15_0.40|a motorcycle on the left of a bus, front view|0",
+    "dicache_adaptive_0.15_0.40|a bird and a cat|0",
+    "dicache_adaptive_0.15_0.40|a cat and a dog|0",
+    "dicache_adaptive_0.15_0.40|a dog and a horse|0",
+    "dicache_adaptive_0.15_0.40|a person|0",
+    "dicache_adaptive_0.15_0.40|a bicycle|0",
+    "dicache_adaptive_0.15_0.40|a car|0"
+  ]
+}

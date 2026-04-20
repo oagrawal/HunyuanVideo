@@ -1,0 +1,44 @@
+[
+    {
+        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+        "dimension": [
+            "appearance_style"
+        ],
+        "auxiliary_info": {
+            "appearance_style": {
+                "appearance_style": "Van Gogh style"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+        "dimension": [
+            "appearance_style"
+        ],
+        "auxiliary_info": {
+            "appearance_style": {
+                "appearance_style": "oil painting"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+        "dimension": [
+            "appearance_style"
+        ],
+        "auxiliary_info": {
+            "appearance_style": {
+                "appearance_style": "by Hokusai, in the style of Ukiyo"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4"
+        ]
+    }
+]

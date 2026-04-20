@@ -80,6 +80,249 @@
       "video_path": "vbench_eval_easycache/videos/easycache_baseline/a motorcycle on the left of a bus, front view-0.mp4",
       "prompt_index": 26,
       "timestamp": "2026-03-10T23:35:19.803870"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 563.7,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-11T12:27:43.566613"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 450.57,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-11T12:35:15.868740"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 515.86,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-11T12:43:53.328076"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 614.3,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-11T12:54:09.217183"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 463.83,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-11T13:01:54.860426"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 517.15,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-11T13:10:33.642341"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 566.17,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-11T13:20:01.321138"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 441.4,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-11T13:27:24.629773"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 521.04,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-11T13:36:07.340254"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 712.84,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-11T13:48:01.535517"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 552.65,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-11T13:57:15.903229"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 568.39,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-11T14:06:45.672380"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 720.67,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-11T14:18:47.642094"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 569.75,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-11T14:28:19.155175"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 594.49,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-11T14:38:15.091077"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 692.39,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-11T14:49:48.889579"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 512.28,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-11T14:58:22.800150"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 564.12,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-11T15:07:48.407066"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 664.46,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-11T15:18:54.245308"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 525.36,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-11T15:27:41.367023"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 554.36,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-11T15:36:57.206495"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 725.33,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-11T15:49:03.813537"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 546.4,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-11T15:58:11.893622"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 596.23,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-11T16:08:09.540563"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 695.02,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-11T16:19:45.939291"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 549.28,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-11T16:28:56.796361"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 609.12,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-11T16:39:07.464774"
     }
   ],
   "completed_keys": [
@@ -91,6 +334,33 @@
     "easycache_baseline|a blue bicycle|0",
     "easycache_baseline|a bicycle on the left of a car, front view|0",
     "easycache_baseline|a car on the right of a motorcycle, front view|0",
-    "easycache_baseline|a motorcycle on the left of a bus, front view|0"
+    "easycache_baseline|a motorcycle on the left of a bus, front view|0",
+    "easycache_fixed_0.025|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "easycache_fixed_0.050|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "easycache_adaptive|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "easycache_fixed_0.025|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "easycache_fixed_0.050|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "easycache_adaptive|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "easycache_fixed_0.025|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "easycache_fixed_0.050|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "easycache_adaptive|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "easycache_fixed_0.025|a red bicycle|0",
+    "easycache_fixed_0.050|a red bicycle|0",
+    "easycache_adaptive|a red bicycle|0",
+    "easycache_fixed_0.025|a green bicycle|0",
+    "easycache_fixed_0.050|a green bicycle|0",
+    "easycache_adaptive|a green bicycle|0",
+    "easycache_fixed_0.025|a blue bicycle|0",
+    "easycache_fixed_0.050|a blue bicycle|0",
+    "easycache_adaptive|a blue bicycle|0",
+    "easycache_fixed_0.025|a bicycle on the left of a car, front view|0",
+    "easycache_fixed_0.050|a bicycle on the left of a car, front view|0",
+    "easycache_adaptive|a bicycle on the left of a car, front view|0",
+    "easycache_fixed_0.025|a car on the right of a motorcycle, front view|0",
+    "easycache_fixed_0.050|a car on the right of a motorcycle, front view|0",
+    "easycache_adaptive|a car on the right of a motorcycle, front view|0",
+    "easycache_fixed_0.025|a motorcycle on the left of a bus, front view|0",
+    "easycache_fixed_0.050|a motorcycle on the left of a bus, front view|0",
+    "easycache_adaptive|a motorcycle on the left of a bus, front view|0"
   ]
 }

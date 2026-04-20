@@ -1,0 +1,996 @@
+{
+  "runs": [
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1359.25,
+      "video_path": "magcache_eval/videos/magcache_baseline/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T11:29:04.776408"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 794.47,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T11:42:21.007206"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 672.36,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T11:53:35.050283"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 572.85,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T12:03:09.721466"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1358.78,
+      "video_path": "magcache_eval/videos/magcache_baseline/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T12:25:50.215856"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 792.45,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T12:39:04.302072"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 670.83,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T12:50:16.853303"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 581.76,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T13:00:00.346618"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1359.94,
+      "video_path": "magcache_eval/videos/magcache_baseline/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-24T13:22:42.046339"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 796.58,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-24T13:36:00.262388"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 670.36,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-24T13:47:12.256565"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 570.77,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-24T13:56:44.688308"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1360.4,
+      "video_path": "magcache_eval/videos/magcache_baseline/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-24T14:19:26.587437"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 791.81,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-24T14:32:39.879875"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 669.66,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-24T14:43:51.027329"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 573.73,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-24T14:53:26.293771"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1359.62,
+      "video_path": "magcache_eval/videos/magcache_baseline/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-24T15:16:07.547846"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 792.14,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-24T15:29:21.321774"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 665.19,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-24T15:40:28.065593"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 566.56,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-24T15:49:56.155248"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1353.23,
+      "video_path": "magcache_eval/videos/magcache_baseline/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-24T16:12:31.002491"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 785.4,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-24T16:25:38.034119"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 662.32,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-24T16:36:41.945904"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 566.1,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-24T16:46:09.672891"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1368.48,
+      "video_path": "magcache_eval/videos/magcache_baseline/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-24T17:08:59.824957"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 796.99,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-24T17:22:18.459880"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 671.46,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-24T17:33:31.425958"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 572.96,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-24T17:43:05.939805"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1374.69,
+      "video_path": "magcache_eval/videos/magcache_baseline/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-24T18:06:02.195305"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 796.44,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-24T18:19:20.274607"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 670.84,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-24T18:30:32.699837"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 573.01,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-24T18:40:07.300371"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_baseline",
+      "time_seconds": 1374.92,
+      "video_path": "magcache_eval/videos/magcache_baseline/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-24T19:03:03.847323"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.06",
+      "time_seconds": 797.23,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.06/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-24T19:16:22.667771"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.12",
+      "time_seconds": 675.75,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.12/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-24T19:27:39.995900"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.24",
+      "time_seconds": 575.89,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.24/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-24T19:37:17.447504"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 546.66,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T22:43:12.544965"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 525.97,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T22:52:00.254227"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 527.63,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T23:00:49.690477"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 525.68,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-24T23:09:37.160063"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 546.62,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T23:18:45.508905"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.4,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T23:27:30.633809"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 522.56,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T23:36:15.003982"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 521.92,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-24T23:44:58.532526"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 545.04,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-24T23:54:05.223637"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.61,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-25T00:02:50.646988"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 524.66,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-25T00:11:37.034413"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 526.71,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-25T00:20:25.524758"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 544.59,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T00:29:31.695259"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.6,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T00:38:17.043663"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 525.62,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T00:47:04.240499"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 522.85,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T00:55:48.681319"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 543.85,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T01:04:54.003286"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.71,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T01:13:39.599341"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 529.23,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T01:22:30.598060"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 523.53,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T01:31:15.684446"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 543.94,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T01:40:21.185772"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.7,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T01:49:06.526967"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 523.0,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T01:57:50.961275"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 522.76,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T02:06:35.336843"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 545.71,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T02:15:42.756483"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.3,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T02:24:27.555183"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 520.92,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T02:33:10.177951"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 523.27,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T02:41:54.919513"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 546.35,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T02:51:02.832810"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 523.65,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T02:59:48.020467"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 522.6,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T03:08:32.239031"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 522.26,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T03:17:16.041562"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.36",
+      "time_seconds": 546.29,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.36/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T03:26:23.877396"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.48",
+      "time_seconds": 522.27,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.48/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T03:35:07.669471"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.64",
+      "time_seconds": 522.72,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.64/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T03:43:51.986520"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_fixed_0.80",
+      "time_seconds": 520.91,
+      "video_path": "magcache_eval/videos/magcache_fixed_0.80/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T03:52:34.427877"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 720.72,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-25T06:42:08.347228"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 473.85,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-25T06:50:04.046964"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 371.86,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-25T06:56:17.732404"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 718.77,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-25T07:08:18.203491"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 474.65,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-25T07:16:14.645592"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 374.43,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-25T07:22:30.897094"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 721.04,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-25T07:34:33.676573"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 471.97,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-25T07:42:27.380102"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 374.3,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-25T07:48:43.316164"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 721.29,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T08:00:46.195520"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 474.76,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T08:08:42.658225"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 375.35,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-25T08:14:59.722567"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 721.3,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T08:27:02.565419"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 474.18,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T08:34:58.405373"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 374.27,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-25T08:41:14.306093"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 718.58,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T08:53:14.451233"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 474.87,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T09:01:11.038234"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 375.31,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-25T09:07:27.960989"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 722.46,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T09:19:32.029645"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 473.59,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T09:27:27.176567"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 371.97,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-25T09:33:40.849631"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 721.48,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T09:45:43.963359"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 472.97,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T09:53:38.652791"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 371.25,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-25T09:59:51.527071"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.06",
+      "time_seconds": 721.08,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.06/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T10:11:54.261018"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.24",
+      "time_seconds": 473.74,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.24/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T10:19:49.803305"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "magcache_k15_fixed_0.80",
+      "time_seconds": 371.26,
+      "video_path": "magcache_eval/videos/magcache_k15_fixed_0.80/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-25T10:26:02.942645"
+    }
+  ],
+  "completed_keys": [
+    "magcache_baseline|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.06|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.12|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.24|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_baseline|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.06|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.12|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.24|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_baseline|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.06|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.12|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.24|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_baseline|a red bicycle|0",
+    "magcache_fixed_0.06|a red bicycle|0",
+    "magcache_fixed_0.12|a red bicycle|0",
+    "magcache_fixed_0.24|a red bicycle|0",
+    "magcache_baseline|a green bicycle|0",
+    "magcache_fixed_0.06|a green bicycle|0",
+    "magcache_fixed_0.12|a green bicycle|0",
+    "magcache_fixed_0.24|a green bicycle|0",
+    "magcache_baseline|a blue bicycle|0",
+    "magcache_fixed_0.06|a blue bicycle|0",
+    "magcache_fixed_0.12|a blue bicycle|0",
+    "magcache_fixed_0.24|a blue bicycle|0",
+    "magcache_baseline|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.06|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.12|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.24|a bicycle on the left of a car, front view|0",
+    "magcache_baseline|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.06|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.12|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.24|a car on the right of a motorcycle, front view|0",
+    "magcache_baseline|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.06|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.12|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.24|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.36|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.48|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.64|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.80|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_fixed_0.36|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.48|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.64|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.80|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_fixed_0.36|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.48|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.64|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.80|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_fixed_0.36|a red bicycle|0",
+    "magcache_fixed_0.48|a red bicycle|0",
+    "magcache_fixed_0.64|a red bicycle|0",
+    "magcache_fixed_0.80|a red bicycle|0",
+    "magcache_fixed_0.36|a green bicycle|0",
+    "magcache_fixed_0.48|a green bicycle|0",
+    "magcache_fixed_0.64|a green bicycle|0",
+    "magcache_fixed_0.80|a green bicycle|0",
+    "magcache_fixed_0.36|a blue bicycle|0",
+    "magcache_fixed_0.48|a blue bicycle|0",
+    "magcache_fixed_0.64|a blue bicycle|0",
+    "magcache_fixed_0.80|a blue bicycle|0",
+    "magcache_fixed_0.36|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.48|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.64|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.80|a bicycle on the left of a car, front view|0",
+    "magcache_fixed_0.36|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.48|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.64|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.80|a car on the right of a motorcycle, front view|0",
+    "magcache_fixed_0.36|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.48|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.64|a motorcycle on the left of a bus, front view|0",
+    "magcache_fixed_0.80|a motorcycle on the left of a bus, front view|0",
+    "magcache_k15_fixed_0.06|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_k15_fixed_0.24|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_k15_fixed_0.80|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "magcache_k15_fixed_0.06|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_k15_fixed_0.24|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_k15_fixed_0.80|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "magcache_k15_fixed_0.06|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_k15_fixed_0.24|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_k15_fixed_0.80|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "magcache_k15_fixed_0.06|a red bicycle|0",
+    "magcache_k15_fixed_0.24|a red bicycle|0",
+    "magcache_k15_fixed_0.80|a red bicycle|0",
+    "magcache_k15_fixed_0.06|a green bicycle|0",
+    "magcache_k15_fixed_0.24|a green bicycle|0",
+    "magcache_k15_fixed_0.80|a green bicycle|0",
+    "magcache_k15_fixed_0.06|a blue bicycle|0",
+    "magcache_k15_fixed_0.24|a blue bicycle|0",
+    "magcache_k15_fixed_0.80|a blue bicycle|0",
+    "magcache_k15_fixed_0.06|a bicycle on the left of a car, front view|0",
+    "magcache_k15_fixed_0.24|a bicycle on the left of a car, front view|0",
+    "magcache_k15_fixed_0.80|a bicycle on the left of a car, front view|0",
+    "magcache_k15_fixed_0.06|a car on the right of a motorcycle, front view|0",
+    "magcache_k15_fixed_0.24|a car on the right of a motorcycle, front view|0",
+    "magcache_k15_fixed_0.80|a car on the right of a motorcycle, front view|0",
+    "magcache_k15_fixed_0.06|a motorcycle on the left of a bus, front view|0",
+    "magcache_k15_fixed_0.24|a motorcycle on the left of a bus, front view|0",
+    "magcache_k15_fixed_0.80|a motorcycle on the left of a bus, front view|0"
+  ]
+}

@@ -1,0 +1,29 @@
+[
+    {
+        "prompt_en": "In a still frame, a stop sign",
+        "dimension": [
+            "temporal_flickering"
+        ],
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/In a still frame, a stop sign-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a toilet, frozen in time",
+        "dimension": [
+            "temporal_flickering"
+        ],
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/a toilet, frozen in time-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a laptop, frozen in time",
+        "dimension": [
+            "temporal_flickering"
+        ],
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/a laptop, frozen in time-0.mp4"
+        ]
+    }
+]

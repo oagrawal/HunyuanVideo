@@ -1,0 +1,25 @@
+{
+    "scene": [
+        0.2708333333333333,
+        [
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/dicache_results/videos/dicache_fixed_0.60/alley-0.mp4",
+                "video_results": 0.8125,
+                "success_frame_count": 13,
+                "frame_count": 16
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/dicache_results/videos/dicache_fixed_0.60/amusement park-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/dicache_results/videos/dicache_fixed_0.60/aquarium-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

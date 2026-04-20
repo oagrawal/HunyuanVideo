@@ -1,0 +1,37 @@
+{
+  "model": "hunyuanvideo_544p",
+  "T_boundary": 40,
+  "total_steps": 50,
+  "retention_ratio": 0.2,
+  "retention_steps": 10,
+  "T_boundary_visual_confirmation": "CONFIRMED from gamma_curve plot: gamma at or above ~1.0 through step 39, then monotonic decline beginning at step 40, collapsing to 0.766 by step 49. Largest delta_gamma spike (0.095) at step 49.",
+  "region_notes": {
+    "early_spike_zone": {
+      "steps": [0, 4],
+      "description": "gamma spikes to 1.29 at step 2 (delta_gamma=0.221), decaying by step 4. Covered by retention_ratio=0.2.",
+      "delta_gamma_range": [0.07, 0.22]
+    },
+    "early_transition_zone": {
+      "steps": [5, 9],
+      "description": "gamma still elevated (1.01-1.06), decaying toward 1.0. delta_gamma moderately elevated (0.03-0.05) vs stable middle (0.01-0.02). Also covered by retention_ratio=0.2. Not clearly unstable enough to warrant delta_LOW; would require lowering retention_ratio to expose this zone.",
+      "delta_gamma_range": [0.028, 0.059]
+    },
+    "stable_zone": {
+      "steps": [10, 39],
+      "description": "gamma oscillates near 1.0. delta_gamma uniformly small. Assign delta_HIGH in adaptive schedule.",
+      "delta_gamma_range": [0.006, 0.060]
+    },
+    "late_unstable_zone": {
+      "steps": [40, 49],
+      "description": "gamma monotonically declining from ~1.0 at step 40 to 0.766 by step 49. delta_gamma spikes at steps 47 (0.066) and 49 (0.095). Assign delta_LOW in adaptive schedule.",
+      "delta_gamma_range": [0.006, 0.095],
+      "gamma_min": 0.76592,
+      "gamma_at_T_boundary": 0.9904
+    }
+  },
+  "adaptive_schedule_design": {
+    "steps_0_to_9": "always compute (retention_ratio=0.2 covers both early spike and transition zone)",
+    "steps_10_to_39": "delta_HIGH (stable zone: aggressive caching is safe)",
+    "steps_40_to_49": "delta_LOW (late unstable zone: conservative caching preserves quality)"
+  }
+}

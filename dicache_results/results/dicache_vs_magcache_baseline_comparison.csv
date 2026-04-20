@@ -1,0 +1,6 @@
+mode,speedup,latency,vbench,quality,semantic,psnr,ssim,lpips
+magcache_baseline,1.00x,1358s,0.823473,0.845602,0.734956,-,-,-
+dicache_fixed_0.05,2.06x,658s,0.823744,0.851949,0.710922,-,-,-
+dicache_fixed_0.10,3.24x,419s,0.816793,0.851887,0.676418,-,-,-
+dicache_fixed_0.15,3.92x,346s,0.824883,0.847806,0.733191,-,-,-
+dicache_fixed_0.20,4.75x,286s,0.814471,0.842295,0.703178,-,-,-

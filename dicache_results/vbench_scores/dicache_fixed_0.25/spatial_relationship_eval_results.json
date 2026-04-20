@@ -1,0 +1,73 @@
+{
+    "spatial_relationship": [
+        0.9071652390500685,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.25/a bicycle on the left of a car, front view-0.mp4",
+                "video_results": 1.0,
+                "frame_results": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.25/a car on the right of a motorcycle, front view-0.mp4",
+                "video_results": 0.7760316076987729,
+                "frame_results": [
+                    0.29881813779981314,
+                    1,
+                    0.2985959138900316,
+                    0.23699032365699033,
+                    0.2933495670995671,
+                    0.28875178073396335,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.25/a motorcycle on the left of a bus, front view-0.mp4",
+                "video_results": 0.9454641094514326,
+                "frame_results": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0.5516745283018868,
+                    0.5757512229210343
+                ]
+            }
+        ]
+    ]
+}

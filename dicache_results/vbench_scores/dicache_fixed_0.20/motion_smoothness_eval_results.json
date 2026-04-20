@@ -1,0 +1,19 @@
+{
+    "motion_smoothness": [
+        0.9936469093162077,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.20/a person swimming in ocean-0.mp4",
+                "video_results": 0.9909318407746319
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.20/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.9971458396144086
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.20/a person washing the dishes-0.mp4",
+                "video_results": 0.9928630475595824
+            }
+        ]
+    ]
+}

@@ -1,0 +1,41 @@
+{
+  "mode": "dicache_fixed_0.40",
+  "seed": 0,
+  "delta": 0.4,
+  "ret_ratio": 0.0,
+  "probe_depth": 1,
+  "runs": [
+    {
+      "prompt_index": 25,
+      "time_seconds": 205.57
+    },
+    {
+      "prompt_index": 26,
+      "time_seconds": 181.3
+    },
+    {
+      "prompt_index": 27,
+      "time_seconds": 205.8
+    },
+    {
+      "prompt_index": 28,
+      "time_seconds": 205.81
+    },
+    {
+      "prompt_index": 29,
+      "time_seconds": 205.75
+    },
+    {
+      "prompt_index": 30,
+      "time_seconds": 205.71
+    },
+    {
+      "prompt_index": 31,
+      "time_seconds": 181.15
+    },
+    {
+      "prompt_index": 32,
+      "time_seconds": 181.11
+    }
+  ]
+}

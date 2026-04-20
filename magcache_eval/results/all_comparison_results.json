@@ -1,0 +1,185 @@
+{
+  "modes": [
+    "easycache_baseline",
+    "easycache_fixed_0.025",
+    "easycache_fixed_0.050",
+    "easycache_adaptive"
+  ],
+  "rows": [
+    {
+      "mode": "magcache_baseline",
+      "speedup": "1.00x",
+      "latency": "1358s",
+      "vbench": "0.823473",
+      "quality": "0.845602",
+      "semantic": "0.734956",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "magcache_fixed_0.06",
+      "speedup": "1.72x",
+      "latency": "791s",
+      "vbench": "0.828663",
+      "quality": "0.847830",
+      "semantic": "0.751999",
+      "psnr": "35.6385",
+      "ssim": "0.9507",
+      "lpips": "0.0378"
+    },
+    {
+      "mode": "magcache_fixed_0.12",
+      "speedup": "2.04x",
+      "latency": "667s",
+      "vbench": "0.825617",
+      "quality": "0.847171",
+      "semantic": "0.739399",
+      "psnr": "33.2511",
+      "ssim": "0.9335",
+      "lpips": "0.0594"
+    },
+    {
+      "mode": "magcache_fixed_0.24",
+      "speedup": "2.38x",
+      "latency": "570s",
+      "vbench": "0.824686",
+      "quality": "0.848733",
+      "semantic": "0.728499",
+      "psnr": "30.6532",
+      "ssim": "0.9006",
+      "lpips": "0.0882"
+    },
+    {
+      "mode": "magcache_fixed_0.36",
+      "speedup": "2.49x",
+      "latency": "545s",
+      "vbench": "0.826205",
+      "quality": "0.848144",
+      "semantic": "0.738448",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "magcache_fixed_0.48",
+      "speedup": "2.60x",
+      "latency": "523s",
+      "vbench": "0.824512",
+      "quality": "0.848420",
+      "semantic": "0.728879",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "magcache_fixed_0.64",
+      "speedup": "2.60x",
+      "latency": "523s",
+      "vbench": "0.826335",
+      "quality": "0.846893",
+      "semantic": "0.744102",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "magcache_fixed_0.80",
+      "speedup": "2.60x",
+      "latency": "523s",
+      "vbench": "0.826335",
+      "quality": "0.846893",
+      "semantic": "0.744102",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    }
+  ],
+  "timing": {
+    "magcache_baseline": {
+      "avg_time": 1358.6969696969695,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.06": {
+      "avg_time": 791.3072727272728,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.12": {
+      "avg_time": 667.5739393939392,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.24": {
+      "avg_time": 570.0242424242425,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.36": {
+      "avg_time": 545.8948484848484,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.48": {
+      "avg_time": 523.3636363636366,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.64": {
+      "avg_time": 523.450303030303,
+      "num_videos": 66
+    },
+    "magcache_fixed_0.80": {
+      "avg_time": 523.121818181818,
+      "num_videos": 66
+    }
+  },
+  "fidelity": {
+    "magcache_fixed_0.06": {
+      "mode": "magcache_fixed_0.06",
+      "baseline": "magcache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 35.63854978760916,
+        "std": 2.792033595673769
+      },
+      "ssim": {
+        "mean": 0.9507164164644761,
+        "std": 0.02096603090986125
+      },
+      "lpips": {
+        "mean": 0.037831188074103295,
+        "std": 0.015380836823131273
+      }
+    },
+    "magcache_fixed_0.24": {
+      "mode": "magcache_fixed_0.24",
+      "baseline": "magcache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 30.653237320396155,
+        "std": 2.7533046280419886
+      },
+      "ssim": {
+        "mean": 0.900607762835003,
+        "std": 0.04217014333087578
+      },
+      "lpips": {
+        "mean": 0.08815624418219742,
+        "std": 0.028977175342332632
+      }
+    },
+    "magcache_fixed_0.12": {
+      "mode": "magcache_fixed_0.12",
+      "baseline": "magcache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 33.25112394135229,
+        "std": 3.0973030986839616
+      },
+      "ssim": {
+        "mean": 0.9335195056419753,
+        "std": 0.029290614611879998
+      },
+      "lpips": {
+        "mean": 0.05940214554685815,
+        "std": 0.023801697070715982
+      }
+    }
+  }
+}

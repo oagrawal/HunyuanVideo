@@ -1,0 +1,92 @@
+{
+  "modes": [
+    "easycache_baseline",
+    "easycache_fixed_0.025",
+    "easycache_fixed_0.050",
+    "easycache_adaptive"
+  ],
+  "rows": [
+    {
+      "mode": "magcache_baseline",
+      "speedup": "1.00x",
+      "latency": "1358s",
+      "vbench": "0.823473",
+      "quality": "0.845602",
+      "semantic": "0.734956",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.05",
+      "speedup": "2.06x",
+      "latency": "658s",
+      "vbench": "0.823744",
+      "quality": "0.851949",
+      "semantic": "0.710922",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.10",
+      "speedup": "3.24x",
+      "latency": "419s",
+      "vbench": "0.816793",
+      "quality": "0.851887",
+      "semantic": "0.676418",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.15",
+      "speedup": "3.92x",
+      "latency": "346s",
+      "vbench": "0.824883",
+      "quality": "0.847806",
+      "semantic": "0.733191",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.20",
+      "speedup": "4.75x",
+      "latency": "286s",
+      "vbench": "0.814471",
+      "quality": "0.842295",
+      "semantic": "0.703178",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    }
+  ],
+  "timing": {
+    "dicache_fixed_0.10": {
+      "avg_time": 419.7778787878788,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.20": {
+      "avg_time": 286.1527272727273,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.15": {
+      "avg_time": 346.6954545454546,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.05": {
+      "avg_time": 658.8999999999997,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.60": {
+      "avg_time": 164.59878787878787,
+      "num_videos": 66
+    },
+    "magcache_baseline": {
+      "avg_time": 1358.69696969697,
+      "num_videos": 33
+    }
+  },
+  "fidelity": {}
+}

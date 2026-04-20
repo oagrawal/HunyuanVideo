@@ -1,0 +1,19 @@
+{
+    "dynamic_degree": [
+        0.3333333333333333,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.40/a person swimming in ocean-0.mp4",
+                "video_results": true
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.40/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": false
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.40/a person washing the dishes-0.mp4",
+                "video_results": false
+            }
+        ]
+    ]
+}

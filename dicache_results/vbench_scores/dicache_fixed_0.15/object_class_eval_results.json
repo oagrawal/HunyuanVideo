@@ -1,0 +1,25 @@
+{
+    "object_class": [
+        0.9375,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.15/a person-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.15/a bicycle-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.15/a car-0.mp4",
+                "video_results": 0.8125,
+                "success_frame_count": 13,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

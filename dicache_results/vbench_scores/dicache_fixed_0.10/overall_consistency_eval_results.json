@@ -1,0 +1,19 @@
+{
+    "overall_consistency": [
+        0.2748379359642665,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.10/Close up of grapes on a rotating table.-0.mp4",
+                "video_results": 0.23488645255565643
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.10/Turtle swimming in ocean.-0.mp4",
+                "video_results": 0.2532588541507721
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_fixed_0.10/A storm trooper vacuuming the beach.-0.mp4",
+                "video_results": 0.33636850118637085
+            }
+        ]
+    ]
+}

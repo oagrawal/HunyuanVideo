@@ -1,0 +1,44 @@
+[
+    {
+        "prompt_en": "a red bicycle",
+        "dimension": [
+            "color"
+        ],
+        "auxiliary_info": {
+            "color": {
+                "color": "red"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/a red bicycle-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a green bicycle",
+        "dimension": [
+            "color"
+        ],
+        "auxiliary_info": {
+            "color": {
+                "color": "green"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/a green bicycle-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a blue bicycle",
+        "dimension": [
+            "color"
+        ],
+        "auxiliary_info": {
+            "color": {
+                "color": "blue"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/a blue bicycle-0.mp4"
+        ]
+    }
+]

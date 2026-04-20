@@ -1,0 +1,25 @@
+{
+    "scene": [
+        0.1875,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/alley-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/amusement park-0.mp4",
+                "video_results": 0.375,
+                "success_frame_count": 6,
+                "frame_count": 16
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.15_0.40/aquarium-0.mp4",
+                "video_results": 0.1875,
+                "success_frame_count": 3,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "prompt_en": "a person",
+        "dimension": [
+            "object_class"
+        ],
+        "auxiliary_info": {
+            "object_class": {
+                "object": "person"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.10_0.30/a person-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a bicycle",
+        "dimension": [
+            "object_class"
+        ],
+        "auxiliary_info": {
+            "object_class": {
+                "object": "bicycle"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.10_0.30/a bicycle-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "a car",
+        "dimension": [
+            "object_class"
+        ],
+        "auxiliary_info": {
+            "object_class": {
+                "object": "car"
+            }
+        },
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.10_0.30/a car-0.mp4"
+        ]
+    }
+]

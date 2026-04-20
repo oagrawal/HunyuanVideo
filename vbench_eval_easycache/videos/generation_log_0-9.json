@@ -80,6 +80,249 @@
       "video_path": "vbench_eval_easycache/videos/easycache_baseline/aquarium-0.mp4",
       "prompt_index": 8,
       "timestamp": "2026-03-10T23:34:02.976210"
+    },
+    {
+      "prompt": "a person swimming in ocean",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 555.28,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a person swimming in ocean-0.mp4",
+      "prompt_index": 0,
+      "timestamp": "2026-03-11T12:25:01.833280"
+    },
+    {
+      "prompt": "a person swimming in ocean",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 426.43,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a person swimming in ocean-0.mp4",
+      "prompt_index": 0,
+      "timestamp": "2026-03-11T12:32:10.482981"
+    },
+    {
+      "prompt": "a person swimming in ocean",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 496.11,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person swimming in ocean-0.mp4",
+      "prompt_index": 0,
+      "timestamp": "2026-03-11T12:40:28.667290"
+    },
+    {
+      "prompt": "a person giving a presentation to a room full of colleagues",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 694.73,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a person giving a presentation to a room full of colleagues-0.mp4",
+      "prompt_index": 1,
+      "timestamp": "2026-03-11T12:52:05.098805"
+    },
+    {
+      "prompt": "a person giving a presentation to a room full of colleagues",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 524.01,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a person giving a presentation to a room full of colleagues-0.mp4",
+      "prompt_index": 1,
+      "timestamp": "2026-03-11T13:00:50.743081"
+    },
+    {
+      "prompt": "a person giving a presentation to a room full of colleagues",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 573.4,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person giving a presentation to a room full of colleagues-0.mp4",
+      "prompt_index": 1,
+      "timestamp": "2026-03-11T13:10:25.530286"
+    },
+    {
+      "prompt": "a person washing the dishes",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 711.45,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/a person washing the dishes-0.mp4",
+      "prompt_index": 2,
+      "timestamp": "2026-03-11T13:22:18.499357"
+    },
+    {
+      "prompt": "a person washing the dishes",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 538.91,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/a person washing the dishes-0.mp4",
+      "prompt_index": 2,
+      "timestamp": "2026-03-11T13:31:19.004933"
+    },
+    {
+      "prompt": "a person washing the dishes",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 612.51,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person washing the dishes-0.mp4",
+      "prompt_index": 2,
+      "timestamp": "2026-03-11T13:41:33.035607"
+    },
+    {
+      "prompt": "Close up of grapes on a rotating table.",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 663.22,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/Close up of grapes on a rotating table.-0.mp4",
+      "prompt_index": 3,
+      "timestamp": "2026-03-11T13:52:37.764593"
+    },
+    {
+      "prompt": "Close up of grapes on a rotating table.",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 513.34,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/Close up of grapes on a rotating table.-0.mp4",
+      "prompt_index": 3,
+      "timestamp": "2026-03-11T14:01:12.680488"
+    },
+    {
+      "prompt": "Close up of grapes on a rotating table.",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 566.31,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/Close up of grapes on a rotating table.-0.mp4",
+      "prompt_index": 3,
+      "timestamp": "2026-03-11T14:10:40.454324"
+    },
+    {
+      "prompt": "Turtle swimming in ocean.",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 691.33,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/Turtle swimming in ocean.-0.mp4",
+      "prompt_index": 4,
+      "timestamp": "2026-03-11T14:22:13.316974"
+    },
+    {
+      "prompt": "Turtle swimming in ocean.",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 490.31,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/Turtle swimming in ocean.-0.mp4",
+      "prompt_index": 4,
+      "timestamp": "2026-03-11T14:30:25.367544"
+    },
+    {
+      "prompt": "Turtle swimming in ocean.",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 588.8,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/Turtle swimming in ocean.-0.mp4",
+      "prompt_index": 4,
+      "timestamp": "2026-03-11T14:40:15.873247"
+    },
+    {
+      "prompt": "A storm trooper vacuuming the beach.",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 710.53,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/A storm trooper vacuuming the beach.-0.mp4",
+      "prompt_index": 5,
+      "timestamp": "2026-03-11T14:52:08.016048"
+    },
+    {
+      "prompt": "A storm trooper vacuuming the beach.",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 568.56,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/A storm trooper vacuuming the beach.-0.mp4",
+      "prompt_index": 5,
+      "timestamp": "2026-03-11T15:01:38.164801"
+    },
+    {
+      "prompt": "A storm trooper vacuuming the beach.",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 620.55,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/A storm trooper vacuuming the beach.-0.mp4",
+      "prompt_index": 5,
+      "timestamp": "2026-03-11T15:12:00.337576"
+    },
+    {
+      "prompt": "alley",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 690.4,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/alley-0.mp4",
+      "prompt_index": 6,
+      "timestamp": "2026-03-11T15:23:32.211105"
+    },
+    {
+      "prompt": "alley",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 494.67,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/alley-0.mp4",
+      "prompt_index": 6,
+      "timestamp": "2026-03-11T15:31:48.550017"
+    },
+    {
+      "prompt": "alley",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 568.82,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/alley-0.mp4",
+      "prompt_index": 6,
+      "timestamp": "2026-03-11T15:41:18.891879"
+    },
+    {
+      "prompt": "amusement park",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 692.78,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/amusement park-0.mp4",
+      "prompt_index": 7,
+      "timestamp": "2026-03-11T15:52:53.325813"
+    },
+    {
+      "prompt": "amusement park",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 491.64,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/amusement park-0.mp4",
+      "prompt_index": 7,
+      "timestamp": "2026-03-11T16:01:07.333796"
+    },
+    {
+      "prompt": "amusement park",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 568.52,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/amusement park-0.mp4",
+      "prompt_index": 7,
+      "timestamp": "2026-03-11T16:10:37.618999"
+    },
+    {
+      "prompt": "aquarium",
+      "seed": 0,
+      "mode": "easycache_fixed_0.025",
+      "time_seconds": 721.67,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.025/aquarium-0.mp4",
+      "prompt_index": 8,
+      "timestamp": "2026-03-11T16:22:40.837676"
+    },
+    {
+      "prompt": "aquarium",
+      "seed": 0,
+      "mode": "easycache_fixed_0.050",
+      "time_seconds": 494.05,
+      "video_path": "vbench_eval_easycache/videos/easycache_fixed_0.050/aquarium-0.mp4",
+      "prompt_index": 8,
+      "timestamp": "2026-03-11T16:30:56.799908"
+    },
+    {
+      "prompt": "aquarium",
+      "seed": 0,
+      "mode": "easycache_adaptive",
+      "time_seconds": 593.9,
+      "video_path": "vbench_eval_easycache/videos/easycache_adaptive/aquarium-0.mp4",
+      "prompt_index": 8,
+      "timestamp": "2026-03-11T16:40:52.440097"
     }
   ],
   "completed_keys": [
@@ -91,6 +334,33 @@
     "easycache_baseline|A storm trooper vacuuming the beach.|0",
     "easycache_baseline|alley|0",
     "easycache_baseline|amusement park|0",
-    "easycache_baseline|aquarium|0"
+    "easycache_baseline|aquarium|0",
+    "easycache_fixed_0.025|a person swimming in ocean|0",
+    "easycache_fixed_0.050|a person swimming in ocean|0",
+    "easycache_adaptive|a person swimming in ocean|0",
+    "easycache_fixed_0.025|a person giving a presentation to a room full of colleagues|0",
+    "easycache_fixed_0.050|a person giving a presentation to a room full of colleagues|0",
+    "easycache_adaptive|a person giving a presentation to a room full of colleagues|0",
+    "easycache_fixed_0.025|a person washing the dishes|0",
+    "easycache_fixed_0.050|a person washing the dishes|0",
+    "easycache_adaptive|a person washing the dishes|0",
+    "easycache_fixed_0.025|Close up of grapes on a rotating table.|0",
+    "easycache_fixed_0.050|Close up of grapes on a rotating table.|0",
+    "easycache_adaptive|Close up of grapes on a rotating table.|0",
+    "easycache_fixed_0.025|Turtle swimming in ocean.|0",
+    "easycache_fixed_0.050|Turtle swimming in ocean.|0",
+    "easycache_adaptive|Turtle swimming in ocean.|0",
+    "easycache_fixed_0.025|A storm trooper vacuuming the beach.|0",
+    "easycache_fixed_0.050|A storm trooper vacuuming the beach.|0",
+    "easycache_adaptive|A storm trooper vacuuming the beach.|0",
+    "easycache_fixed_0.025|alley|0",
+    "easycache_fixed_0.050|alley|0",
+    "easycache_adaptive|alley|0",
+    "easycache_fixed_0.025|amusement park|0",
+    "easycache_fixed_0.050|amusement park|0",
+    "easycache_adaptive|amusement park|0",
+    "easycache_fixed_0.025|aquarium|0",
+    "easycache_fixed_0.050|aquarium|0",
+    "easycache_adaptive|aquarium|0"
   ]
 }

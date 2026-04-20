@@ -1,0 +1,148 @@
+{
+  "modes": [
+    "easycache_baseline",
+    "easycache_fixed_0.025",
+    "easycache_fixed_0.050",
+    "easycache_adaptive"
+  ],
+  "rows": [
+    {
+      "mode": "dicache_fixed_0.05",
+      "speedup": "1.00x",
+      "latency": "658s",
+      "vbench": "0.823744",
+      "quality": "0.851949",
+      "semantic": "0.710922",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.10",
+      "speedup": "1.57x",
+      "latency": "419s",
+      "vbench": "0.816793",
+      "quality": "0.851887",
+      "semantic": "0.676418",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.15",
+      "speedup": "1.90x",
+      "latency": "346s",
+      "vbench": "0.824883",
+      "quality": "0.847806",
+      "semantic": "0.733191",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.20",
+      "speedup": "2.30x",
+      "latency": "286s",
+      "vbench": "0.814471",
+      "quality": "0.842295",
+      "semantic": "0.703178",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.25",
+      "speedup": "2.63x",
+      "latency": "250s",
+      "vbench": "0.805960",
+      "quality": "0.841759",
+      "semantic": "0.662766",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.30",
+      "speedup": "2.91x",
+      "latency": "226s",
+      "vbench": "0.807700",
+      "quality": "0.842601",
+      "semantic": "0.668097",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.35",
+      "speedup": "3.25x",
+      "latency": "202s",
+      "vbench": "0.763163",
+      "quality": "0.806529",
+      "semantic": "0.589697",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.40",
+      "speedup": "3.53x",
+      "latency": "186s",
+      "vbench": "0.749989",
+      "quality": "0.784913",
+      "semantic": "0.610294",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    },
+    {
+      "mode": "dicache_fixed_0.60",
+      "speedup": "4.00x",
+      "latency": "164s",
+      "vbench": "0.635090",
+      "quality": "0.697850",
+      "semantic": "0.384051",
+      "psnr": "-",
+      "ssim": "-",
+      "lpips": "-"
+    }
+  ],
+  "timing": {
+    "dicache_fixed_0.10": {
+      "avg_time": 419.7778787878788,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.30": {
+      "avg_time": 226.46666666666664,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.20": {
+      "avg_time": 286.1527272727273,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.15": {
+      "avg_time": 346.6954545454546,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.35": {
+      "avg_time": 202.430303030303,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.25": {
+      "avg_time": 250.76848484848486,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.05": {
+      "avg_time": 658.8999999999997,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.40": {
+      "avg_time": 186.43878787878782,
+      "num_videos": 66
+    },
+    "dicache_fixed_0.60": {
+      "avg_time": 164.59878787878787,
+      "num_videos": 66
+    }
+  },
+  "fidelity": {}
+}

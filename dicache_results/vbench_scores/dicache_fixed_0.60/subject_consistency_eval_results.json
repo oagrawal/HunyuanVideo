@@ -1,0 +1,19 @@
+{
+    "subject_consistency": [
+        0.9473703419789672,
+        [
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/dicache_results/videos/dicache_fixed_0.60/a person swimming in ocean-0.mp4",
+                "video_results": 0.9421235877089202
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/dicache_results/videos/dicache_fixed_0.60/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.9909982525277883
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/dicache_results/videos/dicache_fixed_0.60/a person washing the dishes-0.mp4",
+                "video_results": 0.908989185700193
+            }
+        ]
+    ]
+}

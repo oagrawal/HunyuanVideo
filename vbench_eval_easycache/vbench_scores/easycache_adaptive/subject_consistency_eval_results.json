@@ -1,0 +1,19 @@
+{
+    "subject_consistency": [
+        0.9432055548919985,
+        [
+            {
+                "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person swimming in ocean-0.mp4",
+                "video_results": 0.9601079446729273
+            },
+            {
+                "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.993864270625636
+            },
+            {
+                "video_path": "vbench_eval_easycache/videos/easycache_adaptive/a person washing the dishes-0.mp4",
+                "video_results": 0.8756444493774325
+            }
+        ]
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "temporal_flickering": [
+        0.999215049992979,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.10_0.30/In a still frame, a stop sign-0.mp4",
+                "video_results": 0.9988458800549601
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.10_0.30/a toilet, frozen in time-0.mp4",
+                "video_results": 0.9994712821408814
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.10_0.30/a laptop, frozen in time-0.mp4",
+                "video_results": 0.9993279877830954
+            }
+        ]
+    ]
+}

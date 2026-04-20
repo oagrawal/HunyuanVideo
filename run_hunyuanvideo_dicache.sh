@@ -1,0 +1,12 @@
+python3 run_hunyuanvideo_dicache.py \
+--video-size 544 960 \
+--video-length 129 \
+--infer-steps 50 \
+--prompt "a  realistic young expert man speaking with enthusiasm front of camera with vintage toy background." \
+--flow-reverse \
+--dicache-results-root ./dicache_results \
+--save-path ./dicache_results/videos \
+--seed 0 \
+--dicache-trace \
+--dicache-trace-only \
+--dicache-ret-ratio 0.0

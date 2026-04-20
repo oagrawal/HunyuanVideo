@@ -1,0 +1,32 @@
+{
+  "mode": "magcache_k15_fixed_0.80",
+  "seed": 0,
+  "K": 15,
+  "retention_ratio": 0.1,
+  "runs": [
+    {
+      "prompt_index": 27,
+      "time_seconds": 373.33
+    },
+    {
+      "prompt_index": 28,
+      "time_seconds": 372.47
+    },
+    {
+      "prompt_index": 29,
+      "time_seconds": 377.51
+    },
+    {
+      "prompt_index": 30,
+      "time_seconds": 373.28
+    },
+    {
+      "prompt_index": 31,
+      "time_seconds": 372.59
+    },
+    {
+      "prompt_index": 32,
+      "time_seconds": 371.78
+    }
+  ]
+}

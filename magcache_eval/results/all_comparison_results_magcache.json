@@ -1,0 +1,277 @@
+{
+  "magcache_baseline": {
+    "vbench_raw": {
+      "subject_consistency": 0.9486406599947562,
+      "scene": 0.6666666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.15475290697674407,
+      "background_consistency": 0.9444993336995443,
+      "color": 1.0,
+      "imaging_quality": 0.6840268247934582,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9990888206008212,
+      "aesthetic_quality": 0.6316577990849813,
+      "temporal_style": 0.20321157077948251,
+      "multiple_objects": 0.5833333333333334,
+      "overall_consistency": 0.28692002097765607,
+      "object_class": 0.6666666666666666,
+      "motion_smoothness": 0.9931745959466921
+    },
+    "vbench_quality_score": 0.8456022240918597,
+    "vbench_semantic_score": 0.734956471430158,
+    "vbench_total_score": 0.8234730735595193,
+    "timing": {
+      "avg_time": 1358.6969696969693,
+      "total_time": 44836.999999999985,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.06": {
+    "vbench_raw": {
+      "subject_consistency": 0.9514343712168435,
+      "scene": 0.7916666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.15423409237726096,
+      "background_consistency": 0.9557234446207682,
+      "color": 0.9791666666666666,
+      "imaging_quality": 0.6815756935297056,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9992301755091724,
+      "aesthetic_quality": 0.6292187968889872,
+      "temporal_style": 0.20436364909013113,
+      "multiple_objects": 0.5833333333333334,
+      "overall_consistency": 0.28692250450452167,
+      "object_class": 0.6875,
+      "motion_smoothness": 0.9933248656277492
+    },
+    "vbench_quality_score": 0.8478295020187189,
+    "vbench_semantic_score": 0.7519986990425944,
+    "vbench_total_score": 0.828663341423494,
+    "fidelity": {
+      "mode": "magcache_fixed_0.06",
+      "baseline": "magcache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 35.63854978760916,
+        "std": 2.792033595673769
+      },
+      "ssim": {
+        "mean": 0.9507164164644761,
+        "std": 0.02096603090986125
+      },
+      "lpips": {
+        "mean": 0.037831188074103295,
+        "std": 0.015380836823131273
+      }
+    },
+    "timing": {
+      "avg_time": 791.3072727272727,
+      "total_time": 26113.14,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.12": {
+    "vbench_raw": {
+      "subject_consistency": 0.9499539124468962,
+      "scene": 0.7291666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.15482901324289397,
+      "background_consistency": 0.9551353454589844,
+      "color": 1.0,
+      "imaging_quality": 0.6807677542516427,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9992827881590213,
+      "aesthetic_quality": 0.6276532212893168,
+      "temporal_style": 0.20642665028572083,
+      "multiple_objects": 0.5416666666666666,
+      "overall_consistency": 0.28565723697344464,
+      "object_class": 0.6666666666666666,
+      "motion_smoothness": 0.9934652121354567
+    },
+    "vbench_quality_score": 0.847170974164048,
+    "vbench_semantic_score": 0.7393986675804345,
+    "vbench_total_score": 0.8256165128473253,
+    "fidelity": {
+      "mode": "magcache_fixed_0.12",
+      "baseline": "magcache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 33.25112394135229,
+        "std": 3.0973030986839616
+      },
+      "ssim": {
+        "mean": 0.9335195056419753,
+        "std": 0.029290614611879998
+      },
+      "lpips": {
+        "mean": 0.05940214554685815,
+        "std": 0.023801697070715982
+      }
+    },
+    "timing": {
+      "avg_time": 667.5739393939393,
+      "total_time": 22029.94,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.24": {
+    "vbench_raw": {
+      "subject_consistency": 0.9544412723431984,
+      "scene": 0.6666666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.1546741763565891,
+      "background_consistency": 0.9610265096028646,
+      "color": 1.0,
+      "imaging_quality": 0.6787510432753452,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9992481890651915,
+      "aesthetic_quality": 0.6258000532786051,
+      "temporal_style": 0.2068112442890803,
+      "multiple_objects": 0.5208333333333334,
+      "overall_consistency": 0.2850158015886943,
+      "object_class": 0.6666666666666666,
+      "motion_smoothness": 0.9937221337187688
+    },
+    "vbench_quality_score": 0.8487326845399998,
+    "vbench_semantic_score": 0.7284988275345596,
+    "vbench_total_score": 0.8246859131389119,
+    "fidelity": {
+      "mode": "magcache_fixed_0.24",
+      "baseline": "magcache_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 30.653237320396155,
+        "std": 2.7533046280419886
+      },
+      "ssim": {
+        "mean": 0.900607762835003,
+        "std": 0.04217014333087578
+      },
+      "lpips": {
+        "mean": 0.08815624418219742,
+        "std": 0.028977175342332632
+      }
+    },
+    "timing": {
+      "avg_time": 570.0242424242424,
+      "total_time": 18810.8,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.36": {
+    "vbench_raw": {
+      "subject_consistency": 0.9548058973159641,
+      "scene": 0.6666666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.15617369186046529,
+      "background_consistency": 0.9579779307047526,
+      "color": 0.9791666666666666,
+      "imaging_quality": 0.6785268004858525,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.999369139063592,
+      "aesthetic_quality": 0.6255007386207581,
+      "temporal_style": 0.20721480250358582,
+      "multiple_objects": 0.625,
+      "overall_consistency": 0.2849556605021159,
+      "object_class": 0.6666666666666666,
+      "motion_smoothness": 0.9937436308749356
+    },
+    "vbench_quality_score": 0.8481442931954114,
+    "vbench_semantic_score": 0.7384483430646631,
+    "vbench_total_score": 0.8262051031692618,
+    "timing": {
+      "avg_time": 545.8948484848486,
+      "total_time": 18014.530000000002,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.48": {
+    "vbench_raw": {
+      "subject_consistency": 0.954375114912788,
+      "scene": 0.6666666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.1548245720284237,
+      "background_consistency": 0.9607340494791666,
+      "color": 0.9791666666666666,
+      "imaging_quality": 0.6779710400997822,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9989532354610419,
+      "aesthetic_quality": 0.6257272760073344,
+      "temporal_style": 0.20646328727404276,
+      "multiple_objects": 0.5416666666666666,
+      "overall_consistency": 0.28641804059346515,
+      "object_class": 0.6666666666666666,
+      "motion_smoothness": 0.9937475826464356
+    },
+    "vbench_quality_score": 0.848419661667787,
+    "vbench_semantic_score": 0.7288793636326348,
+    "vbench_total_score": 0.8245116020607567,
+    "timing": {
+      "avg_time": 523.3636363636364,
+      "total_time": 17271.0,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.64": {
+    "vbench_raw": {
+      "subject_consistency": 0.9552297030265132,
+      "scene": 0.7291666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.15748970445736432,
+      "background_consistency": 0.9560794830322266,
+      "color": 0.9791666666666666,
+      "imaging_quality": 0.678134159117706,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9993282043466382,
+      "aesthetic_quality": 0.6198402047157288,
+      "temporal_style": 0.20758052666982016,
+      "multiple_objects": 0.5625,
+      "overall_consistency": 0.28892412781715393,
+      "object_class": 0.6875,
+      "motion_smoothness": 0.9937745885063946
+    },
+    "vbench_quality_score": 0.8468932617494667,
+    "vbench_semantic_score": 0.7441016873723324,
+    "vbench_total_score": 0.8263349468740397,
+    "timing": {
+      "avg_time": 523.450303030303,
+      "total_time": 17273.859999999997,
+      "num_videos": 33
+    }
+  },
+  "magcache_fixed_0.80": {
+    "vbench_raw": {
+      "subject_consistency": 0.9552297030265132,
+      "scene": 0.7291666666666666,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 1.0,
+      "appearance_style": 0.15748970445736432,
+      "background_consistency": 0.9560794830322266,
+      "color": 0.9791666666666666,
+      "imaging_quality": 0.678134159117706,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9993282043466382,
+      "aesthetic_quality": 0.6198402047157288,
+      "temporal_style": 0.20758052666982016,
+      "multiple_objects": 0.5625,
+      "overall_consistency": 0.28892412781715393,
+      "object_class": 0.6875,
+      "motion_smoothness": 0.9937745885063946
+    },
+    "vbench_quality_score": 0.8468932617494667,
+    "vbench_semantic_score": 0.7441016873723324,
+    "vbench_total_score": 0.8263349468740397,
+    "timing": {
+      "avg_time": 523.1218181818182,
+      "total_time": 17263.02,
+      "num_videos": 33
+    }
+  }
+}

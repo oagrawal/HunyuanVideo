@@ -1,0 +1,5 @@
+mode,speedup,latency,vbench,quality,semantic,psnr,ssim,lpips
+EasyCache baseline,1.00x,1357s,0.823473,0.845602,0.734956,-,-,-
+EasyCache fixed 0.025,2.06x,660s,0.822094,0.846859,0.723036,33.5108,0.9258,0.0576
+EasyCache fixed 0.050,2.70x,502s,0.816519,0.840361,0.721154,28.1696,0.8333,0.1833
+EasyCache adaptive,2.42x,561s,0.821905,0.844324,0.732229,30.4283,0.8878,0.1007

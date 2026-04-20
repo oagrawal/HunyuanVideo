@@ -1,0 +1,96 @@
+{
+  "runs": [
+    {
+      "prompt": "a person swimming in ocean",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 249.57,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/a person swimming in ocean-0.mp4",
+      "prompt_index": 0,
+      "timestamp": "2026-03-29T07:28:54.160660"
+    },
+    {
+      "prompt": "a person giving a presentation to a room full of colleagues",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 250.35,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/a person giving a presentation to a room full of colleagues-0.mp4",
+      "prompt_index": 1,
+      "timestamp": "2026-03-29T07:33:05.788235"
+    },
+    {
+      "prompt": "a person washing the dishes",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 249.75,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/a person washing the dishes-0.mp4",
+      "prompt_index": 2,
+      "timestamp": "2026-03-29T07:37:16.796267"
+    },
+    {
+      "prompt": "Close up of grapes on a rotating table.",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 250.14,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/Close up of grapes on a rotating table.-0.mp4",
+      "prompt_index": 3,
+      "timestamp": "2026-03-29T07:41:28.074721"
+    },
+    {
+      "prompt": "Turtle swimming in ocean.",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 249.24,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/Turtle swimming in ocean.-0.mp4",
+      "prompt_index": 4,
+      "timestamp": "2026-03-29T07:45:38.754373"
+    },
+    {
+      "prompt": "A storm trooper vacuuming the beach.",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 250.04,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/A storm trooper vacuuming the beach.-0.mp4",
+      "prompt_index": 5,
+      "timestamp": "2026-03-29T07:49:50.069707"
+    },
+    {
+      "prompt": "alley",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 249.33,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/alley-0.mp4",
+      "prompt_index": 6,
+      "timestamp": "2026-03-29T07:54:00.632503"
+    },
+    {
+      "prompt": "amusement park",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 249.28,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/amusement park-0.mp4",
+      "prompt_index": 7,
+      "timestamp": "2026-03-29T07:58:11.234617"
+    },
+    {
+      "prompt": "aquarium",
+      "seed": 0,
+      "mode": "dicache_fixed_0.25",
+      "time_seconds": 249.28,
+      "video_path": "dicache_results/videos/dicache_fixed_0.25/aquarium-0.mp4",
+      "prompt_index": 8,
+      "timestamp": "2026-03-29T08:02:21.773184"
+    }
+  ],
+  "completed_keys": [
+    "dicache_fixed_0.25|a person swimming in ocean|0",
+    "dicache_fixed_0.25|a person giving a presentation to a room full of colleagues|0",
+    "dicache_fixed_0.25|a person washing the dishes|0",
+    "dicache_fixed_0.25|Close up of grapes on a rotating table.|0",
+    "dicache_fixed_0.25|Turtle swimming in ocean.|0",
+    "dicache_fixed_0.25|A storm trooper vacuuming the beach.|0",
+    "dicache_fixed_0.25|alley|0",
+    "dicache_fixed_0.25|amusement park|0",
+    "dicache_fixed_0.25|aquarium|0"
+  ]
+}

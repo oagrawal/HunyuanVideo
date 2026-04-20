@@ -1,0 +1,44 @@
+{
+  "mode": "magcache_k15_fixed_0.24",
+  "seed": 0,
+  "K": 15,
+  "retention_ratio": 0.1,
+  "runs": [
+    {
+      "prompt_index": 9,
+      "time_seconds": 475.8
+    },
+    {
+      "prompt_index": 10,
+      "time_seconds": 472.19
+    },
+    {
+      "prompt_index": 11,
+      "time_seconds": 473.4
+    },
+    {
+      "prompt_index": 12,
+      "time_seconds": 476.91
+    },
+    {
+      "prompt_index": 13,
+      "time_seconds": 473.38
+    },
+    {
+      "prompt_index": 14,
+      "time_seconds": 475.07
+    },
+    {
+      "prompt_index": 15,
+      "time_seconds": 474.81
+    },
+    {
+      "prompt_index": 16,
+      "time_seconds": 474.38
+    },
+    {
+      "prompt_index": 17,
+      "time_seconds": 473.35
+    }
+  ]
+}

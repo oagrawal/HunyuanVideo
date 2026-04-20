@@ -1,0 +1,25 @@
+{
+    "background_consistency": [
+        0.9579779307047526,
+        [
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_fixed_0.36/alley-0.mp4",
+                "video_results": 0.9339771270751953,
+                "video_sim": 119.549072265625,
+                "cnt_per_video": 128
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_fixed_0.36/amusement park-0.mp4",
+                "video_results": 0.9740219116210938,
+                "video_sim": 124.6748046875,
+                "cnt_per_video": 128
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_fixed_0.36/aquarium-0.mp4",
+                "video_results": 0.9659347534179688,
+                "video_sim": 123.6396484375,
+                "cnt_per_video": 128
+            }
+        ]
+    ]
+}

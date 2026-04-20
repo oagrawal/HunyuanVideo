@@ -1,0 +1,19 @@
+{
+    "subject_consistency": [
+        0.9544412723431984,
+        [
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.24/a person swimming in ocean-0.mp4",
+                "video_results": 0.9608957408927381
+            },
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.24/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.9948462368920445
+            },
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.24/a person washing the dishes-0.mp4",
+                "video_results": 0.9075818392448127
+            }
+        ]
+    ]
+}

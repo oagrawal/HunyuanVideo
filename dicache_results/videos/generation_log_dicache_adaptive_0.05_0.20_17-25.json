@@ -1,0 +1,86 @@
+{
+  "runs": [
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 468.3,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+      "prompt_index": 17,
+      "timestamp": "2026-03-29T14:49:13.042569"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 468.25,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-29T14:57:02.683274"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 468.26,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-29T15:04:52.331614"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 468.39,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-29T15:12:42.014170"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 467.81,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-29T15:20:31.005248"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 468.06,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-29T15:28:20.254730"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 467.87,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-29T15:36:09.369075"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "dicache_adaptive_0.05_0.20",
+      "time_seconds": 468.88,
+      "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-29T15:43:59.420958"
+    }
+  ],
+  "completed_keys": [
+    "dicache_adaptive_0.05_0.20|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0",
+    "dicache_adaptive_0.05_0.20|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "dicache_adaptive_0.05_0.20|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "dicache_adaptive_0.05_0.20|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "dicache_adaptive_0.05_0.20|a red bicycle|0",
+    "dicache_adaptive_0.05_0.20|a green bicycle|0",
+    "dicache_adaptive_0.05_0.20|a blue bicycle|0",
+    "dicache_adaptive_0.05_0.20|a bicycle on the left of a car, front view|0"
+  ]
+}

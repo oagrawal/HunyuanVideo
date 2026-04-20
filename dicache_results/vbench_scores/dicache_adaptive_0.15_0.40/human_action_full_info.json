@@ -1,0 +1,29 @@
+[
+    {
+        "prompt_en": "A person is riding a bike",
+        "dimension": [
+            "human_action"
+        ],
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/A person is riding a bike-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A person is marching",
+        "dimension": [
+            "human_action"
+        ],
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/A person is marching-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "A person is roller skating",
+        "dimension": [
+            "human_action"
+        ],
+        "video_list": [
+            "dicache_results/videos/dicache_adaptive_0.15_0.40/A person is roller skating-0.mp4"
+        ]
+    }
+]

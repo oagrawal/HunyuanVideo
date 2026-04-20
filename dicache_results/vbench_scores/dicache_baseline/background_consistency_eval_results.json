@@ -1,0 +1,25 @@
+{
+    "background_consistency": [
+        0.9444993336995443,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_baseline/alley-0.mp4",
+                "video_results": 0.8995704650878906,
+                "video_sim": 115.14501953125,
+                "cnt_per_video": 128
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_baseline/amusement park-0.mp4",
+                "video_results": 0.9788284301757812,
+                "video_sim": 125.2900390625,
+                "cnt_per_video": 128
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_baseline/aquarium-0.mp4",
+                "video_results": 0.9550991058349609,
+                "video_sim": 122.252685546875,
+                "cnt_per_video": 128
+            }
+        ]
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "multiple_objects": [
+        0.4166666666666667,
+        [
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a bird and a cat-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a cat and a dog-0.mp4",
+                "video_results": 0.25,
+                "success_frame_count": 4,
+                "frame_count": 16
+            },
+            {
+                "video_path": "dicache_results/videos/dicache_adaptive_0.05_0.20/a dog and a horse-0.mp4",
+                "video_results": 1.0,
+                "success_frame_count": 16,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

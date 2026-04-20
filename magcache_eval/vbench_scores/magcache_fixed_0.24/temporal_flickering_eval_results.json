@@ -1,0 +1,19 @@
+{
+    "temporal_flickering": [
+        0.9992481890651915,
+        [
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.24/In a still frame, a stop sign-0.mp4",
+                "video_results": 0.9992126419263727
+            },
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.24/a toilet, frozen in time-0.mp4",
+                "video_results": 0.9993354207160426
+            },
+            {
+                "video_path": "magcache_eval/videos/magcache_fixed_0.24/a laptop, frozen in time-0.mp4",
+                "video_results": 0.9991965045531591
+            }
+        ]
+    ]
+}

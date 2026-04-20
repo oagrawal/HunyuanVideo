@@ -56,14 +56,18 @@ def compute_aggregate(raw):
             scaled[dim] = s * DIM_WEIGHT.get(dim, 1)
     q = [scaled[d] for d in QUALITY_LIST if d in scaled]
     s = [scaled[d] for d in SEMANTIC_LIST if d in scaled]
-    qs = sum(q) / len(q) if q else None
-    ss = sum(s) / len(s) if s else None
+    # Divide by sum-of-weights, not count — dynamic_degree has weight 0.5
+    q_wsum = sum(DIM_WEIGHT.get(d, 1) for d in QUALITY_LIST if d in scaled)
+    s_wsum = sum(DIM_WEIGHT.get(d, 1) for d in SEMANTIC_LIST if d in scaled)
+    qs = sum(q) / q_wsum if q else None
+    ss = sum(s) / s_wsum if s else None
     total = (qs * QUALITY_WEIGHT + ss * SEMANTIC_WEIGHT) / (QUALITY_WEIGHT + SEMANTIC_WEIGHT) if qs and ss else None
     return {"quality_score": qs, "semantic_score": ss, "total_score": total}
 
 
 def load_timing(log_dir):
     m = {}
+    # Source 1: generation_log_*.json files inside the videos dir (EasyCache style)
     for p in glob.glob(os.path.join(log_dir, "generation_log_*.json")):
         with open(p) as f:
             log = json.load(f)
@@ -72,6 +76,16 @@ def load_timing(log_dir):
                 continue
             mode = run["mode"]
             m.setdefault(mode, []).append(run["time_seconds"])
+    # Source 2: timing_*.json files in a sibling results/ dir (MagCache style)
+    results_dir = os.path.join(os.path.dirname(log_dir.rstrip("/")), "results")
+    for p in glob.glob(os.path.join(results_dir, "timing_*.json")):
+        with open(p) as f:
+            data = json.load(f)
+        mode = data.get("mode")
+        if mode:
+            for run in data.get("runs", []):
+                if "time_seconds" in run:
+                    m.setdefault(mode, []).append(run["time_seconds"])
     return {mode: {"avg_time": sum(t)/len(t), "num_videos": len(t)} for mode, t in m.items()}
 
 
@@ -82,7 +96,7 @@ def load_fidelity(metrics_dir):
             return json.load(f)
     # Fallback: merge per-mode files (e.g. from 2-GPU parallel run)
     r = {}
-    for fpath in glob.glob(os.path.join(metrics_dir, "*_vs_easycache_baseline.json")):
+    for fpath in glob.glob(os.path.join(metrics_dir, "*_vs_*_baseline.json")):
         with open(fpath) as f:
             d = json.load(f)
         mode = d.get("mode")
@@ -98,18 +112,25 @@ def main():
     p.add_argument("--gen-log-dir", default="vbench_eval_easycache/videos")
     p.add_argument("--output-json", default="vbench_eval_easycache/all_comparison_results.json")
     p.add_argument("--output-csv", default="vbench_eval_easycache/all_comparison_results.csv")
+    p.add_argument("--modes", default=None, help="Comma-separated list of modes (overrides ALL_MODES)")
+    p.add_argument("--baseline", default=None, help="Mode name to use as baseline for speedup (default: first mode)")
     args = p.parse_args()
+
+    modes = [m.strip() for m in args.modes.split(",")] if args.modes else ALL_MODES
+    baseline_mode = args.baseline if args.baseline else modes[0]
 
     timing = load_timing(args.gen_log_dir)
     fidelity = load_fidelity(args.fidelity_dir)
-    baseline_time = timing.get("easycache_baseline", {}).get("avg_time")
+    baseline_time = timing.get(baseline_mode, {}).get("avg_time")
 
     print("=" * 80)
-    print("EasyCache Evaluation Results")
+    print("Evaluation Results")
     print("=" * 80)
+    print("%-30s %8s %8s %10s %8s %8s %8s" % ("Mode", "Speedup", "Latency", "VBench", "PSNR", "SSIM", "LPIPS"))
+    print("-" * 80)
 
     rows = []
-    for mode in ALL_MODES:
+    for mode in modes:
         raw = load_vbench_scores(os.path.join(args.scores_dir, mode))
         agg = compute_aggregate(raw)
         t = timing.get(mode, {})
@@ -117,15 +138,19 @@ def main():
         speedup = baseline_time / t["avg_time"] if baseline_time and t else None
         row = {
             "mode": MODE_LABELS.get(mode, mode),
-            "speedup": f"{speedup:.2f}x" if speedup else "—",
-            "latency": f"{t['avg_time']:.0f}s" if t else "—",
-            "vbench": f"{agg['total_score']*100:.2f}%" if agg["total_score"] else "—",
-            "psnr": f"{fid['psnr']['mean']:.4f}" if fid and "psnr" in fid else "—",
-            "ssim": f"{fid['ssim']['mean']:.4f}" if fid and "ssim" in fid else "—",
-            "lpips": f"{fid['lpips']['mean']:.4f}" if fid and "lpips" in fid else "—",
+            "speedup": "%.2fx" % speedup if speedup else "-",
+            "latency": "%ds" % t["avg_time"] if t else "-",
+            "vbench": "%.6f" % agg["total_score"] if agg["total_score"] else "-",
+            "quality": "%.6f" % agg["quality_score"] if agg["quality_score"] else "-",
+            "semantic": "%.6f" % agg["semantic_score"] if agg["semantic_score"] else "-",
+            "psnr": "%.4f" % fid["psnr"]["mean"] if fid and "psnr" in fid else "-",
+            "ssim": "%.4f" % fid["ssim"]["mean"] if fid and "ssim" in fid else "-",
+            "lpips": "%.4f" % fid["lpips"]["mean"] if fid and "lpips" in fid else "-",
         }
         rows.append(row)
-        print(f"{row['mode']:<22} {row['speedup']:>8} {row['latency']:>8} {row['vbench']:>10} {row['psnr']:>8} {row['ssim']:>8} {row['lpips']:>8}")
+        print("%-30s %8s %8s %10s %8s %8s %8s" % (
+            row["mode"], row["speedup"], row["latency"], row["vbench"],
+            row["psnr"], row["ssim"], row["lpips"]))
 
     out_dir = os.path.dirname(args.output_json) or "."
     os.makedirs(out_dir, exist_ok=True)
@@ -139,7 +164,7 @@ def main():
         import csv
 
         csv_path = args.output_csv
-        fieldnames = ["mode", "speedup", "latency", "vbench", "psnr", "ssim", "lpips"]
+        fieldnames = ["mode", "speedup", "latency", "vbench", "quality", "semantic", "psnr", "ssim", "lpips"]
         with open(csv_path, "w", newline="") as cf:
             writer = csv.DictWriter(cf, fieldnames=fieldnames)
             writer.writeheader()

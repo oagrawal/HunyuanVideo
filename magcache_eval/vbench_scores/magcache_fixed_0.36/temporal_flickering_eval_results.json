@@ -1,0 +1,19 @@
+{
+    "temporal_flickering": [
+        0.999369139063592,
+        [
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_fixed_0.36/In a still frame, a stop sign-0.mp4",
+                "video_results": 0.9993152669831818
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_fixed_0.36/a toilet, frozen in time-0.mp4",
+                "video_results": 0.999443501701542
+            },
+            {
+                "video_path": "/nfs/oagrawal/HunyuanVideo/magcache_eval/videos/magcache_fixed_0.36/a laptop, frozen in time-0.mp4",
+                "video_results": 0.9993486485060523
+            }
+        ]
+    ]
+}

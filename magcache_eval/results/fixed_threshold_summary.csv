@@ -1,0 +1,9 @@
+method_id,delta,K,speedup,vbench_total_score,psnr_mean,ssim_mean,lpips_mean,avg_time_seconds,num_videos
+magcache_baseline,N/A,N/A,1.00x,0.823473,-,-,-,1358.697,66
+magcache_fixed_0.06,0.06,6,1.72x,0.828663,35.6385,0.9507,0.0378,791.307,66
+magcache_fixed_0.12,0.12,6,2.04x,0.825617,33.2511,0.9335,0.0594,667.574,66
+magcache_fixed_0.24,0.24,6,2.38x,0.824686,30.6532,0.9006,0.0882,570.024,66
+magcache_fixed_0.36,0.36,6,2.49x,0.826205,-,-,-,545.895,66
+magcache_fixed_0.48,0.48,6,2.60x,0.824512,-,-,-,523.364,66
+magcache_fixed_0.64,0.64,6,2.60x,0.826335,-,-,-,523.450,66
+magcache_fixed_0.80,0.80,6,2.60x,0.826335,-,-,-,523.122,66

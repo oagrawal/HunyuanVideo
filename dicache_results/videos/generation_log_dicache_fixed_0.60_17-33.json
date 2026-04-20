@@ -1,0 +1,166 @@
+{
+  "runs": [
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, zoom out",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 157.31,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4",
+      "prompt_index": 17,
+      "timestamp": "2026-03-28T00:21:40.699014"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.56,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4",
+      "prompt_index": 18,
+      "timestamp": "2026-03-28T00:24:18.605832"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand, oil painting",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.44,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4",
+      "prompt_index": 19,
+      "timestamp": "2026-03-28T00:26:56.154942"
+    },
+    {
+      "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.25,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4",
+      "prompt_index": 20,
+      "timestamp": "2026-03-28T00:29:33.639823"
+    },
+    {
+      "prompt": "a red bicycle",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 155.92,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a red bicycle-0.mp4",
+      "prompt_index": 21,
+      "timestamp": "2026-03-28T00:32:10.734666"
+    },
+    {
+      "prompt": "a green bicycle",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.0,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a green bicycle-0.mp4",
+      "prompt_index": 22,
+      "timestamp": "2026-03-28T00:34:47.823663"
+    },
+    {
+      "prompt": "a blue bicycle",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 155.95,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a blue bicycle-0.mp4",
+      "prompt_index": 23,
+      "timestamp": "2026-03-28T00:37:24.827331"
+    },
+    {
+      "prompt": "a bicycle on the left of a car, front view",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.18,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a bicycle on the left of a car, front view-0.mp4",
+      "prompt_index": 24,
+      "timestamp": "2026-03-28T00:40:02.053140"
+    },
+    {
+      "prompt": "a car on the right of a motorcycle, front view",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.28,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a car on the right of a motorcycle, front view-0.mp4",
+      "prompt_index": 25,
+      "timestamp": "2026-03-28T00:42:39.497145"
+    },
+    {
+      "prompt": "a motorcycle on the left of a bus, front view",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 155.93,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a motorcycle on the left of a bus, front view-0.mp4",
+      "prompt_index": 26,
+      "timestamp": "2026-03-28T00:45:16.574757"
+    },
+    {
+      "prompt": "a bird and a cat",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.0,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a bird and a cat-0.mp4",
+      "prompt_index": 27,
+      "timestamp": "2026-03-28T00:47:53.688667"
+    },
+    {
+      "prompt": "a cat and a dog",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.46,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a cat and a dog-0.mp4",
+      "prompt_index": 28,
+      "timestamp": "2026-03-28T00:50:31.329697"
+    },
+    {
+      "prompt": "a dog and a horse",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.4,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a dog and a horse-0.mp4",
+      "prompt_index": 29,
+      "timestamp": "2026-03-28T00:53:08.904928"
+    },
+    {
+      "prompt": "a person",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.42,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a person-0.mp4",
+      "prompt_index": 30,
+      "timestamp": "2026-03-28T00:55:46.474172"
+    },
+    {
+      "prompt": "a bicycle",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 156.35,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a bicycle-0.mp4",
+      "prompt_index": 31,
+      "timestamp": "2026-03-28T00:58:23.981827"
+    },
+    {
+      "prompt": "a car",
+      "seed": 0,
+      "mode": "dicache_fixed_0.60",
+      "time_seconds": 155.97,
+      "video_path": "dicache_results/videos/dicache_fixed_0.60/a car-0.mp4",
+      "prompt_index": 32,
+      "timestamp": "2026-03-28T01:01:00.951163"
+    }
+  ],
+  "completed_keys": [
+    "dicache_fixed_0.60|A beautiful coastal beach in spring, waves lapping on sand, zoom out|0",
+    "dicache_fixed_0.60|A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style|0",
+    "dicache_fixed_0.60|A beautiful coastal beach in spring, waves lapping on sand, oil painting|0",
+    "dicache_fixed_0.60|A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo|0",
+    "dicache_fixed_0.60|a red bicycle|0",
+    "dicache_fixed_0.60|a green bicycle|0",
+    "dicache_fixed_0.60|a blue bicycle|0",
+    "dicache_fixed_0.60|a bicycle on the left of a car, front view|0",
+    "dicache_fixed_0.60|a car on the right of a motorcycle, front view|0",
+    "dicache_fixed_0.60|a motorcycle on the left of a bus, front view|0",
+    "dicache_fixed_0.60|a bird and a cat|0",
+    "dicache_fixed_0.60|a cat and a dog|0",
+    "dicache_fixed_0.60|a dog and a horse|0",
+    "dicache_fixed_0.60|a person|0",
+    "dicache_fixed_0.60|a bicycle|0",
+    "dicache_fixed_0.60|a car|0"
+  ]
+}

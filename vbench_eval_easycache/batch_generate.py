@@ -38,6 +38,10 @@ MODES = [
     {"name": "easycache_fixed_0.025", "mode": "easycache", "thresh": 0.025},
     {"name": "easycache_fixed_0.050", "mode": "easycache", "thresh": 0.050},
     {"name": "easycache_adaptive", "mode": "adaptive", "thresh_low": 0.025, "thresh_high": 0.050, "first_steps": 8, "last_steps": 6},
+    {"name": "easycache_fixed_0.0375", "mode": "easycache", "thresh": 0.0375},
+    {"name": "easycache_fixed_0.075", "mode": "easycache", "thresh": 0.075},
+    {"name": "easycache_adaptive_0.025_0.075", "mode": "adaptive", "thresh_low": 0.025, "thresh_high": 0.075, "first_steps": 8, "last_steps": 6},
+    {"name": "easycache_adaptive_0.0375_0.050", "mode": "adaptive", "thresh_low": 0.0375, "thresh_high": 0.050, "first_steps": 8, "last_steps": 6},
 ]
 
 
